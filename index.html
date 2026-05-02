@@ -17,7 +17,6 @@
   --text2: #7a8a9e;
   --text3: #4a5a6e;
   --accent: #00c8ff;
-  --accent2: #0078d4;
   --green: #00e5a0;
   --amber: #ffb400;
   --coral: #ff5e5e;
@@ -34,8 +33,6 @@ body {
   line-height: 1.6;
   min-height: 100vh;
 }
-
-/* GRID BACKGROUND */
 body::before {
   content: '';
   position: fixed;
@@ -48,7 +45,69 @@ body::before {
   z-index: 0;
 }
 
-/* HEADER */
+/* ─── LOADING OVERLAY ─────────────────────────────── */
+#loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  transition: opacity 0.4s;
+}
+#loading-overlay.hidden { opacity: 0; pointer-events: none; }
+.loading-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  letter-spacing: 0.1em;
+  color: var(--text);
+}
+.loading-logo span { color: var(--accent); }
+.loading-bar-track {
+  width: 200px;
+  height: 2px;
+  background: var(--border2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loading-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 2px;
+  animation: loadbar 0.8s ease-out forwards;
+}
+@keyframes loadbar { from { width: 0 } to { width: 100% } }
+.loading-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+}
+
+/* ─── ERROR BANNER ────────────────────────────────── */
+#error-banner {
+  display: none;
+  background: rgba(255,94,94,0.12);
+  border: 1px solid rgba(255,94,94,0.3);
+  color: var(--coral);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+#error-banner.show { display: block; }
+#error-banner code {
+  background: rgba(255,94,94,0.15);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+/* ─── HEADER ──────────────────────────────────────── */
 header {
   position: sticky;
   top: 0;
@@ -62,22 +121,15 @@ header {
   align-items: center;
   justify-content: space-between;
 }
-.logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 24px;
-  letter-spacing: 0.1em;
-  color: var(--text);
-}
+.logo { font-family: 'Bebas Neue', sans-serif; font-size: 24px; letter-spacing: 0.1em; color: var(--text); }
 .logo span { color: var(--accent); }
-.header-meta {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--text3);
-  letter-spacing: 0.05em;
-}
+.header-right { display: flex; align-items: center; gap: 1.5rem; }
+.header-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3); letter-spacing: 0.05em; }
 .header-meta strong { color: var(--accent); }
+/* last-updated badge — filled after fetch */
+#last-updated { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); }
 
-/* HERO */
+/* ─── HERO ────────────────────────────────────────── */
 .hero {
   position: relative;
   z-index: 1;
@@ -96,33 +148,17 @@ header {
   align-items: center;
   gap: 8px;
 }
-.hero-label::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 1px;
-  background: var(--accent);
-}
+.hero-label::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--accent); }
 h1.hero-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: clamp(36px, 5vw, 64px);
   letter-spacing: 0.05em;
   line-height: 1;
   margin-bottom: 1rem;
-  color: var(--text);
 }
-h1.hero-title em {
-  color: var(--accent);
-  font-style: normal;
-}
-.hero-desc {
-  color: var(--text2);
-  font-size: 14px;
-  max-width: 560px;
-  margin-bottom: 2rem;
-}
+h1.hero-title em { color: var(--accent); font-style: normal; }
+.hero-desc { color: var(--text2); font-size: 14px; max-width: 560px; margin-bottom: 2rem; }
 
-/* STATS ROW */
 .stats-row {
   display: flex;
   gap: 1px;
@@ -133,274 +169,84 @@ h1.hero-title em {
   overflow: hidden;
   max-width: 700px;
 }
-.stat {
-  flex: 1;
-  background: var(--surface);
-  padding: 1rem 1.25rem;
-  text-align: center;
-}
-.stat-n {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  line-height: 1;
-}
-.stat-l {
-  font-size: 10px;
-  color: var(--text3);
-  font-family: 'DM Mono', monospace;
-  letter-spacing: 0.05em;
-  margin-top: 2px;
-  text-transform: uppercase;
-}
+.stat { flex: 1; background: var(--surface); padding: 1rem 1.25rem; text-align: center; }
+.stat-n { font-family: 'Bebas Neue', sans-serif; font-size: 32px; color: var(--accent); letter-spacing: 0.05em; line-height: 1; }
+.stat-l { font-size: 10px; color: var(--text3); font-family: 'DM Mono', monospace; letter-spacing: 0.05em; margin-top: 2px; text-transform: uppercase; }
 
-/* MAIN LAYOUT */
-.main {
-  position: relative;
-  z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem 4rem;
-}
+/* ─── MAIN ────────────────────────────────────────── */
+.main { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 2rem 4rem; }
 
-/* CHARTS */
-.charts-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin-bottom: 2.5rem;
-}
-.chart-panel {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.25rem;
-}
+/* ─── CHARTS ──────────────────────────────────────── */
+.charts-section { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 2.5rem; }
+.chart-panel { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.25rem; }
 .chart-panel h3 {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--text3);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--border);
+  font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3);
+  letter-spacing: 0.1em; text-transform: uppercase;
+  margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
 }
 .chart-wrap { position: relative; height: 200px; }
 
-/* FILTERS */
-.filters-section {
-  margin-bottom: 1.5rem;
-}
-.filter-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 10px;
-}
-.filter-group-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: var(--text3);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  min-width: 52px;
-}
-.filter-btn {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  padding: 4px 12px;
-  border-radius: 4px;
-  border: 1px solid var(--border2);
-  background: transparent;
-  color: var(--text2);
-  cursor: pointer;
-  transition: all 0.15s;
-  letter-spacing: 0.03em;
-}
+/* ─── SECTION DIVIDER ─────────────────────────────── */
+.section-divider { display: flex; align-items: center; gap: 12px; margin-bottom: 1.25rem; }
+.section-divider h2 { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3); letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; }
+.section-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ─── FILTERS ─────────────────────────────────────── */
+.filters-section { margin-bottom: 1.5rem; }
+.filter-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.filter-group-label { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); letter-spacing: 0.1em; text-transform: uppercase; min-width: 52px; }
+.filter-btn { font-family: 'DM Mono', monospace; font-size: 11px; padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border2); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.15s; letter-spacing: 0.03em; }
 .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
 .filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 500; }
 
-.search-row {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 1.5rem;
-  align-items: center;
-}
-.search-wrap {
-  position: relative;
-  flex: 1;
-  max-width: 400px;
-}
-.search-wrap::before {
-  content: '⌕';
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--text3);
-  font-size: 16px;
-}
-#search-input {
-  width: 100%;
-  background: var(--surface);
-  border: 1px solid var(--border2);
-  border-radius: 6px;
-  color: var(--text);
-  padding: 8px 12px 8px 34px;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 13px;
-  outline: none;
-  transition: border-color 0.15s;
-}
+/* ─── SORT + SEARCH ROW ───────────────────────────── */
+.search-row { display: flex; gap: 10px; margin-bottom: 1.5rem; align-items: center; flex-wrap: wrap; }
+.search-wrap { position: relative; flex: 1; max-width: 400px; }
+.search-wrap::before { content: '⌕'; position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text3); font-size: 16px; }
+#search-input { width: 100%; background: var(--surface); border: 1px solid var(--border2); border-radius: 6px; color: var(--text); padding: 8px 12px 8px 34px; font-family: 'Noto Sans JP', sans-serif; font-size: 13px; outline: none; transition: border-color 0.15s; }
 #search-input:focus { border-color: var(--accent); }
 #search-input::placeholder { color: var(--text3); }
-.result-count {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--text3);
-}
+.sort-select { font-family: 'DM Mono', monospace; font-size: 11px; background: var(--surface); border: 1px solid var(--border2); border-radius: 6px; color: var(--text2); padding: 8px 10px; outline: none; cursor: pointer; }
+.sort-select:focus { border-color: var(--accent); }
+.result-count { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3); margin-left: auto; }
 .result-count strong { color: var(--accent); }
 
-/* NEWS GRID */
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 12px;
-}
-.news-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1rem 1.125rem;
-  cursor: pointer;
-  transition: border-color 0.15s, transform 0.15s;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.news-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px;
-  height: 100%;
-  background: var(--card-accent, var(--accent));
-  opacity: 0;
-  transition: opacity 0.15s;
-}
-.news-card:hover {
-  border-color: var(--border2);
-  transform: translateY(-1px);
-}
+/* ─── PAGINATION ──────────────────────────────────── */
+.pagination { display: flex; align-items: center; justify-content: center; gap: 6px; margin-top: 2rem; }
+.page-btn { font-family: 'DM Mono', monospace; font-size: 11px; padding: 6px 12px; border-radius: 4px; border: 1px solid var(--border2); background: transparent; color: var(--text2); cursor: pointer; transition: all 0.15s; }
+.page-btn:hover { border-color: var(--accent); color: var(--accent); }
+.page-btn.active { background: var(--accent); border-color: var(--accent); color: var(--bg); font-weight: 500; }
+.page-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.page-btn:disabled:hover { border-color: var(--border2); color: var(--text2); }
+.page-ellipsis { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3); padding: 6px 4px; }
+
+/* ─── NEWS GRID ───────────────────────────────────── */
+.news-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 12px; }
+.news-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem 1.125rem; cursor: pointer; transition: border-color 0.15s, transform 0.15s; position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 8px; }
+.news-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: var(--card-accent, var(--accent)); opacity: 0; transition: opacity 0.15s; }
+.news-card:hover { border-color: var(--border2); transform: translateY(-1px); }
 .news-card:hover::before { opacity: 1; }
-
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 6px;
-}
+.card-top { display: flex; align-items: center; justify-content: space-between; gap: 6px; }
 .card-badges { display: flex; gap: 4px; flex-wrap: wrap; }
-.badge {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  padding: 2px 7px;
-  border-radius: 3px;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-.badge-country { background: rgba(0,200,255,0.12); color: var(--accent); border: 1px solid rgba(0,200,255,0.25); }
-.badge-vn { background: rgba(0,200,255,0.12); color: var(--accent); border: 1px solid rgba(0,200,255,0.25); }
-.badge-my { background: rgba(0,229,160,0.12); color: var(--green); border: 1px solid rgba(0,229,160,0.25); }
-.badge-id { background: rgba(255,180,0,0.12); color: var(--amber); border: 1px solid rgba(255,180,0,0.25); }
-.badge-ph { background: rgba(244,114,182,0.12); color: var(--pink); border: 1px solid rgba(244,114,182,0.25); }
+.badge { font-family: 'DM Mono', monospace; font-size: 10px; padding: 2px 7px; border-radius: 3px; letter-spacing: 0.04em; white-space: nowrap; }
+.badge-vn  { background: rgba(0,200,255,0.12); color: var(--accent);  border: 1px solid rgba(0,200,255,0.25); }
+.badge-my  { background: rgba(0,229,160,0.12); color: var(--green);   border: 1px solid rgba(0,229,160,0.25); }
+.badge-id  { background: rgba(255,180,0,0.12); color: var(--amber);   border: 1px solid rgba(255,180,0,0.25); }
+.badge-ph  { background: rgba(244,114,182,0.12); color: var(--pink);  border: 1px solid rgba(244,114,182,0.25); }
 .badge-asean { background: rgba(167,139,250,0.12); color: var(--purple); border: 1px solid rgba(167,139,250,0.25); }
-.badge-jp { background: rgba(255,94,94,0.12); color: var(--coral); border: 1px solid rgba(255,94,94,0.25); }
+.badge-jp  { background: rgba(255,94,94,0.12); color: var(--coral);   border: 1px solid rgba(255,94,94,0.25); }
 .badge-cat { background: rgba(255,255,255,0.06); color: var(--text3); border: 1px solid var(--border); font-size: 9px; }
-.card-date {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: var(--text3);
-  white-space: nowrap;
-}
-.card-title {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--text);
-  line-height: 1.45;
-}
-.card-summary {
-  font-size: 12px;
-  color: var(--text2);
-  line-height: 1.6;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-top: auto;
-  padding-top: 6px;
-  border-top: 1px solid var(--border);
-}
-.card-link {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  color: var(--text3);
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  transition: color 0.15s;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
+.card-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); white-space: nowrap; }
+.card-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.45; }
+.card-summary { font-size: 12px; color: var(--text2); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.card-footer { display: flex; align-items: center; justify-content: flex-end; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--border); }
+.card-link { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); text-decoration: none; letter-spacing: 0.05em; transition: color 0.15s; display: flex; align-items: center; gap: 4px; }
 .card-link:hover { color: var(--accent); }
+.empty-state { grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: var(--text3); font-family: 'DM Mono', monospace; font-size: 12px; }
 
-/* EMPTY STATE */
-.empty-state {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 4rem 2rem;
-  color: var(--text3);
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-}
-
-/* SECTION DIVIDER */
-.section-divider {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 1.25rem;
-}
-.section-divider h2 {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  color: var(--text3);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  white-space: nowrap;
-}
-.section-divider::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: var(--border);
-}
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .charts-section { grid-template-columns: 1fr; }
-  .hero { padding: 2rem 1rem 1.5rem; }
-  .main { padding: 0 1rem 3rem; }
+  .hero, .main { padding-left: 1rem; padding-right: 1rem; }
   header { padding: 0 1rem; }
   .news-grid { grid-template-columns: 1fr; }
   .stats-row { flex-wrap: wrap; }
@@ -409,34 +255,51 @@ h1.hero-title em {
 </head>
 <body>
 
+<!-- Loading overlay -->
+<div id="loading-overlay">
+  <div class="loading-logo">Port<span>IT</span> Watch</div>
+  <div class="loading-bar-track"><div class="loading-bar-fill"></div></div>
+  <div class="loading-text" id="loading-text">データを読み込み中...</div>
+</div>
+
+<!-- Error banner (shown if fetch fails) -->
+<div id="error-banner">
+  ⚠ <code>data.json</code> の読み込みに失敗しました。
+  ファイルが同じフォルダにあるか確認してください。
+  ローカルで開く場合は Live Server など HTTP サーバー経由で起動してください。
+  <br><small id="error-detail"></small>
+</div>
+
 <header>
   <div class="logo">Port<span>IT</span> Watch</div>
-  <div class="header-meta">ASEAN港湾ITニュースDB — データ更新: <strong>2026.04</strong></div>
+  <div class="header-right">
+    <span id="last-updated" class="header-meta"></span>
+    <div class="header-meta">ASEAN港湾ITニュースDB — データ更新: <strong>2026.04</strong></div>
+  </div>
 </header>
 
 <section class="hero">
   <div class="hero-label">港湾IT Intelligence Platform</div>
   <h1 class="hero-title">ASEAN<em>PORT</em><br>IT NEWS</h1>
   <p class="hero-desc">ベトナム・マレーシア・インドネシア・フィリピン・日本の港湾デジタル化・スマートポート・脱炭素化に関するニュースをGemini AIで要約・蓄積したインテリジェンスデータベース。</p>
-  <div class="stats-row" id="stats-row">
-    <div class="stat"><div class="stat-n" id="stat-total">72</div><div class="stat-l">Total News</div></div>
-    <div class="stat"><div class="stat-n">6</div><div class="stat-l">Countries</div></div>
-    <div class="stat"><div class="stat-n">8</div><div class="stat-l">Categories</div></div>
-    <div class="stat"><div class="stat-n">2026</div><div class="stat-l">Latest Year</div></div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-n" id="stat-total">—</div><div class="stat-l">Total News</div></div>
+    <div class="stat"><div class="stat-n" id="stat-countries">—</div><div class="stat-l">Countries</div></div>
+    <div class="stat"><div class="stat-n" id="stat-cats">—</div><div class="stat-l">Categories</div></div>
+    <div class="stat"><div class="stat-n" id="stat-latest">—</div><div class="stat-l">Latest Year</div></div>
   </div>
 </section>
 
 <main class="main">
-
   <div class="section-divider"><h2>Trend Analytics</h2></div>
   <div class="charts-section">
     <div class="chart-panel">
       <h3>国・地域別ニュース件数</h3>
-      <div class="chart-wrap"><canvas id="chart-country" role="img" aria-label="国別ニュース件数の棒グラフ">Vietnam 24, Malaysia 17, Philippines 15, Indonesia 12, ASEAN 6, Japan 4</canvas></div>
+      <div class="chart-wrap"><canvas id="chart-country" role="img" aria-label="国別ニュース件数の棒グラフ"></canvas></div>
     </div>
     <div class="chart-panel">
       <h3>カテゴリ別ニュース件数</h3>
-      <div class="chart-wrap"><canvas id="chart-cat" role="img" aria-label="カテゴリ別ニュース件数の横棒グラフ">スマートポート/デジタル化 21, グリーン/脱炭素 17, 自動化/TOS 14, ショアパワー 12, 港湾開発 11, 規制/政策 7</canvas></div>
+      <div class="chart-wrap"><canvas id="chart-cat" role="img" aria-label="カテゴリ別ニュース件数の横棒グラフ"></canvas></div>
     </div>
   </div>
 
@@ -446,22 +309,12 @@ h1.hero-title em {
     <div class="filter-group">
       <span class="filter-group-label">国</span>
       <button class="filter-btn active" data-filter="country" data-value="all">すべて</button>
-      <button class="filter-btn" data-filter="country" data-value="Vietnam">Vietnam</button>
-      <button class="filter-btn" data-filter="country" data-value="Malaysia">Malaysia</button>
-      <button class="filter-btn" data-filter="country" data-value="Philippines">Philippines</button>
-      <button class="filter-btn" data-filter="country" data-value="Indonesia">Indonesia</button>
-      <button class="filter-btn" data-filter="country" data-value="ASEAN">ASEAN</button>
-      <button class="filter-btn" data-filter="country" data-value="Japan">Japan</button>
+      <!-- Country buttons injected dynamically -->
     </div>
-    <div class="filter-group">
+    <div class="filter-group" id="cat-filter-group">
       <span class="filter-group-label">カテゴリ</span>
       <button class="filter-btn active" data-filter="cat" data-value="all">すべて</button>
-      <button class="filter-btn" data-filter="cat" data-value="smart">スマートポート</button>
-      <button class="filter-btn" data-filter="cat" data-value="green">グリーン/脱炭素</button>
-      <button class="filter-btn" data-filter="cat" data-value="automation">自動化/TOS</button>
-      <button class="filter-btn" data-filter="cat" data-value="shore">ショアパワー</button>
-      <button class="filter-btn" data-filter="cat" data-value="dev">港湾開発</button>
-      <button class="filter-btn" data-filter="cat" data-value="policy">規制/政策</button>
+      <!-- Category buttons injected dynamically -->
     </div>
   </div>
 
@@ -469,235 +322,325 @@ h1.hero-title em {
     <div class="search-wrap">
       <input type="text" id="search-input" placeholder="キーワード検索（タイトル・要約）...">
     </div>
-    <div class="result-count"><strong id="result-num">72</strong> 件表示中</div>
+    <select class="sort-select" id="sort-select">
+      <option value="date-desc">新しい順</option>
+      <option value="date-asc">古い順</option>
+      <option value="country">国名順</option>
+    </select>
+    <div class="result-count"><strong id="result-num">—</strong> 件表示中</div>
   </div>
 
-  <div class="news-grid" id="news-grid"></div>
+  <div class="news-grid" id="news-grid">
+    <!-- Cards injected here -->
+  </div>
+
+  <div class="pagination" id="pagination"></div>
 </main>
 
 <script>
-const NEWS_DATA = [
-  {id:1, date:"2026-04-18", country:"Vietnam", cat:"green", catLabel:"グリーン/脱炭素", title:"Ho Chi Minh City Approves $5B MSC Container Terminal", summary:"ホーチミン市でMSCによる50億ドル規模の大型コンテナターミナルが承認。グリーンポート・ショアパワー技術の大規模導入が加速する見通しで、ベトナム物流の脱炭素化を牽引する重要案件。", url:"https://news.google.com/rss/articles/CBMilAFBVV95cUxOWFZrZkh2RGFsRnFOOVNoTTRqNmYxdkJucVVfSWpBSklRU3hXZXdUdWkwdXJtckNqU3B3YVZ6d1BiRzhUaGNGQXB0MFVjU3JCYXp6blFxVDZpa3d6NFp0Q3laTnVVOGd2OC1NaGNpaGl6UFZYRmVreFluX3B6eEJ5OVB6SjV4bkRzcXU2bHo2eEtLUklY"},
-  {id:2, date:"2026-04-08", country:"Vietnam", cat:"smart", catLabel:"スマートポート", title:"APM Terminals Secures Foothold in Danang", summary:"APM Terminalsがベトナム・ダナン港に進出。先進的な港湾運営ノウハウやDX技術が導入され、現地港湾のスマート化が加速。ASEAN主要港でスマートポート化競争が本格化。", url:"https://news.google.com/rss/articles/CBMicEFVX3lxTE5HclB4Umh3T0NseWJSRTVZR3NCcUY1bmc2YnRHVXpQc21mTkZyNmVZZUhLUHI2S1RzN0JQVW4tWEVjSHJTN0dNUzdDbG5NcS1zZnNjeExuZGRYRVpRSkZBcG0yWEFGdlM4czFDSmk3WHc"},
-  {id:3, date:"2026-04-04", country:"Vietnam", cat:"automation", catLabel:"自動化/TOS", title:"APM Terminals Becomes Minority Shareholder in Hai Phong", summary:"APM Terminalsがベトナム・ハイフォン港のコンテナハブに資本参加。港湾IT・自動化技術導入による物流効率化が加速。日系企業のサプライチェーン安定化と競争力向上に直結する動き。", url:"https://news.google.com/rss/articles/CBMitAFBVV95cUxPdzNHcjV6QmotMmdFUk5wdC0yMjNleWdRNEJqUWhpNU83N2xzaWtGay1IMFhILXZEZjVEX2tPWGVHdDA4ZmxWUjhVcDluRHNwcFdNTzFGcE1pUEFtTFVDd1VyQ1k5TW9aTTVYRndieVJHYVVuMkJZbC03SzA1Sk5Ib0lMQnprR0d1dlJFVHZjay1SbXFpc2lRcUEtSTBpN183VFpqMGU1QU92UTVEQ2xNOVBVZFE"},
-  {id:4, date:"2026-04-24", country:"Japan", cat:"automation", catLabel:"自動化/TOS", title:"T2 — トラック自動運転・有人運転切り替え拠点を神奈川・神戸に設置", summary:"T2プロジェクトの一環として、トラックの自動運転と有人運転を切り替えるための拠点が神奈川県と神戸市に設置。港湾物流のDX推進における重要な国内動向。", url:"#"},
-  {id:5, date:"2026-04-02", country:"Japan", cat:"automation", catLabel:"自動化/TOS", title:"サイバーポートのNACCS連携機能が航空貨物にも対応", summary:"サイバーポートのNACCS連携機能が新たに航空貨物に対応。港湾物流システムが航空貨物に係るNACCS業務の一部を実施できるようになった。", url:"#"},
-  {id:6, date:"2026-03-21", country:"Vietnam", cat:"automation", catLabel:"自動化/TOS", title:"APMT Takes 49% Stake in Hai Phong Container Hub", summary:"APMTがベトナム・ハイフォン港のコンテナハブに49%資本参加。港湾IT・自動化技術導入による物流効率化が加速し、日系企業のサプライチェーン安定化に直結。", url:"https://news.google.com/rss/articles/CBMikAFBVV95cUxOZ2Z0bk5qblNyREhHRmhQdFI1Y3puUzlTS3NFYUxaU2hYd0t0SjVGSmIyWV9mdWxkOWZDa1hfRDVLMjJyemE1QXY5cGl4ZkVzcW5CS21ucVZRc3JMVWZUR1RuNlN3LUZHSnlQRFhhdzVySm52VDZVaFdocktXQ3lBX29yWlFsMUVrckxDMWE1YjA"},
-  {id:7, date:"2026-03-17", country:"Vietnam", cat:"smart", catLabel:"スマートポート", title:"APM Terminals Secures Foothold in Danang — Splash247", summary:"APMTerminalsがベトナム・ダナン港に進出。先進的な港湾DX技術が導入され、現地港湾のスマート化が加速。日本のサプライチェーン拠点であるベトナムにおける物流効率化に直結。", url:"https://news.google.com/rss/articles/CBMicEFVX3lxTE5HclB4Umh3T0NseWJSRTVZR3NCcUY1bmc2YnRHVXpQc21mTkZyNmVZZUhLUHI2S1RzN0JQVW4tWEVjSHJTN0dNUzdDbG5NcS1zZnNjeExuZGRYRVpRSkZBcG0yWEFGdlM4czFDSmk3WHc"},
-  {id:8, date:"2026-03-15", country:"Malaysia", cat:"automation", catLabel:"自動化/TOS", title:"Asia's New Terminal Technology Hub — Malaysia", summary:"マレーシアがアジアの新たな港湾技術ハブとして台頭。TOS・自動化・AIなど最新の港湾ターミナル技術動向が集約されている。日本企業の競争力強化やサプライチェーン戦略上の重要拠点として注目。", url:"https://news.google.com/rss/articles/CBMiV0FVX3lxTE5zRy1MdTgzaG56ZFotNzZpZXBVZU8ydEFCR2NicmhwcVZjYTRjalhLblF3OTFZNF9XZzNEUVV2TlpZdU1qM1lQY09sTExGckwzbF9ndUpaVQ"},
-  {id:9, date:"2026-03-11", country:"ASEAN", cat:"smart", catLabel:"スマートポート", title:"The United States Can't Deter China Without Allied Shipyards", summary:"米中対立下での海上覇権争いで、同盟国の造船能力が極めて重要。日本企業にはASEANを含むグローバルサプライチェーンの強靭化に向け、港湾・物流のDX推進が急務。デジタルツイン技術の活用が注目。", url:"https://news.google.com/rss/articles/CBMipAFBVV95cUxNd1FydFd2bzkzc2ZENF9HV3I2eXdZbTN5UDRuMTYyM0xlRVZJdGhDVnpsQWhuV0MyWEQyZlhRVGpRWUVaVUR4aVAtbkZ4Vk5Za3RyUVNaNXdMV09FQWRDVFE1d1h1ekw0OWhlb1dBZVVGTmFqNy1DWEx4LTBnUTZBMlNEYmt4LTgyMXA0UXBNQnJGcHFmV0lkNWt1YTMwNi1IWk43dw"},
-  {id:10, date:"2026-03-10", country:"Vietnam", cat:"dev", catLabel:"港湾開発", title:"Cambodia's Blue Economy Problem — The Maritime Executive", summary:"カンボジアの海洋経済は港湾インフラ開発の遅れという課題に直面。ASEAN域内のサプライチェーン強化や新規投資を狙う日本企業にとって解決への貢献が重要なビジネス機会となる。", url:"https://news.google.com/rss/articles/CBMifkFVX3lxTE1WaVNNWHNpQlJ4Nm9ETHBwMHpWUGRUVjNsbWFHQnZFVTBWUHZWVWNuTkZOWlN1N1hFc2R3cTQwNTZXOWdIc3Y1VWdadkhJb1RVY0ZFXzQ5MzhfY0ZKNjItalJPNHNoZzZqcnpHU01HeW5nNlNXUVNNMmRELWVzZw"},
-  {id:11, date:"2026-02-25", country:"Indonesia", cat:"automation", catLabel:"自動化/TOS", title:"China's Zhi Fei Completes World-First Unmanned Container Operation at Qingdao", summary:"中国・青島港がAIと高度TOSを活用した世界初のコンテナターミナル完全無人オペレーションを達成。日本企業は国際競争力維持と労働力不足解消のため、港湾物流のDX推進が喫緊の課題。", url:"https://news.google.com/rss/articles/CBMirwFBVV95cUxPUjNva1U4ekg3MTZyaVpRU2xLNl9nSUdZQmI0YThTUDVuZ3R4dk1kU2VURDFoZTNaMGxDY2dMRk50Y003SzN1ajNCNDhQTzZJZHpYLTBXYmRkX3VjSjJlT3NKaTl0UW9vZ1M3TEtnVjJib0JvaGxoYmtFYjN2bUEyNnNlRE5BaHJjSkNmOC10YkRoMHktcmppZEdZVkpVRGtIV01sRDh2ajl2NzBxa2RR"},
-  {id:12, date:"2026-02-17", country:"Indonesia", cat:"smart", catLabel:"スマートポート", title:"Shipping Archives — Port Technology (Indonesia)", summary:"Port TechnologyがインドネシアのデジタルポートDX化に関する記事を掲載。同国の港湾デジタル技術導入の現状や取り組みが紹介されており、今後の港湾DX推進を検討する上での参考情報となる。", url:"https://news.google.com/rss/articles/CBMiXkFVX3lxTE1pSzB3RlJYOU9qOFlBRzVWQWF3c1ZaSXJnX0ZRM3k3MnVHRnVMeDRrVGtUUXFlS2xIMGhmZ3haYTl0SkRyVno1ZmpJTkF1OHVsYVByNlBqV1J3VXNiUEE"},
-  {id:13, date:"2026-02-17", country:"Philippines", cat:"green", catLabel:"グリーン/脱炭素", title:"Green Technology Archives — Port Technology (Philippines)", summary:"フィリピンの港湾分野でグリーンテクノロジーを活用した取り組みが進んでいる。カーボンニュートラルポートの実現を目指すサステナビリティ重視の技術導入が現地の重要な潮流となっている。", url:"https://news.google.com/rss/articles/CBMiaEFVX3lxTFBENFNWdi1FaHJyX1FHcm5LTDVJakRGVml1RDRKRG9iUEZfdXo2aUJ6U3ZtQWd6SkxuYTM4NUl4b0pKSS1hU3pBSi0wTjVDS2prVko5OG5qdzlFdEk0NTFIVTFsYl9oNEtx"},
-  {id:14, date:"2026-01-21", country:"Malaysia", cat:"shore", catLabel:"ショアパワー", title:"Daily Briefing — Lloyd's List (Malaysia Shore Power)", summary:"船舶の燃料消費と排出量をリアルタイムで可視化し、複雑なデータ管理を統合。EU ETS（排出権取引）やCII（燃費格付け）等の国際的な環境規制への対応を自動化。データ主導の脱炭素化により、運航効率の向上と資産価値維持を実現。", url:"https://news.google.com/rss/articles/CBMixwFBVV95cUxNWk5aa1I1WnI2LVkwRjdoenRYN0EwbExlMnFiblRpcDg5RU9vazZCMTh6OEhGNkx5V1pJeC1IZ09ZbXNhMG9DeGpsYWVIX2VMZXJhcnl1dF9JNlA1MGZpdWhVX0ZFNmpFQnV1U21lcVNuVVEyampCVERxQkE1eFVkaDN4cmFmOUt1QXRvaVNOT1BRWUV5WE1STHk2MlBtMkFlOFloalJGa0RnMldDbFBYb2xJNEFJN2trLTJPZnZ3Nl9YYk5CSF9J"},
-  {id:15, date:"2025-11-26", country:"ASEAN", cat:"smart", catLabel:"スマートポート", title:"Vietnam Eyes Top Asia Logistics Hub with Digital, Green Transformation", summary:"ベトナムはデジタル・グリーン変革を通じ、アジアの主要物流ハブを目指す。港湾のデジタル化、スマートポート化、TOS導入推進、およびサステナビリティ重視を示すASEAN地域の主要動向。", url:"https://news.google.com/rss/articles/CBMiogFBVV95cUxPTmlkbEUyNHlRUk12LXZpdXdtYWFLanVaMGVidy1Xdno3eGRiYmo4VVNnalZtVTM0RXV4TWpUbWp3blZIaV9Cc1UyTkxMZWh5YmM0YXQ4bnRPdnZNbGtXN0pwR0R1ZWZKTkVEempibEhfSkRYNkZsN1ByeEtDU2V3RDBCZkVPcm1ydTQxdWNLY2V4SXN4WTEza3ZmTkhtT0lHS1E"},
-  {id:16, date:"2025-10-21", country:"Malaysia", cat:"automation", catLabel:"自動化/TOS", title:"RBS on Super Intelligent AI and the Future of Port Automation", summary:"RBSが超知能AIによる港湾自動化の未来を展望。従来の自動化を遥かに超える港湾運営の次世代進化を示唆するもので、今後の港湾IT戦略において重要な動向。", url:"https://news.google.com/rss/articles/CBMimAFBVV95cUxObGwyRzk2QUZCRTdPd0t5ZnZzLVhSMWwwQXlCS0hmUFpVRVBVdk8zUGJsWS1NSXdtWlJUYUsxdzBZWHcyQW1NWUZfbHdXZHE0SUxLdFBzc1dZOHpFM2pCc05ERnFrVXdOUGhNendpX2xiRlBVcHM1cC1iZldLcml1a3JydmNndUhKaGZqM1dLeVl1clVUWVg2OQ"},
-  {id:17, date:"2025-10-21", country:"ASEAN", cat:"dev", catLabel:"港湾開発", title:"Singapore Navigates Geopolitical Storms in an Era of Trade Disruption", summary:"シンガポールが地政学的リスクと貿易混乱の時代に直面し、主要貿易ハブとして難局を乗り越えようとしている。この状況はサプライチェーンのレジリエンス強化と港湾IT・サステナビリティへの投資加速を促す。", url:"https://news.google.com/rss/articles/CBMilwFBVV95cUxOcTM3b1M1UzY3ZDd4ZUFBMVZJVXYwM2ViWm1BdW9xUXVtZ21RU01pdFB5RGVVeDM4UjM3RTRreGVzMHNlanNoeUkteXh5Z2VIVERfaDVfMjJ0XzhjMmo5YlFmdUdFYXlCTjF4OUcxUHFtWEFSY2dGTms1cmU0MGVOXzlMT0QyU2tUZDFWR1g3MU9UQzNJZWhV"},
-  {id:18, date:"2025-09-16", country:"Vietnam", cat:"automation", catLabel:"自動化/TOS", title:"Transforming Hai Phong: HHIT's Smart Port Success", summary:"ベトナム・ハイフォン港のHHITがスマートポート化に成功。AIやIoT、自動化技術を導入し業務効率と安全性を大幅に向上。国際競争力強化と持続可能な港湾運営の先進事例として注目。", url:"https://news.google.com/rss/articles/CBMifkFVX3lxTFAtMC1kdmFubHN2ampCX0JCR3dzV1dxbWs5eGxWN0dULThDaExEaEdPTFBSc2xzU1FJek1FWkNjVlVrXy1CWDZaNDFQdXNjRm9lOVY1dGFWcXRCTFFmOGowVjNLTU02THl2NlVsOFZDUTZtVy13aGpINGkzbmZUUQ"},
-  {id:19, date:"2025-04-08", country:"Vietnam", cat:"automation", catLabel:"自動化/TOS", title:"Hateco, APMT Celebrate Haiphong Terminal Opening in Vietnam", summary:"ベトナム・ハイフォン港でHatecoとAPMTによる新ターミナルが開業。最新の港湾自動化技術を導入し、効率的な貨物処理を実現。アジア太平洋地域における港湾DXの重要な進展として注目。", url:"https://news.google.com/rss/articles/CBMipwFBVV95cUxON1lsLTVWTUFCSVhOSEtqcXluMjFsNzZQbWltVk53a1k2d2RlNWJOUC1oaHR5dFFwYXhzZktsVWJNWmV6d0thSjZiWHk2d0hsRFZxMHhWMWFDZ3FTMjdzYWl0cW5fNmFpQjFaU1NhRFZxb2lOZUxwbl83bVJ6enE3SVk3RWpjS04tenpaUUtEZjltSl9NTzRFbUhFdEpfbGxpdVJzLVloRQ"},
-  {id:20, date:"2025-02-12", country:"Vietnam", cat:"smart", catLabel:"スマートポート", title:"HHIT Welcomes First Commercial Ship — Port Technology", summary:"ベトナムのHHITが初の商船を受け入れ、正式運用を開始。最新のTOSとスマートポート技術を駆使したデジタル化された港湾として、地域の物流効率化とDX推進における重要な一歩となる。", url:"https://news.google.com/rss/articles/CBMidkFVX3lxTE9xZ1VTVDVTRFAyUlljUHo0bEsxQU02b1RDeFpFbERpc0prQXBOZ3luaUFkckcxMHNDa25KV0FmYW9OMi1NS3I1bElGTVZ5LUhndTRMZUcyM21RWEgwanlaaVdkWTRuMTBLYjljdy02MGZieFV6OWc"},
-  {id:21, date:"2026-03-06", country:"Malaysia", cat:"policy", catLabel:"規制/政策", title:"China: News & Insights — Nikkei Asia (Maritime Policy)", summary:"船舶データとAI分析を統合し燃料消費と排出量の削減を強力に支援。CIIやEU ETS等の国際規制に対し信頼性の高いデータ報告体制を構築。海運DXによる持続可能な経営で運航効率を可視化しコスト削減と資産価値維持を実現。", url:"https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBMRmxXSUNyUEhJcC1lYnd1WWpXSzlUQ0gxWmVyZ3NNLW8yU29hZWswdDVJMFlqbl9ieEdDeW9oNHdDVl8yeVZjdkVfWUZIRVY1cy1JSXlFcEt4ZTZhSC10NFh3RGZZSmM"},
-  {id:22, date:"2026-04-01", country:"Indonesia", cat:"green", catLabel:"グリーン/脱炭素", title:"The Rise of Hydrogen in Short Sea Shipping — Splash247", summary:"短距離海上輸送における水素燃料の採用が脱炭素化に向けた新たな重要技術動向として台頭。インドネシアでのこの動きはアジア全域の海運・港湾グリーン化を加速させ、新たなビジネス機会を創出する可能性を示唆。", url:"https://news.google.com/rss/articles/CBMic0FVX3lxTE5DbE92akktVEl3ZVQzX3hnS0x0d19XSjdNb3AxZjlNVUhYZC1udXhraTN1blFxRVFQTkNoZG1PbFNHV2VrcVF0M3dkQXI3SkZTYjZyUTBORzRSZjdSUjJqWEJWYk80ZVBUSkdwa1VfSlRabXc"},
-  {id:23, date:"2026-03-02", country:"Philippines", cat:"dev", catLabel:"港湾開発", title:"Philippines Open to Bids for 3.3GW Offshore Wind Tender", summary:"フィリピンが3.3GWの大規模洋上風力発電プロジェクトの入札を開始。ASEANの再エネ市場参入、港湾開発・物流、ITソリューション提供など、サプライチェーン全体での関与が期待される。", url:"https://news.google.com/rss/articles/CBMihAFBVV95cUxPQVBicl8zM0lxa3ctbkN5Uk9odnJOY0k0ZWpLaVZKTl9vTkxnMUIxaC0tcW5WMXZzd0oySVlFWS03ZUIzblQ4YVlUS3NuaVRTVVJtWGJiWFFzdExWckJuejdLOGYxODBRdC0xMUdTNDNpSERYbDYtMFJ1UTRnSlYxdzRPOE8"},
-  {id:24, date:"2025-10-10", country:"Vietnam", cat:"policy", catLabel:"規制/政策", title:"China to Impose Tit-for-Tat Port Fees on US Shipping", summary:"AD Ports Groupが2024年にスペインのNoatum買収やエジプト・パキスタン等への進出により、50カ国以上に拠点を拡大し売上高が急成長。デジタルツイン技術活用の港湾運営プラットフォームでスマート物流の国際標準化を推進。", url:"https://news.google.com/rss/articles/CBMi0AFBVV95cUxNWVVEZTJMbkE0bzRhdVk2aW92SldVZ2lielJ1YXZhMzlNa2ZhalhWUGZ0Y1N5eTR5ZzE5dzVBZWFRZEYxbk9jdnZMa3A1enFCcTJTeG1xZ1hCNEs2STZnVUF6SWlzVzdRNmZTWlM2LVF3UkJhOUdPS0ptemhENlhIY2Utb3VIa2huUDBEem1oN181NkY2NTI2TTg1R3ZLOV1oT08weVNGRVpxVktXbnZ3dWk2ckZwaDNQOUlFdWlQaDNVQ01Ycnd6UG9ISkNQMW9S"},
-  {id:25, date:"2025-07-18", country:"Philippines", cat:"policy", catLabel:"規制/政策", title:"China's War of Ideas in the South China Sea — Nikkei Asia", summary:"世界最大手MSCの500隻をクラウド接続し船団全体のデータをリアルタイム統合。脱炭素化と規制対応を高度化し燃料消費の最適化によりCIIやMRVなどの国際環境規制への対応を自動化。", url:"https://news.google.com/rss/articles/CBMigAFBVV95cUxOM2dwV0oxcWdjVVNqRUI1RHNDTVdqY3JIU2N0MmNHWnAybEEyS1F4ejdCMk11Z2RzTzEtR3dmc01CZkd2TTc2Z3BNZE1xX2dtQ2JTbHJqbGhvUEV5Ymk1M2Jhem42eG1YT25RSThYYW1mU3FfaTdLV1dWSkMyUk5INA"},
-  {id:26, date:"2024-09-25", country:"Vietnam", cat:"smart", catLabel:"スマートポート", title:"Smart Digital Ports of the Future 2024 — Port Technology (Vietnam)", summary:"「SMART DIGITAL PORTS OF THE FUTURE 2024」がベトナムで開催。デジタル技術を活用したスマート港湾の未来と実現に向けた課題が主要テーマ。日本の港湾DX推進にも参考となる議論が展開。", url:"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVEtxV2RPSDdVZDdXTlA3YnBuZ2RGQkk1a0gtVE1pcTkwMWRjNGR6ZFFxOWJmanZXZnVuZzFCbWFrMzRsZWRpNWdtREVzTVYzV2pQSmdUMU1YaVNJUVUzQXpGYTBYaXlQMklZbEpvc1BadkUwdHN6V1JJc2h4Y2FyeWZIRGtuRFRj"},
-  {id:27, date:"2024-09-25", country:"Malaysia", cat:"smart", catLabel:"スマートポート", title:"Smart Digital Ports of the Future 2024 — Port Technology (Malaysia)", summary:"マレーシアで「SMART DIGITAL PORTS OF THE FUTURE 2024」が開催。デジタル技術を活用したスマート港湾の未来と実現に向けた課題が主要テーマ。港湾DX推進にも参考となる議論が展開された。", url:"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNVEtxV2RPSDdVZDdXTlA3YnBuZ2RGQkk1a0gtVE1pcTkwMWRjNGR6ZFFxOWJmanZXZnVuZzFCbWFrMzRsZWRpNWdtREVzTVYzV2pQSmdUMU1YaVNJUVUzQXpGYTBYaXlQMklZbEpvc1BadkUwdHN6V1JJc2h4Y2FyeWZIRGtuRFRj"},
-  {id:28, date:"2024-09-25", country:"Indonesia", cat:"smart", catLabel:"スマートポート", title:"Smart Digital Ports of the Future 2024 — Port Technology (Indonesia)", summary:"インドネシアで「SMART DIGITAL PORTS OF THE FUTURE 2024」が開催。未来の港湾デジタル化・スマート化の最新動向が議論された。港湾IT及びサステナビリティにおける今後の展開に注目が必要。", url:"https://news.google.com/rss/articles/CBMikwFBVV95cUxQS2tQemh3WmxhVFROV2RadXRPeFEyTUJCb3hweVFxUTRod3BqYjgzNFdBa3daOVUtTGNORFRSdTc4T1F3S3l6blhsSUpzWkJ0bHN4U0Y2NFBrajNDRzlYemFJVHc4em9nTE1XTDJRNWpnejNiRDZtaVV3NUdjRkw2czE5ajhIQWttZ0NGVTB5eDhVQUk"},
-  {id:29, date:"2024-03-02", country:"Philippines", cat:"shore", catLabel:"ショアパワー", title:"ABB Supplies Shore Connection Solution to Portsmouth International Port", summary:"ABBが英ポーツマス国際港へ陸電供給（ショアパワー）ソリューションを導入。停泊中の船舶からの温室効果ガス排出削減を推進。港湾における脱炭素化とサステナビリティ推進の具体的事例として注目。", url:"https://news.google.com/rss/articles/CBMipgFBVV95cUxPM19DaXN0aG4wYjg5NTJkYzVYT0JESkkwa0hpTDJPbExWQ1haMzhaLTI3QkRFejdWMXRzSUZMaWo0Rjhjc2FobFdWR0IzY2dfN2VHbmt5WnQxYk9mQVlhTU1lYjcyZnl2YUVxVTE5RDFJQUF4SFJvbG83bHU0OGVObUR2c1hBWDltN096NXQzOFhucnl1UWhlR1RGSy1ibkF3S2trRmxB"},
-  {id:30, date:"2023-11-01", country:"Philippines", cat:"shore", catLabel:"ショアパワー", title:"Report: EU Shore Power Regulations Fall Short of Potential", summary:"環境規制対応を大幅に効率化。船舶データと解析ソフトを連携しCII格付けやEU ETS報告の自動化を実現。高精度な排出量予測と管理により、データ主導の脱炭素戦略を加速する取り組みが注目される。", url:"https://news.google.com/rss/articles/CBMinAFBVV95cUxOeVJsTHpQN1ZFMW9OWXYzQnl2dHRlSHBxcENZWExaaFk0Q1ZmUWZwZFN0Vl83Xy1RWTZKMGR5QTg1RFRNaVBna3pvOUNDbGZkaUpBb1NjRW1nX0owQ3RfLUx3WmZ3SGVkNWRzZVZyaV8xcFlvTWp5TExfeEhWOGd4NWJEWkJQam5oTFZpTzkzMWR5T1N6UmhDUWNVbzA"},
-  {id:31, date:"2023-08-10", country:"Malaysia", cat:"smart", catLabel:"スマートポート", title:"Westports Malaysia Aims to Utilise Automated Guided Vehicles", summary:"マレーシアのウエストポーツが港湾のデジタル化とスマートポート化推進の一環として、AGV（自動運転無人搬送車）導入を目指す。ターミナル運用効率の向上と持続可能性への貢献が期待される。", url:"https://news.google.com/rss/articles/CBMingFBVV95cUxOOWpwaUZiX21lbkNDcUZDelV3U3h4QVZvMXl0dXZ1RjdIeE5Wa0d2TE5CRzZjdU5HRmI0NGxZd3FhTmdlZ3RkYndRVUxuT1gwbEt2TmRLMXVaV0NWZV9GQ3UxYmc1Y1RXVlplMkc1VnR2NzFfN3BiVVRIYUxqNmNTX2NPWGdHYV9nQ185ajZSRjFGRmRPMXBBZWhGTC1WQQ"},
-  {id:32, date:"2023-07-17", country:"Vietnam", cat:"dev", catLabel:"港湾開発", title:"PSA Italy Commences Operations at New Port Warehouse", summary:"PSA Italyが新たな港湾倉庫の操業を開始。港湾業務の効率化とサプライチェーンの持続可能性向上に貢献する動き。グローバルな港湾IT・サステナビリティ戦略の動向として注目。", url:"https://news.google.com/rss/articles/CBMikwFBVV95cUxQWTY0SWNsaFJycXlXQUNmVzFaUGNDaUZ4Ylh2MnVpRjNSZ2lKY0JWVjV6cHVQUGJVSnFLNjNyQjRHNW83U0FwbEItY18ycEx0REE0UnkzT05wRFhVQXJrajcxdGNsdEFsZEJ3akkxeVRKU1FNeHlKYzFNb1Bhc3NNdlMtemxiSFFiNnBrU19DTDgtV3c"},
-  {id:33, date:"2023-07-05", country:"Indonesia", cat:"policy", catLabel:"規制/政策", title:"Indonesia Makes Moves to Create a Formal Coast Guard Agency", summary:"運航効率と安全性の一体管理。船舶データとNAPAの航海最適化・安定性解析を統合し燃料と排出量を削減。高精度なデータ収集によりCII（燃費格付け）報告の正確性と透明性を確保。", url:"https://news.google.com/rss/articles/CBMinwFBVV95cUxQQm5VM1Y3NzlubEh5ZzJ4ZXp3ank4U1ZpUUdQc05vUFdQUGhHYzZKVlhZSHlxUWpOeFM0ME41ZlNjLWtwOTM0TnJaSjVsZXdCb1haOGhhYTJNdnJpTnEwZElSOXZaMjFDMlV6ZmY5SGhZeVBZc1lIeE5jc3BwLS0wSkljcjBwNk1FUWxhc3Myb2ZEa0VucHd2VThlc2hHVnM"},
-  {id:34, date:"2023-06-07", country:"Malaysia", cat:"green", catLabel:"グリーン/脱炭素", title:"FourKites Reveals Promising Trends in US-Mexico Trade", summary:"FourKitesの調査で米墨貿易における有望な動向が示された。サプライチェーン全体の効率化を促進し、CO2排出量削減に直結。港湾のカーボンニュートラル化に向けた重要な示唆となる。", url:"https://news.google.com/rss/articles/CBMilAFBVV95cUxObXZtNlBMZHYyU2pBRmxtVHF4d3pxUWRlX3k5NE5GTjJLZHpiUVJtMFpTMWtkbUM1am5QeVN0MEplLWtsYTlOZl93bTlBNzZWNVZzMXRNWnkyVHJVVkFSUnBPYjRfbi04eW1DMGRYR01yeUVQVFBweU55NkNTaXJER0N3WDBLbjB0TFZZTVpDYW1JUG82"},
-  {id:35, date:"2023-05-17", country:"Philippines", cat:"smart", catLabel:"スマートポート", title:"Smart Digital Ports of the Future — Port Technology (Philippines)", summary:"フィリピンが「未来のスマートデジタル港」構想を推進。IoTやAI等の先端技術導入により運用最適化と環境負荷低減を図る計画。ASEAN地域の港湾デジタル化動向として注目が集まる。", url:"https://news.google.com/rss/articles/CBMimAFBVV95cUxQaUhocE80N3VadTNZdkt1M29HYkhWeWM1NkluRGttZlY1Q3ZXNWpRVk1INXdSOVR2bXNUQ3h3MV9TSXhoRmdMX096UWN4Ykh1SmttMlBrVDBxRVJXNTF6dXlPS1dpdjFMZllESW9Eb0hVUVBvaUVxdnlzcWlqNjQ1eXRrWm1IQkQwTDRoWTBmZFVlWlp2M0RaOA"},
-  {id:36, date:"2022-11-01", country:"Malaysia", cat:"green", catLabel:"グリーン/脱炭素", title:"JAXPORT Awarded $23.5M for Port Sustainability Initiatives", summary:"米国のJAXPORTが港湾サステナビリティ推進のため2,350万ドルの助成金を受領。環境負荷低減と持続可能な港湾運営に向けた大規模投資が加速。国内港湾の脱炭素化・環境対策を検討する上で重要な参考事例。", url:"https://news.google.com/rss/articles/CBMinAFBVV95cUxNdHNJMklZd2t4S0Jsa2RsNFM5cl8zLWQ4b0JNU1FBc1Mzdi02aWpTZGZfeFJqRkZYXzZtOC1Hc3RUQ09wNlZOSWltenY0QlpYQmlZT2lLdXZxSEcwZ181MzAtY29zWUZIcFQ0MEdOSTJVUldHMXBrOWttc200TU5hUFNZV0xfMGR6bHB6R25pME04ZGJtY1NMdzZJem0"},
-  {id:37, date:"2022-08-15", country:"Vietnam", cat:"green", catLabel:"グリーン/脱炭素", title:"Vietnam Maritime Administration Formulates Green Ports Criteria", summary:"ベトナム海事局がグリーンポートの基準を策定。港湾の環境対応と持続可能な発展に向けた重要な政策動向であり、日本企業のビジネス戦略策定に直結する情報。", url:"#"},
-  {id:38, date:"2022-07-13", country:"Philippines", cat:"automation", catLabel:"自動化/TOS", title:"Automation Trends — Port Technology (Philippines)", summary:"フィリピンにおける港湾自動化の動向が紹介されている。効率性・生産性向上を目指しグローバルで加速する自動化技術の導入が主題。IT戦略とサステナビリティ向上を検討する上で重要な示唆となる。", url:"https://news.google.com/rss/articles/CBMijwFBVV95cUxOdFRZdUEwZHhJZG1mNGM3aVRVYjZuZmU2blZfTHZuaXlFZkFKdTk4UVRNWVQ1bFFpZVVJZXhfMHptQ0lienNmekJiRDkzcWE1c0pvdzlFcjcyM09lMEUtZERmdVZEbmljWkNZeHFHS1lSdi16QVA0RmYzd2d1NWJCVlhLYVk1Q1BCYTZqMUE0TQ"},
-  {id:39, date:"2022-07-12", country:"Indonesia", cat:"automation", catLabel:"自動化/TOS", title:"Visy Oy — Port Technology (Indonesia Automation)", summary:"Visy Oyがインドネシアの港湾向けに自動化技術を展開中。現地の港湾オペレーション効率化を推進する取り組みとして注目されている。", url:"https://news.google.com/rss/articles/CBMiXEFVX3lxTE1sOUlueDkySU5GMndrUTdhQU9hZnV3SHlLMXRSQW4xZHk1OUJYdHp1blRuRzJkUloxUEdIZlZaRm9odlhnVDJwOHg1aFdxdHdIYXFVbkpWWDZibkZj"},
-  {id:40, date:"2022-01-28", country:"Indonesia", cat:"smart", catLabel:"スマートポート", title:"Container Port to Be Built in Indonesia — Port Technology", summary:"インドネシアで最新スマート技術を搭載したコンテナ港の建設が進められる。港湾ITおよびサステナビリティの観点から注目される動きであり、今後の動向に要注目。", url:"https://news.google.com/rss/articles/CBMiigFBVV95cUxPTjFVUnhaY0VhZVJxTEdqeDNYYUVrNmhGdUN5cThZRkVOQ3EzYkVORjZ1MUdJcENMZGJOT094ZDRrNDlrSFdWeTdHcmNocWNhazljMmNkbjZWcWJmeHlJckdGRU9nQ25jcVl2dFgtWTMwQkdpdGpIckd2c09xc0dhY2ljT0hNbjFoZXc"},
-  {id:41, date:"2021-12-09", country:"Vietnam", cat:"smart", catLabel:"スマートポート", title:"Vietnam's Largest Deep Seaport 'Gemalink' Equipped with SFT Cone Fender Systems", summary:"ベトナム最大の深海港「ゲマリン」にSFTコーンフェンダーシステムとボラードが導入された。これにより船舶の安全かつ効率的な接岸作業が支援される。", url:"https://news.google.com/rss/articles/CBMixAFBVV95cUxNbXE0YjY0ODNCcEwyZk91M0J4ZVhFY3NNaTRSd1lEMFg0QTdlRnp0LWNvY3lsdDdWalVXTlQ2LXNZYXBCelFwdll1ejhBbWRDaXV4eGViOEtEaXJMcVR5aldCQjhJbXVzRmozalk2UThKUU5va1VEZ2hRX214NlZOYVc3WjNfVWFFTjNnTFFXdnF2dzQzTVlFQl85TWdSZzRYUDF5OERDRlp3OW5zb0QzZEx2c1BZZHRvNWxPd2QxcXZ1eXVI"},
-  {id:42, date:"2021-08-20", country:"Indonesia", cat:"shore", catLabel:"ショアパワー", title:"Top Ports 2021 — Lloyd's List (Shore Power)", summary:"AIによる運航最適化の強化として、船舶データと気象・航路情報をAIで統合し燃料消費とCO2排出を最小化。環境規制対応の自動化によりCII格付けやEU ETS報告に必要なデータをシームレスに連携。", url:"https://news.google.com/rss/articles/CBMisAFBVV95cUxPSHhMMGEzYTFMRExiVktqVVlXSkFSYng2UkM1X25Rb09TcVplMmp3eEFfeVBtaW5hbGF6TDBfcGZDS0t2aDBMcGNmQXVpMXg0c1hMTFRuRHBiamticGtPSVFkcEl5SDJXLVNPNEUyTTZCb05oX09xY0EyaXZ1bGdfdUhITmJkS2duVU1DU29nX0plT1pJUFA1OU9jWjZZQllUUUpZWUkwUmFPSmZWdEd3Rg"},
-  {id:43, date:"2021-05-16", country:"Malaysia", cat:"smart", catLabel:"スマートポート", title:"Kuantan Port Beginning Its Digital Journey", summary:"マレーシアのクアンタン港が港湾のデジタル化に着手。スマートポート化に向けた重要な一歩となる取り組みとして注目される。", url:"https://news.google.com/rss/articles/CBMiugFBVV95cUxOSm0taUZYd21SaGoxYkVWOXU3dmR0M3ZLbWpJTlNMQklid3JxTkxXdjBQUkI2XzdzZkVuQm16XzN4RXFiSUlQNFVIMVBqQlgxdkxZUjRLZ2JXQ1hNeU5ZbzhIdTZRSkV5T0dCd0dDa2cwOWx2SXc0VkJrTXJWcUxYM2hqUVNjazZhLVpxWkZValdEU0lwSFlSUmEzNzlPNTNxNlZEWk9qMDZidEJnMVZuWC1TeGwwUzBHcHc"},
-  {id:44, date:"2021-03-21", country:"Vietnam", cat:"automation", catLabel:"自動化/TOS", title:"Navis Launches New Programme to Certify TOS Experts at Terminals", summary:"NavisがターミナルのTOS専門家を認定する新プログラムを開始。TOS専門知識の標準化と港湾オペレーターのデジタル化スキル向上を促進する重要な業界動向。", url:"#"},
-  {id:45, date:"2021-02-14", country:"Indonesia", cat:"shore", catLabel:"ショアパワー", title:"Shore Power for Merchant Vessels — Port Technology", summary:"CII規制への対応を自動化。船舶データと船級（ABS）の認証を連携し燃費実績格付けの報告を効率化。リアルタイムな運航データにより排出量報告の透明性と正確性を担保。脱炭素化の意思決定を支援。", url:"https://news.google.com/rss/articles/CBMikAFBVV95cUxPdFhuakJfSnR3UkFQODZIYjludXZfbjBmSmhoN3ZiVFNOREpjNkg1M1ZKbWpkSmlLLUlYdFB5TlYxYTFoUXRPQVlWTy15RlpoOTVVbHdkTDJYQnRET3Rzd1VPUzdDWGF5akVzSENmZEk2ZTVvOVVnYjM0LU1HUzRaY2s0MUliWHEwb25nSF9FTDI"},
-  {id:46, date:"2021-01-21", country:"Indonesia", cat:"green", catLabel:"グリーン/脱炭素", title:"New Start with the World Ports Sustainability Program — Port Technology", summary:"インドネシアで世界港湾サステナビリティプログラム（WPSP）の新たな取り組みが開始。世界の港湾が持続可能な発展を目指す上での重要な一歩となる。", url:"https://news.google.com/rss/articles/CBMiuwFBVV95cUxNQzJrR3NiQ2t2ME5xdGNlMm9iaFNqdm1DMHM0M0FXcGpSWHU1SkhHZndRanNCRjJDTjY2U3NNaG9FVWhJNUpqM1BLQ3hKOEpjNEV2NVpvZV9ERHh1bG1jS01wbGhlOGk2R0p5UUdjNVN5VS1OLThxY0piLWhSZ0lPeWdPMGtQNVpJTUZUTGc1d05odU1PZ0lfamxnbk0wZi1RWmZMdl94a0hnSWpOemhlem9zM3gzQW9lX1BB"},
-  {id:47, date:"2021-01-12", country:"Vietnam", cat:"green", catLabel:"グリーン/脱炭素", title:"TAN CANG – CAI MEP International Terminal Awarded Green Port 2020 by APSN", summary:"TAN CANG – CAI MEP INTERNATIONAL TERMINAL (TCIT)がAPEC港湾サービスネットワーク(APSN)理事会より「グリーンポート2020」の賞を受賞。ベトナムの港湾グリーン化先進事例として注目。", url:"#"},
-  {id:48, date:"2020-10-28", country:"Vietnam", cat:"smart", catLabel:"スマートポート", title:"Le Havre: A Smart Port 5G Project", summary:"ル・アーブルにおいてスマートポートの5Gプロジェクトが実施されている。5G通信技術を活用した港湾スマート化の先進事例として、ベトナムを含む世界各地の港湾DX推進に参考となる。", url:"#"},
-  {id:49, date:"2020-07-06", country:"Malaysia", cat:"smart", catLabel:"スマートポート", title:"South Korea Looks to Lead Smart Port Development — Splash247", summary:"韓国がスマートポート開発分野で主導権を握ることを目指している。国際的な港湾のデジタル化競争における重要な動きであり、日本を含む港湾関係者も今後の動向に注視する必要がある。", url:"https://news.google.com/rss/articles/CBMie0FVX3lxTE4tSXRmRFNqZWlsaFVJYnVvSGltM0RZaE1yelpNUnFDX3RfR2FNc0ZNNHZ4R054WFloVEZUYWJWN1F2NEZkNFZ2VDd4cWNrU1FaMkEyMDllbkE0SXI0dUNQVnk1VjN1UlpELW1taWc2RG41TktFQmU2cDdNcw"},
-  {id:50, date:"2019-11-06", country:"ASEAN", cat:"smart", catLabel:"スマートポート", title:"The Journal — Port Technology (ASEAN Digital Port)", summary:"ASEAN地域ではデジタルポート化の取り組みが活発化しており最新動向がPort Technologyのジャーナルで詳報されている。スマートポート推進におけるアジア圏での具体的な動きを示すものとして注目。", url:"https://news.google.com/rss/articles/CBMitwFBVV95cUxOTklHZGdHTUk2Q3dtb2EzcUdDdGxOOGM2cEthMTctVlBuSy1wVmVOMXRQNnRBRVo2MnZLdW0zUVA2bWgxY0poWkkzVGZWNTYwd2phZEpIRkNTU016ZDAxTmNXS3ZGaGNpSE9WUEVpa01YSnlBZU5vVnMyUHVPSzhzeG1fT2tXMFlPaElqR3c1clJ6SUZieHVWaEZIMENiUndKOHA0RkU1QUZ3OU9DY1JCUnNxTGE0UHc"},
-  {id:51, date:"2019-10-17", country:"Malaysia", cat:"dev", catLabel:"港湾開発", title:"Port of Tanjung Pelepas to Expand Free Trade Zone", summary:"マレーシアのタンジュン・ペレパス港（PTP）が自由貿易圏を350エーカー追加し現在の2倍に拡張する計画。最新のターミナルオペレーティングシステムも導入済み。58基の超大型クレーンを備え世界最大級のコンテナ船にも対応。", url:"https://news.google.com/rss/articles/CBMikgFBVV95cUxPTVZ5bzRoYzNWT0dKQ1poTWtkd2lOSVktaUgzWmlrZ3lQb2poRjhqOGphWXVqeXhqZUZLS0hVYmo1eGlxcXJfSFJmeXg1eC1jYkoyUVo2Z1o2NW13VXdVOXZUUms3VUlPTXJMMHpMQnp2dWM1bk5xNEZVRnFmaT9tclBSOGpWYVluVVRUeDcxNzZjcEE"},
-  {id:52, date:"2019-04-23", country:"Philippines", cat:"smart", catLabel:"スマートポート", title:"ICTSI Terminal to Accelerate Upgrade Plans — Port Technology", summary:"フィリピンのICTSIターミナルが港湾のデジタル化やスマートポート化に向けたアップグレード計画を加速。TOS（ターミナルオペレーションシステム）導入などにより運営効率向上を目指す動き。", url:"https://news.google.com/rss/articles/CBMif0FVX3lxTFB0MkNGYkd6M0FsNEJGUXFHQWVYLWZtSGZSYndpMEJkVU4ybE91RVRiMDFieENlTDhRSXNqUmZ6RWM1OGZJZmZjTkRqZjhaVks0dDRTR3NMdXc2RU5BU0cyeEpIM0pvR1F5bUlTRTJPVEJNeXpNTUFGZWl0NkVvUXc"},
-  {id:53, date:"2019-01-20", country:"Philippines", cat:"shore", catLabel:"ショアパワー", title:"Equinor Pushes Ahead with Shore Power", summary:"世界最大手MSCが500隻をデジタル化。クラウド基盤「Vessel Insight」を全自社船に導入し船団全体のリアルタイムなデータ統合を実現。脱炭素化と規制対応を自動化しAI分析で燃料消費を最適化。", url:"https://news.google.com/rss/articles/CBMiggFBVV95cUxNbHpka2tYZW4wYnZvM3Bvd0ZUNy1JS3dpMVphRVZOb01qeTFiejVxRE9ZOEJySlZHQ2tRZDVWOUI0d2NSalJmdjN6Y2ZEYzByYkNxNTEya3NiYmgyOEhGWGl4VXY5ZFljdXpKdVZxRFhlSHRxT1gwUlRyekFZWEVFUVRB"},
-  {id:54, date:"2018-09-04", country:"Vietnam", cat:"smart", catLabel:"スマートポート", title:"Philippine Navy Refloats Grounded Frigate — The Maritime Executive", summary:"ハード不要の迅速なデジタル化として、追加機器なしで船舶をクラウド接続する新サービスを開始し既存船を含む全船団のDX導入障壁を大幅に下げた。環境規制への即時対応としてCIIやMRV等の国際規制への正確な対応を支援。", url:"https://news.google.com/rss/articles/CBMihwFBVV95cUxPUWZBYW1oNWtGbk1TVjRSSjVYSTROa3FDa3hMZlROQ0N5d1JmNWpxYVU0em5YWEVKU1JuMDJyM2l5bXhnNWRTNXBiQ3VsMmdfYjd4dExvSUlTZlMzZ25GUjRWdERuQTJhQkdHN3V1RXBVOXJZajNGX1NqeWZzMUJkWllJNXE2b0E"},
-  {id:55, date:"2026-04-24", country:"Malaysia", cat:"green", catLabel:"グリーン/脱炭素", title:"Indonesia Backs Away After Finance Minister Proposes Malacca Tolls", summary:"マラッカ海峡の通行料提案撤回は日本企業にとって物流コストの安定化に寄与。今後重要海域での脱炭素化（ショアパワー等）やグリーンポート推進に向けた新たな政策が運航コストやサプライチェーンに影響する可能性を示唆。", url:"https://news.google.com/rss/articles/CBMisgFBVV95cUxNTkpvMFFkQTBoRzhQVFY0a0l1dFNZdmFXVWpWdnlSdUlGbGxHUnJmTm5XTzNHMnFVd2lZX1lKQW9Ha3ZOVnh5QTkyN052UWRlWi1lNmlHeFFiQ2ZjUVhvbEw2WU5seHJ3QlI1RjkyTVNTYjJNWmlaU3JQanV2TWp6MnFXR0lrbUJURjVmN1JFa2ZBajdHTFg0QjJhUFdyaGsxMjNTOUhTRWkwZl9TekZXRDRR"},
-  {id:56, date:"2026-04-08", country:"Malaysia", cat:"dev", catLabel:"港湾開発", title:"What War Reveals About Energy Security — Splash247", summary:"戦争が浮き彫りにするエネルギー安全保障の脆弱性は輸入依存の日本にとって喫緊の課題。マレーシア等の重要港湾での安定供給確保には、代替燃料対応・DXによるサプライチェーン強靭化・サイバーセキュリティが不可欠。", url:"https://news.google.com/rss/articles/CBMibkFVX3lxTE1WeUVGbXVNT01SZDBqaE41Q2Q3NVE3Q21mUkM4cDRYQmdpVGRiV1pNam8wQ0FTdjR1WVhCSi1EanVVUjM0UzBBNElkQ3hHRW42TllmNzEtbXFqWW40UHU0Q0p0M1haNExQemNHV1Z3"},
-  {id:57, date:"2026-03-19", country:"Japan", cat:"smart", catLabel:"スマートポート", title:"東北国際物流戦略チーム — 国土交通省東北地方整備局", summary:"東北地域において「東北国際物流戦略チーム」が存在する。このチームは国際物流に関する戦略を策定・推進している。国土交通省東北地方整備局がこのチームに関連する情報を公開している。", url:"#"},
-  {id:58, date:"2026-03-14", country:"Philippines", cat:"dev", catLabel:"港湾開発", title:"Philippine Coast Guard Rescues Engineer Trapped on Capsized Ship", summary:"フィリピン沿岸警備隊による海難救助は同国での港湾開発・投資環境における海上安全確保の重要性を再認識させる。IoTやAIを活用した海域監視・救助支援システムの導入は港湾の安全性向上とレジリエンス強化に直結。", url:"https://news.google.com/rss/articles/CBMipgFBVV95cUxPUDJoLWNsWkJpVEU3dk1wamY5Y3hMZllUTWdqOTJEbWljOWNBM3VTaTlsNnpjdGZWVmNtZ1FrVkU0WmRpSURlT2MwSUJidHQzMGtITlJDNHJ2bnRuOEdsNWV3ME1RdTlvQWhseGQ0bWE3VDFPSmpxZnl5MWtQVmJkWGZCUkxjSnBVVFR6VXNseVdwNzdYYkdTNFBkWHA2NXd1TEtPa3p3"},
-  {id:59, date:"2021-08-20", country:"Malaysia", cat:"shore", catLabel:"ショアパワー", title:"Top Ports 2021 — Lloyd's List (Malaysia)", summary:"AIによる運航最適化の強化として船舶データと気象・航路情報をAIで統合し燃料消費とCO2排出を最小化。環境規制対応の自動化によりCII格付けやEU ETS報告に必要なデータをシームレスに連携し業務負荷を軽減。", url:"#"},
-  {id:60, date:"2024-11-12", country:"Malaysia", cat:"shore", catLabel:"ショアパワー", title:"The Premier Media Company for the Ports and Terminals Sector — Port Technology", summary:"追加機器不要の即時デジタル化として既存設備のみで船舶をクラウド接続し全船団のDX導入コストと時間を大幅に削減。環境規制対応の自動化として手入力データを構造化しCIIやMRVへの正確な対応を支援。", url:"https://news.google.com/rss/articles/CBMimwFBVV95cUxOS1VRTEtfZU03TjUyZ0pmNlJ3dl9ydHF0T2Q4VzhoYTI2cXBpSGkwV2cwRWdmR0ZBa2o1NUxqOXZuOFhQZE9LY2hzcUR4Qnc3VlJJUXJxT0Rjc01QRjFxOGpkVGxDNko3MzRLbEw2WWNXME5fQ0VGVmUxZ2V1MUk3enNjckpFQjE1cnpYSWZuTC1DUUpDV21UNUJFNA"},
-  {id:61, date:"2026-02-18", country:"Vietnam", cat:"shore", catLabel:"ショアパワー", title:"Policy and Regulation Archives — Port Technology (Vietnam)", summary:"世界最大手MSCが全船団にデジタルツイン導入。MSCはKongsberg Digitalの「Vessel Insight」を採用し全船団のデータをリアルタイムで統合・可視化するデジタルツイン環境を構築。データ駆動型の運航最適化と排出削減を推進。", url:"https://news.google.com/rss/articles/CBMib0FVX3lxTE1SeGJ6YURhak01X002d01CMk85TW1HVkNBMzIyQlA2LWNvbUxJYUhsekp3a1ZBTHpBQVhHNjcyNlotczBUS0FVMElmNXhBVmZzLWdrS3Jid3I0WW1CRFF6SkJKREI0Y2NCMldLUWxNMA"},
-  {id:62, date:"2025-02-14", country:"Vietnam", cat:"shore", catLabel:"ショアパワー", title:"ONE Names First-Owned Newbuilding Vessel — Port Technology", summary:"世界最大手MSCが全自社船500隻をデジタル化。MSCはKongsberg Digitalのクラウド基盤「Vessel Insight」を採用し全自社船のデータをリアルタイムで統合・可視化する体制を構築。脱炭素化と運用効率の最大化を実現。", url:"https://news.google.com/rss/articles/CBMifEFVX3lxTE5kU29XUDk0RkFDdnk1RC0yWFlmOFpSaWZ2VkpDOTFvMVkycUd5cFhHYUNFU0hVaEgxNTZ4b0NFc1cxeHFoZXFuUklXWlBpWUZSREdIU0RKN09JdERRc01qc01OdXJOREN6WFQ0ZGViLXdHOTctMk4tY1RtOU8"},
-  {id:63, date:"2026-03-27", country:"Philippines", cat:"dev", catLabel:"港湾開発", title:"Indian Navy is Quietly Guiding the Country's Ships Through Strait of Hormuz", summary:"ホルムズ海峡でインド海軍が自国船舶を密かに誘導。日本のエネルギー供給の生命線である同海峡の安定輸送に直結する動き。地政学リスクが高まる中、海上交通管理のIT基盤進化と国際連携が注目される。", url:"https://news.google.com/rss/articles/CBMitAFBVV95cUxPTThRQVRZOXQ2NlpKc1FoMjdsVTl2WTJzRDhSa2hjSzhIczFvVFlOVkkwdGZlMk1Ta0JObGJtS0hRdEFfZ280OWlmUXo1aGxTMWN1NGp6OHZYRnU1a1k0VUhseldpUVBtaFZyTUpLZ2prb0xNV2NuQW5JQ3gwNDZCQS1WOU15OUZ6Ym90OGU0TGxlN0dqOEFMejNUTzg1RmpuejZMeEVROHRYblk3Y2owYTVkNXE"},
-  {id:64, date:"2026-04-17", country:"Vietnam", cat:"dev", catLabel:"港湾開発", title:"Carrier USS Gerald R. Ford Sets Post-Vietnam Record for Longest Deployment", summary:"米空母フォードの過去最長展開はインド太平洋の海上安定化を示唆。最新鋭技術によるその運用は日本のサプライチェーン強靭化と直結。港湾のDX推進と国際連携が日本のビジネスにとって不可欠な重要課題。", url:"https://news.google.com/rss/articles/CBMisgFBVV95cUxPRWpzeHdCS25yeHczWkZidjVpT1dpVDR2ZmRqcDBYS09DUldaQm1KbWNWWlcxTTVRQXRmeTNGUmRteHZGcnVIbmMtT05pamVoN3B0ZVI1bDhEU2pkaWRNLW1zb09KanlEWEN3V3E1cTZzQjk2bEFHOGtTczRhVzBpYzlyUmN5dURSM21TQk92ZHc2TS1XT3JsOEdtUzNQb3FIbkxCcnpfcENYWlFQM1ZXM1JB"},
-  {id:65, date:"2026-04-22", country:"Vietnam", cat:"shore", catLabel:"ショアパワー", title:"Future Ford-Class Carrier Orders May Be at Risk — The Maritime Executive", summary:"米空母調達リスクは大型艦船建造における環境規制対応コスト増大を示唆。岸壁電源や脱炭素技術導入が将来の船舶・港湾プロジェクトの経済性を左右する重要技術動向。ベトナム含むアジアでのグリーン港湾ITソリューション提供で商機。", url:"https://news.google.com/rss/articles/CBMijwFBVV95cUxNVXpNQWdyeEo0cVItN3JWTFRWZHg0U0dsdDhIV1ZBNzdfRFlWWnR5MlR6S2gzclFOMmRKOFBFaW5lRnBhZkc1WWdaZUNMei13bW9aVDlYTEc2cWtLNm1CbmU1bWFYUVdpWmhpRjN2czlBUEtXS0dENUo0WGZpRVVGMkN0WlZYMGtRXzNJUmppTQ"},
-  {id:66, date:"2026-04-25", country:"Vietnam", cat:"shore", catLabel:"ショアパワー", title:"CENTCOM Says Three Carriers Are in Middle East for First Time in 23 Years", summary:"中東での米空母展開が示す地政学的緊張は日本の海上サプライチェーンに潜在的リスクをもたらす。一方でベトナムをはじめアジア地域では港湾の脱炭素化（ショアパワー等）技術が急速に進展。", url:"https://news.google.com/rss/articles/CBMisgFBVV95cUxOd2xPeWhPdTlPYkJ3b0Z6T0UtZi0tZVlCMGZsOERodU9QRUNrOE5aMVpSZXFsd0FuVHdoZnYtbE12dTJubWp2UUdGdW9UY1loSHlVYkVqQmRWaHFZM0Nac2VUZnczWlVxb2duX05VUVhxRDV5UzZBd1MxcGpJZENoeW4xOHdzaVJPNThCUC02dkphcDdLS1BRZ2c2T0V5RU5XOGtjaWMwRktQ"},
-  {id:67, date:"2026-03-23", country:"Malaysia", cat:"dev", catLabel:"港湾開発", title:"Tanjung Offshore Wins FPSO Tow and Reconnection Job — Splash247", summary:"マレーシアでFPSOの高度な曳航・再接続作業が受注。洋上エネルギー開発における専門技術と物流の重要性を示す。日本企業はこの海洋サービス市場の技術動向とビジネス機会に注目すべき。", url:"https://news.google.com/rss/articles/CBMif0FVX3lxTE9zRUhGaHB3ZjQtMjFIYUMxa0ppVTB6RlhlS0xySTltMGNsVE5RRmE0X3NsNlVVY2toV3FnZXpOcDNZRW1OdVEwU3RYYVNLaHI2RG1XOXVOUDUyOU9vMkxQdENnQktQUk1GOWIwSzJQQWdPNGtnYmpFSDh6dlI1czg"},
-  {id:68, date:"2026-04-03", country:"Malaysia", cat:"dev", catLabel:"港湾開発", title:"Tanjung Offshore Wins FPSO Tow — Splash247 (follow-up)", summary:"マレーシアのFPSO案件はエネルギー開発港湾拠点としての同国の地位向上を示す。日本企業にとって洋上エネルギーサプライチェーンにおけるマレーシア港湾の重要性が改めて浮き彫りになった。", url:"#"},
-  {id:69, date:"2023-03-02", country:"Philippines", cat:"shore", catLabel:"ショアパワー", title:"ABB Supplies Shore Connection to Portsmouth — Port Technology (2024)", summary:"ABBが英ポーツマス国際港への陸電供給ソリューション導入事例は、フィリピンを含むアジア港湾のショアパワー導入加速への重要な先行事例となる。停泊中の船舶からの温室効果ガス排出削減を推進。", url:"#"},
-  {id:70, date:"2026-04-18", country:"Vietnam", cat:"shore", catLabel:"ショアパワー", title:"Traffic Confusion in the Strait of Hormuz — The Maritime Executive", summary:"ホルムズ海峡の混乱は日本のサプライチェーンに地政学的リスクをもたらす。同時に「ショアパワー」「グリーンポート」など海事の脱炭素技術動向が世界で加速。日本企業はリスク対応と技術への戦略的投資が競争力維持に不可欠。", url:"https://news.google.com/rss/articles/CBMihwFBVV95cUxQZkw2OXZybUt3UmEtUzh4NHk0OGN3ejdGZXpwSGMzNmMxbzRGcDdwWkl0dGFXRldXeU9yVFBSdmV4WU9oLVpfNjByQ1VXeFlvQ3I1aWJteHRiZTdTZmUtNUdFTjB2QTRpNHZ4bE92T0Z3Z0lVWmpPeTdzT0JraTZaOUZ1dU9wQjA"},
-  {id:71, date:"2026-04-13", country:"Malaysia", cat:"dev", catLabel:"港湾開発", title:"What War Reveals About Energy Security (Malaysia Dev) — Splash247", summary:"エネルギー安全保障の脆弱性が露わになる中、マレーシア港湾の戦略的重要性が増大。代替燃料対応やDXによるサプライチェーン強靭化、サイバーセキュリティ投資が急務となっている。", url:"#"},
-  {id:72, date:"2026-03-23", country:"Indonesia", cat:"automation", catLabel:"自動化/TOS", title:"China's Zhi Fei Completes Unmanned Operation at Qingdao (Indonesia context)", summary:"青島港の世界初完全無人コンテナオペレーションはインドネシアを含むアジア全域の港湾自動化競争を激化させる。日本企業は国際競争力維持と労働力不足解消のため港湾物流のDX推進が喫緊の課題。", url:"#"}
-];
+// ─── CONFIG ────────────────────────────────────────────
+const DATA_URL    = './data.json';
+const PAGE_SIZE   = 20;
 
-const catColorMap = {
-  smart: '#00c8ff',
-  green: '#00e5a0',
-  automation: '#a78bfa',
-  shore: '#ffb400',
-  dev: '#f472b6',
-  policy: '#ff5e5e'
+// カテゴリ定義（日本語ラベルと色）
+const CAT_META = {
+  smart:      { label: 'スマートポート',   color: '#00c8ff' },
+  green:      { label: 'グリーン/脱炭素',  color: '#00e5a0' },
+  automation: { label: '自動化/TOS',       color: '#a78bfa' },
+  shore:      { label: 'ショアパワー',      color: '#ffb400' },
+  dev:        { label: '港湾開発',          color: '#f472b6' },
+  policy:     { label: '規制/政策',         color: '#ff5e5e' },
 };
 
-const countryClass = {
-  Vietnam: 'badge-vn',
-  Malaysia: 'badge-my',
-  Indonesia: 'badge-id',
-  Philippines: 'badge-ph',
-  ASEAN: 'badge-asean',
-  Japan: 'badge-jp'
+const COUNTRY_CLASS = {
+  Vietnam: 'badge-vn', Malaysia: 'badge-my', Indonesia: 'badge-id',
+  Philippines: 'badge-ph', ASEAN: 'badge-asean', Japan: 'badge-jp',
 };
 
+// ─── STATE ─────────────────────────────────────────────
+let NEWS_DATA    = [];
 let activeCountry = 'all';
-let activeCat = 'all';
-let searchQuery = '';
+let activeCat     = 'all';
+let searchQuery   = '';
+let sortMode      = 'date-desc';
+let currentPage   = 1;
+let chartCountry  = null;
+let chartCat      = null;
 
-function formatDate(s) {
-  return s.replace(/-/g, '/');
+// ─── FETCH ─────────────────────────────────────────────
+async function loadData() {
+  const overlay   = document.getElementById('loading-overlay');
+  const loadText  = document.getElementById('loading-text');
+  const errBanner = document.getElementById('error-banner');
+
+  try {
+    loadText.textContent = 'data.json を取得中...';
+    const res = await fetch(DATA_URL);
+    if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
+
+    loadText.textContent = 'データを解析中...';
+    NEWS_DATA = await res.json();
+
+    // 件数バリデーション
+    if (!Array.isArray(NEWS_DATA) || NEWS_DATA.length === 0) {
+      throw new Error('data.json の形式が正しくありません（空配列または配列以外）');
+    }
+
+    loadText.textContent = `${NEWS_DATA.length} 件読み込み完了`;
+
+    // 最新の検索日をヘッダーに表示
+    const dates = NEWS_DATA.map(n => n.date).filter(Boolean).sort();
+    const latestDate = dates[dates.length - 1];
+    if (latestDate) {
+      document.getElementById('last-updated').textContent =
+        `最終更新: ${latestDate.replace(/-/g, '/')}`;
+    }
+
+    // 初期化
+    buildDynamicFilters();
+    updateStats();
+    buildCharts();
+    renderCards();
+
+    // フェードアウト
+    setTimeout(() => overlay.classList.add('hidden'), 400);
+
+  } catch (err) {
+    console.error('loadData error:', err);
+    document.getElementById('error-detail').textContent = err.message;
+    errBanner.classList.add('show');
+    overlay.classList.add('hidden');
+  }
 }
 
-function renderCards() {
-  const grid = document.getElementById('news-grid');
-  const filtered = NEWS_DATA.filter(n => {
-    const matchCountry = activeCountry === 'all' || n.country === activeCountry;
-    const matchCat = activeCat === 'all' || n.cat === activeCat;
-    const q = searchQuery.toLowerCase();
-    const matchSearch = !q || n.title.toLowerCase().includes(q) || n.summary.toLowerCase().includes(q);
-    return matchCountry && matchCat && matchSearch;
+// ─── DYNAMIC FILTER BUTTONS ────────────────────────────
+function buildDynamicFilters() {
+  // 国ボタン（データから自動収集）
+  const countries = [...new Set(NEWS_DATA.map(n => n.country))].sort();
+  const countryGroup = document.querySelector('[data-filter="country"]').closest('.filter-group');
+  countries.forEach(c => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.filter = 'country';
+    btn.dataset.value = c;
+    btn.textContent = c;
+    countryGroup.appendChild(btn);
   });
 
-  document.getElementById('result-num').textContent = filtered.length;
+  // カテゴリボタン（CAT_META 定義順）
+  const catGroup = document.getElementById('cat-filter-group');
+  Object.entries(CAT_META).forEach(([key, meta]) => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.filter = 'cat';
+    btn.dataset.value = key;
+    btn.textContent = meta.label;
+    catGroup.appendChild(btn);
+  });
 
-  if (filtered.length === 0) {
+  // イベント委譲でフィルタ処理
+  document.querySelectorAll('.filters-section').forEach(sec => {
+    sec.addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      const { filter, value } = btn.dataset;
+      sec.querySelectorAll(`[data-filter="${filter}"]`).forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      if (filter === 'country') activeCountry = value;
+      else activeCat = value;
+      currentPage = 1;
+      renderCards();
+    });
+  });
+}
+
+// ─── STATS ─────────────────────────────────────────────
+function updateStats() {
+  const countries = new Set(NEWS_DATA.map(n => n.country)).size;
+  const cats      = new Set(NEWS_DATA.map(n => n.cat)).size;
+  const years     = NEWS_DATA.map(n => parseInt(n.date)).filter(Boolean);
+  const latest    = Math.max(...years);
+
+  document.getElementById('stat-total').textContent     = NEWS_DATA.length;
+  document.getElementById('stat-countries').textContent = countries;
+  document.getElementById('stat-cats').textContent      = cats;
+  document.getElementById('stat-latest').textContent    = isFinite(latest) ? latest : '—';
+}
+
+// ─── CHARTS ────────────────────────────────────────────
+function buildCharts() {
+  const countryOrder  = ['Vietnam','Malaysia','Philippines','Indonesia','ASEAN','Japan'];
+  const countryColors = ['#00c8ff','#00e5a0','#f472b6','#ffb400','#a78bfa','#ff5e5e'];
+  const countryLabels = countryOrder.filter(c => NEWS_DATA.some(n => n.country === c));
+  const countryData   = countryLabels.map(c => NEWS_DATA.filter(n => n.country === c).length);
+  const countryBg     = countryLabels.map(c => countryColors[countryOrder.indexOf(c)] || '#7a8a9e');
+
+  const catKeys   = Object.keys(CAT_META);
+  const catLabels = catKeys.map(k => CAT_META[k].label);
+  const catData   = catKeys.map(k => NEWS_DATA.filter(n => n.cat === k).length);
+  const catColors = catKeys.map(k => CAT_META[k].color);
+
+  const chartOpts = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    animation: { duration: 600 },
+  };
+  const gridColor = 'rgba(255,255,255,0.04)';
+  const tickFont  = { size: 11, family: "'DM Mono', monospace" };
+  const tickColor = '#7a8a9e';
+
+  chartCountry = new Chart(document.getElementById('chart-country'), {
+    type: 'bar',
+    data: { labels: countryLabels, datasets: [{ data: countryData, backgroundColor: countryBg, borderRadius: 4, borderSkipped: false }] },
+    options: { ...chartOpts, scales: {
+      x: { grid: { color: gridColor }, ticks: { color: tickColor, font: tickFont } },
+      y: { grid: { color: gridColor }, ticks: { color: tickColor, font: tickFont, stepSize: 5 }, beginAtZero: true },
+    }},
+  });
+
+  chartCat = new Chart(document.getElementById('chart-cat'), {
+    type: 'bar',
+    data: { labels: catLabels, datasets: [{ data: catData, backgroundColor: catColors, borderRadius: 4, borderSkipped: false }] },
+    options: { ...chartOpts, indexAxis: 'y', scales: {
+      x: { grid: { color: gridColor }, ticks: { color: tickColor, font: tickFont }, beginAtZero: true },
+      y: { grid: { display: false }, ticks: { color: tickColor, font: tickFont } },
+    }},
+  });
+}
+
+// チャートを現在のフィルタ状態に合わせて更新
+function updateCharts(filtered) {
+  if (!chartCountry || !chartCat) return;
+
+  const countryOrder = ['Vietnam','Malaysia','Philippines','Indonesia','ASEAN','Japan'];
+  const cl = chartCountry.data.labels;
+  chartCountry.data.datasets[0].data = cl.map(c => filtered.filter(n => n.country === c).length);
+  chartCountry.update();
+
+  const catKeys = Object.keys(CAT_META);
+  chartCat.data.datasets[0].data = catKeys.map(k => filtered.filter(n => n.cat === k).length);
+  chartCat.update();
+}
+
+// ─── FILTERING + SORTING ───────────────────────────────
+function getFiltered() {
+  const q = searchQuery.toLowerCase();
+  return NEWS_DATA.filter(n => {
+    if (activeCountry !== 'all' && n.country !== activeCountry) return false;
+    if (activeCat     !== 'all' && n.cat     !== activeCat)     return false;
+    if (q && !n.title.toLowerCase().includes(q) && !n.summary.toLowerCase().includes(q)) return false;
+    return true;
+  }).sort((a, b) => {
+    if (sortMode === 'date-desc') return b.date.localeCompare(a.date);
+    if (sortMode === 'date-asc')  return a.date.localeCompare(b.date);
+    if (sortMode === 'country')   return a.country.localeCompare(b.country);
+    return 0;
+  });
+}
+
+// ─── RENDER CARDS ──────────────────────────────────────
+function renderCards() {
+  const filtered = getFiltered();
+  const total    = filtered.length;
+  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  if (currentPage > totalPages) currentPage = totalPages;
+
+  document.getElementById('result-num').textContent = total;
+  updateCharts(filtered);
+
+  const start = (currentPage - 1) * PAGE_SIZE;
+  const page  = filtered.slice(start, start + PAGE_SIZE);
+  const grid  = document.getElementById('news-grid');
+
+  if (page.length === 0) {
     grid.innerHTML = '<div class="empty-state">— 該当するニュースが見つかりませんでした —</div>';
+    document.getElementById('pagination').innerHTML = '';
     return;
   }
 
-  grid.innerHTML = filtered.map(n => {
-    const accentColor = catColorMap[n.cat] || '#00c8ff';
-    const isExternal = n.url && n.url !== '#';
+  grid.innerHTML = page.map(n => {
+    const accentColor  = (CAT_META[n.cat] || {}).color || '#00c8ff';
+    const countryClass = COUNTRY_CLASS[n.country] || 'badge-vn';
+    const catLabel     = (CAT_META[n.cat] || {}).label || n.catLabel || n.cat;
+    const isExternal   = n.url && n.url !== '#';
+    const dateStr      = (n.date || '').replace(/-/g, '/');
     return `
-    <div class="news-card" style="--card-accent: ${accentColor}">
+    <div class="news-card" style="--card-accent:${accentColor}">
       <div class="card-top">
         <div class="card-badges">
-          <span class="badge ${countryClass[n.country] || 'badge-country'}">${n.country}</span>
-          <span class="badge badge-cat">${n.catLabel}</span>
+          <span class="badge ${countryClass}">${n.country}</span>
+          <span class="badge badge-cat">${catLabel}</span>
         </div>
-        <span class="card-date">${formatDate(n.date)}</span>
+        <span class="card-date">${dateStr}</span>
       </div>
       <div class="card-title">${n.title}</div>
       <div class="card-summary">${n.summary}</div>
       <div class="card-footer">
-        ${isExternal ? `<a class="card-link" href="${n.url}" target="_blank" rel="noopener">元記事を開く →</a>` : '<span class="card-link" style="opacity:0.4">リンクなし</span>'}
+        ${isExternal
+          ? `<a class="card-link" href="${n.url}" target="_blank" rel="noopener">元記事を開く →</a>`
+          : `<span class="card-link" style="opacity:0.4">リンクなし</span>`}
       </div>
     </div>`;
   }).join('');
+
+  renderPagination(totalPages);
 }
 
-document.querySelectorAll('[data-filter="country"]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-filter="country"]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeCountry = btn.dataset.value;
-    renderCards();
-  });
-});
+// ─── PAGINATION ────────────────────────────────────────
+function renderPagination(totalPages) {
+  const pg = document.getElementById('pagination');
+  if (totalPages <= 1) { pg.innerHTML = ''; return; }
 
-document.querySelectorAll('[data-filter="cat"]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-filter="cat"]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeCat = btn.dataset.value;
-    renderCards();
-  });
-});
+  const p = currentPage;
+  let html = '';
 
+  // 前へボタン
+  html += `<button class="page-btn" onclick="goPage(${p-1})" ${p===1?'disabled':''}>← 前</button>`;
+
+  // ページ番号（最大7つ表示）
+  const pages = [];
+  if (totalPages <= 7) {
+    for (let i = 1; i <= totalPages; i++) pages.push(i);
+  } else {
+    pages.push(1);
+    if (p > 3) pages.push('...');
+    for (let i = Math.max(2, p-1); i <= Math.min(totalPages-1, p+1); i++) pages.push(i);
+    if (p < totalPages - 2) pages.push('...');
+    pages.push(totalPages);
+  }
+
+  pages.forEach(pg => {
+    if (pg === '...') {
+      html += `<span class="page-ellipsis">…</span>`;
+    } else {
+      html += `<button class="page-btn ${pg===p?'active':''}" onclick="goPage(${pg})">${pg}</button>`;
+    }
+  });
+
+  html += `<button class="page-btn" onclick="goPage(${p+1})" ${p===totalPages?'disabled':''}>次 →</button>`;
+  pg.innerHTML = html;
+}
+
+function goPage(n) {
+  currentPage = n;
+  renderCards();
+  window.scrollTo({ top: document.querySelector('.section-divider').offsetTop - 70, behavior: 'smooth' });
+}
+
+// ─── SEARCH + SORT EVENTS ──────────────────────────────
 let searchTimer;
 document.getElementById('search-input').addEventListener('input', e => {
   clearTimeout(searchTimer);
-  searchTimer = setTimeout(() => {
-    searchQuery = e.target.value;
-    renderCards();
-  }, 200);
+  searchTimer = setTimeout(() => { searchQuery = e.target.value; currentPage = 1; renderCards(); }, 200);
 });
 
-renderCards();
-
-// Charts
-const countryLabels = ['Vietnam', 'Malaysia', 'Philippines', 'Indonesia', 'ASEAN', 'Japan'];
-const countryData = countryLabels.map(c => NEWS_DATA.filter(n => n.country === c).length);
-const countryColors = ['#00c8ff', '#00e5a0', '#f472b6', '#ffb400', '#a78bfa', '#ff5e5e'];
-
-new Chart(document.getElementById('chart-country'), {
-  type: 'bar',
-  data: {
-    labels: countryLabels,
-    datasets: [{
-      data: countryData,
-      backgroundColor: countryColors,
-      borderRadius: 4,
-      borderSkipped: false
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: {
-      x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#7a8a9e', font: { size: 11, family: "'DM Mono', monospace" } } },
-      y: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#7a8a9e', font: { size: 11, family: "'DM Mono', monospace" }, stepSize: 5 }, beginAtZero: true }
-    }
-  }
+document.getElementById('sort-select').addEventListener('change', e => {
+  sortMode = e.target.value; currentPage = 1; renderCards();
 });
 
-const catLabels = ['スマートポート', 'グリーン/脱炭素', '自動化/TOS', 'ショアパワー', '港湾開発', '規制/政策'];
-const catKeys = ['smart', 'green', 'automation', 'shore', 'dev', 'policy'];
-const catData = catKeys.map(c => NEWS_DATA.filter(n => n.cat === c).length);
-const catColors = ['#00c8ff', '#00e5a0', '#a78bfa', '#ffb400', '#f472b6', '#ff5e5e'];
-
-new Chart(document.getElementById('chart-cat'), {
-  type: 'bar',
-  data: {
-    labels: catLabels,
-    datasets: [{
-      data: catData,
-      backgroundColor: catColors,
-      borderRadius: 4,
-      borderSkipped: false
-    }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: {
-      x: { grid: { color: 'rgba(255,255,255,0.04)' }, ticks: { color: '#7a8a9e', font: { size: 11, family: "'DM Mono', monospace" } }, beginAtZero: true },
-      y: { grid: { display: false }, ticks: { color: '#7a8a9e', font: { size: 11, family: "'DM Mono', monospace" } } }
-    }
-  }
-});
+// ─── BOOT ──────────────────────────────────────────────
+loadData();
 </script>
 </body>
 </html>
