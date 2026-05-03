@@ -65,12 +65,18 @@ def resolve_category(raw: str):
     return "other", raw[:30] if raw else "その他"
 
 
-def fetch_sheet_values(api_key: str, range_name: str) -> list[list[str]]:
-    """Sheets API v4 で指定レンジの値を取得する。"""
+def fetch_sheet_values(api_key: str, range_name: str,
+                       render: str = "UNFORMATTED_VALUE") -> list[list[str]]:
+    """
+    Sheets API v4 で指定レンジの値を取得する。
+    render: "UNFORMATTED_VALUE" 日付をシリアル値/ISO形式で取得（デフォルト）
+            "FORMULA"           数式をそのまま取得（HYPERLINK等）
+            "FORMATTED_VALUE"   表示テキストを取得
+    """
     base = "https://sheets.googleapis.com/v4/spreadsheets"
     params = urllib.parse.urlencode({
         "range": range_name,
-        "valueRenderOption": "UNFORMATTED_VALUE",
+        "valueRenderOption": render,
         "key": api_key,
     })
     url = f"{base}/{SPREADSHEET_ID}/values/{urllib.parse.quote(range_name)}?{params}"
@@ -282,7 +288,15 @@ def main():
     print(f"  → {len(list_records)} 件取得")
 
     print("▶ Technology シートを取得中...")
-    tech_rows = fetch_sheet_values(api_key, SHEETS["technology"]["range"])
+    # 日付等は UNFORMATTED_VALUE、URL列(F列)は FORMULA で別取得してマージ
+    tech_rows       = fetch_sheet_values(api_key, SHEETS["technology"]["range"])
+    tech_url_rows   = fetch_sheet_values(api_key, "Technology!F:F", render="FORMULA")
+    # URL列をマージ: tech_rows の各行の6列目(index 5)を FORMULA 取得値で上書き
+    for i, row in enumerate(tech_rows):
+        formula_val = tech_url_rows[i][0] if i < len(tech_url_rows) and tech_url_rows[i] else ""
+        if len(row) < 6:
+            row.extend([""] * (6 - len(row)))
+        row[5] = formula_val  # F列(index 5)を数式値で上書き
     tech_records = parse_technology_sheet(tech_rows)
     print(f"  → {len(tech_records)} 件取得")
 
