@@ -123,6 +123,20 @@ def normalize_date(raw) -> str:
     return s[:10]
 
 
+def normalize_month(raw) -> str:
+    """
+    発行月セルを YYYY-MM 形式に変換する（Technology シート専用）。
+    例: "2026-04-01T..." → "2026-04"
+        46142.5          → "2026-04"
+        "2026/04"        → "2026-04"
+        "April 2026"     → "2026-04"
+    """
+    full = normalize_date(raw)  # まず YYYY-MM-DD に変換
+    if full and len(full) >= 7:
+        return full[:7]         # 先頭7文字 = YYYY-MM
+    return full
+
+
 def resolve_url(raw: str, fallback: str = "") -> str:
     """
     セルの値からURLを抽出して返す。
@@ -218,9 +232,9 @@ def parse_technology_sheet(rows: list[list]) -> list[dict]:
 
         edition = col(3)
 
-        # 日付: 発行月(B) のみ使用。A列（検索日）は無視する
+        # 日付: 発行月(B) のみ使用。A列（検索日）は無視する。YYYY-MM形式で保存
         date_raw_b = row[1] if len(row) > 1 and row[1] != "" else None
-        date = normalize_date(date_raw_b)
+        date = normalize_month(date_raw_b)
 
         results.append({
             "date":     date,
