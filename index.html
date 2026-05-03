@@ -236,6 +236,7 @@ h1.hero-title em { color: var(--accent); font-style: normal; }
 .badge-asean { background: rgba(167,139,250,0.12); color: var(--purple); border: 1px solid rgba(167,139,250,0.25); }
 .badge-jp  { background: rgba(255,94,94,0.12); color: var(--coral);   border: 1px solid rgba(255,94,94,0.25); }
 .badge-cat { background: rgba(255,255,255,0.06); color: var(--text3); border: 1px solid var(--border); font-size: 9px; }
+.badge-edition { background: rgba(255,180,0,0.10); color: var(--amber); border: 1px solid rgba(255,180,0,0.25); font-size: 9px; }
 .card-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); white-space: nowrap; }
 .card-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.45; }
 .card-summary { font-size: 12px; color: var(--text2); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
@@ -564,13 +565,21 @@ function renderCards() {
     const countryClass = COUNTRY_CLASS[n.country] || 'badge-vn';
     const catLabel     = (CAT_META[n.cat] || {}).label || n.catLabel || n.cat;
     const isExternal   = n.url && n.url !== '#';
-    const dateStr      = (n.date || '').replace(/-/g, '/');
+    // magazineは YYYY-MM（年月のみ）、それ以外は YYYY-MM-DD
+    const dateStr      = n.source === 'magazine'
+      ? (n.date || '').slice(0, 7).replace('-', '/')   // "2026-04" → "2026/04"
+      : (n.date || '').replace(/-/g, '/');
+    // Editionバッジ（magazineのみ表示）
+    const editionBadge = (n.source === 'magazine' && n.edition)
+      ? `<span class="badge badge-edition">${n.edition}</span>`
+      : '';
     return `
     <div class="news-card" style="--card-accent:${accentColor}">
       <div class="card-top">
         <div class="card-badges">
           <span class="badge ${countryClass}">${n.country}</span>
           <span class="badge badge-cat">${catLabel}</span>
+          ${editionBadge}
         </div>
         <span class="card-date">${dateStr}</span>
       </div>
