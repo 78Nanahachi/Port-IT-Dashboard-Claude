@@ -28,7 +28,7 @@
     "catLabel": "(\"港湾自動化\" OR \"港湾管理システム\" OR \"港湾A",
     "title": "T2／トラック自動運転と有人運転の切り替え拠点を神奈川県と神戸市に設置 - 物流ニュースのLNEWS",
     "summary": "T2と称されるプロジェクトの一環として、トラックの自動運転と有人運転を切り替えるための拠点が設置されます。\nこの拠点は神奈川県と神戸市に設置されます。",
-    "url": "LINK",
+    "url": "",
     "source": "news",
     "id": 3
   },
@@ -116,7 +116,7 @@
     "catLabel": "(\"港湾自動化\" OR \"港湾管理システム\" OR \"港湾A",
     "title": "サイバーポート（港湾物流）のNACCS連携機能が航空貨物にも対応！ ～サイバーポートで航空貨物に係るNACCS業務の一部が実施可能に～ - mlit.go.jp",
     "summary": "サイバーポートのNACCS連携機能が、新たに航空貨物に対応しました。\nこれにより、サイバーポート上で航空貨物に係るNACCS業務の一部を実施できます。\nサイバーポートは港湾物流システムです。",
-    "url": "LINK",
+    "url": "",
     "source": "news",
     "id": 11
   },
@@ -139,7 +139,7 @@
     "edition": "Edition 161",
     "title": "The Rise of Intelligent Terminals",
     "summary": "この記事では、インテリジェントターミナルの台頭について論じています。港湾のDXの一環として、AIやIoTなどの先進技術を導入することで、ターミナル運営の効率化と自動化を推進しています。これにより、人件費の削減や作業ミスの低減が期待できます。導入の背景には、海上貿易量の増加と労働力不足という課題があります。しかし、既存システムの統合やサイバーセキュリティ対策が課題として挙げられています。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 13
   },
@@ -151,7 +151,7 @@
     "edition": "",
     "title": "Port of Antwerp-Bruges advances digital platform plan",
     "summary": "アントワープ・ブルージュ港の株主であるRX/SeaPortとAPZIは、デジタルプラットフォームRX/SeaPortとNxtPortの統合原則に合意しました。この統合は、港湾のDXを推進し、データ共有と連携を強化することを目的としています。導入により、港湾運営の効率化、サプライチェーンの透明性向上、意思決定の迅速化が期待されます。既存のシステム間の互換性確保と、データセキュリティ対策の強化が課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 14
   },
@@ -163,7 +163,7 @@
     "edition": "",
     "title": "HPH Trust deploys autonomous trucks in Hong Kong",
     "summary": "Hutchison Port Holdings Trust (HPH Trust)は、Westwell製の自律走行トラック (AT) フリートを香港で導入しました。これは、ターミナル自動化の一環であり、コンテナターミナル内での効率的な輸送を実現することが目的です。ATの導入により、人件費の削減、作業員の安全性向上、24時間体制での運用が可能になります。しかし、初期投資の高さや、既存のインフラとの統合、緊急時の対応プロトコルの確立が課題として挙げられます。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 15
   },
@@ -175,7 +175,7 @@
     "edition": "",
     "title": "MPA, SSA accelerate AI rollout across shipping sector",
     "summary": "シンガポール海事港湾庁 (MPA) とシンガポール海運協会 (SSA) は、海運セクター全体でのAI導入を加速するための覚書 (MoU) に署名しました。この取り組みは、海運業界のDXを推進し、運航効率の向上、安全性強化、新たなサービスの創出を目指しています。AIを活用することで、船舶の運航最適化、貨物追跡の精度向上、予測分析によるリスク管理が可能となります。導入には、データ共有の枠組み構築と、AI人材の育成が不可欠です。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 16
   },
@@ -187,7 +187,7 @@
     "edition": "",
     "title": "Port of Klaipėda advances shore power electrification rollout",
     "summary": "クライペダ港は、陸上電力供給の導入に向けた試験段階に入りました。これは、脱炭素化とスマートポート化の一環であり、停泊中の船舶からの排出ガス削減が主な目的です。陸上電力供給により、船舶は燃料を燃焼することなく電力を得られるため、CO2排出量や大気汚染物質の削減に貢献します。一方で、大規模なインフラ投資が必要であり、対応する船舶の普及も課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 17
   },
@@ -199,7 +199,7 @@
     "edition": "",
     "title": "Port of Klaipėda nears launch of green hydrogen output",
     "summary": "クライペダ港湾局は、グリーン水素ステーションプロジェクトの最終段階に達しました。これは、脱炭素化とエネルギー転換を推進するスマートポートの取り組みの一環です。グリーン水素の生産により、港湾運営および周辺地域でのクリーンエネルギー利用が促進され、化石燃料への依存度を低減します。技術的な実現可能性は高いものの、生産コストの削減と、供給網の構築が今後の課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 18
   },
@@ -211,7 +211,7 @@
     "edition": "",
     "title": "PIL, PSA launch green transhipment service",
     "summary": "Pacific International Lines (PIL) とPSA International (PSA) は、DNVの検証支援のもと、シンガポールで初の陸海連携グリーン付加価値トランシップサービスを開始しました。このサービスは、脱炭素化とサプライチェーン全体の環境負荷低減を目指すものです。グリーン燃料の使用や、効率的な輸送経路の最適化により、排出ガスを削減し、環境に配慮した物流を実現します。ただし、既存の輸送ネットワークとの連携や、コスト面での競争力確保が課題です。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 19
   },
@@ -223,7 +223,7 @@
     "edition": "",
     "title": "Port of Tyne trials autonomous terminal tractor",
     "summary": "Port of Tyneは、North East Automotive Alliance (NEAA)、Oxaおよび業界・学術パートナーとのコンソーシアムと共に、自律走行ターミナルトラクターの試験運用を開始しました。これは、港湾の自動化と効率化を目的としたスマートポートの取り組みです。自律走行トラクターの導入により、コンテナの輸送効率向上、人件費削減、24時間体制での運用が可能になります。しかし、天候や路面状況への対応、他の車両や人間との安全な協調作業の確立が今後の課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 20
   },
@@ -235,7 +235,7 @@
     "edition": "",
     "title": "CentrePort deploys private 5G for container operations",
     "summary": "CentrePortは、プライベート5Gネットワークの主要な運用アプリケーションを展開し、コンテナハンドリングにおける現場スタッフの接続性を強化しました。これは、港湾ITの進化とスマートポート化の一環であり、リアルタイムデータ通信の改善が目的です。5Gネットワークの導入により、高帯域幅と低遅延が実現され、遠隔操作機器の制御、高精細ビデオストリーミング、IoTデバイスの接続が強化されます。しかし、初期投資の高さと、既存のネットワークシステムとの統合が課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 21
   },
@@ -247,7 +247,7 @@
     "edition": "",
     "title": "Singapore launches autonomous feeder vessel EOI",
     "summary": "シンガポール海事港湾庁 (MPA) とPSA Singapore (PSA) は、自律走行フィーダー船の関心表明 (EOI) を開始しました。これは、海運業界のDXと自動化を推進し、効率的で持続可能な港湾運営を目指すものです。自律走行フィーダー船の導入により、人件費の削減、運航の安全性向上、24時間体制での運航が可能となります。技術的な成熟度、法規制の整備、海上交通における他の船舶との協調が課題です。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 22
   },
@@ -259,7 +259,7 @@
     "edition": "",
     "title": "MPA introduces OCEANS-X for maritime data connectivity",
     "summary": "シンガポールは、海事港湾庁 (MPA) が開発した新しいデータおよびAPI交換プラットフォーム「OCEANS-X」を立ち上げました。これは、海事データの接続性と共有を強化し、海運業界のDXを加速させることを目的としています。OCEANS-Xにより、異なるシステム間でのデータ連携が容易になり、サプライチェーン全体の可視性向上、意思決定の迅速化、新たなデジタルサービスの創出が期待されます。ただし、データ標準化の推進と、サイバーセキュリティ対策の強化が重要となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 23
   },
@@ -271,7 +271,7 @@
     "edition": "",
     "title": "MPA, LA, Long Beach advance GDSC implementation",
     "summary": "シンガポール海事港湾庁 (MPA)、ロサンゼルス港、ロングビーチ港は、GDSC (Green and Digital Shipping Corridor) の実施を進めています。これは、脱炭素化とDXを組み合わせたスマートポートの国際的な取り組みです。GDSCの導入により、船舶の運航効率向上、排出ガスの削減、デジタル技術を活用したサプライチェーンの最適化が期待されます。しかし、国際的な協力体制の構築、統一されたデータプラットフォームの開発、技術的な標準化が課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 24
   },
@@ -304,7 +304,7 @@
     "catLabel": "スマートポート",
     "title": "東北国際物流戦略チーム - pa.thr.mlit.go.jp",
     "summary": "東北地域において「東北国際物流戦略チーム」が存在します。\nこのチームは国際物流に関する戦略を策定・推進しています。\n国土交通省東北地方整備局がこのチームに関連する情報を公開しています。",
-    "url": "LINK",
+    "url": "",
     "source": "news",
     "id": 27
   },
@@ -393,7 +393,7 @@
     "edition": "Edition 160",
     "title": "Ports Beyond the Gate",
     "summary": "本記事は「ゲートを越えた港湾」をテーマに、港湾の機能が従来のゲート内での貨物処理に留まらず、より広範なサプライチェーン全体に拡大している現状と今後の展望について解説しています。港湾ITシステムとTOSの連携強化、そしてスマートポート化を通じて、陸上輸送とのシームレスな接続や内陸コンテナデポとの連携を促進することで、サプライチェーン全体の効率化と可視性の向上を目指しています。導入の背景には、グローバルサプライチェーンの複雑化とレジリエンス強化の必要性があります。しかし、異なるシステム間の相互運用性の確保やデータ共有における課題が存在します。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 35
   },
@@ -449,7 +449,7 @@
     "edition": "Edition 159",
     "title": "Turning Legacy into Advantage",
     "summary": "この記事は、既存のレガシーシステムを最新の港湾ITソリューションと統合し、それを競争優位性に変える戦略について詳しく解説しています。ターミナル自動化の推進において、既存のインフラや設備を最大限に活用しつつ、TOSのアップグレードや新しいデジタルツールの導入を進めることで、段階的なDXを実現します。導入の背景には、多額の新規投資を必要とせずに、既存資産の価値を最大化したいという港湾事業者のニーズがあります。しかし、レガシーシステムと最新技術の互換性の問題や、従業員のスキルアップが課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 40
   },
@@ -472,7 +472,7 @@
     "edition": "Edition 158",
     "title": "Ports as Powerhouses",
     "summary": "本記事では、港湾が単なる物流拠点から、地域の経済成長とイノベーションを牽引する「動力源」としての役割を果たす可能性について探求しています。スマートポートの概念に基づき、港湾ITの活用やTOSの高度化を通じて、データ駆動型の意思決定を促進し、サプライチェーン全体の最適化を目指します。また、脱炭素化の取り組みとして、再生可能エネルギーの導入や陸電供給設備の拡充も含まれます。導入の背景には、持続可能な社会の実現に向けた国際的な要請と、港湾の多機能化への期待があります。しかし、大規模なインフラ投資と多様なステークホルダー間の調整が課題です。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 42
   },
@@ -484,7 +484,7 @@
     "edition": "Edition 157",
     "title": "The Course Ahead",
     "summary": "この記事は、港湾業界が直面する将来の課題と機会、そしてそれらを乗り越えるための戦略的な方向性について概説しています。DXとターミナル自動化は、効率性の向上とコスト削減の鍵となります。TOSの進化と港湾ITシステムの統合により、リアルタイムでの情報共有と意思決定が可能になります。また、脱炭素化は喫緊の課題であり、グリーンテクノロジーの導入とエネルギー効率の改善が不可欠です。導入の背景には、環境規制の強化と競争激化があります。しかし、技術導入に伴う投資回収期間の長期化や、変化への抵抗が課題として挙げられます。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 43
   },
@@ -507,7 +507,7 @@
     "edition": "Edition 156",
     "title": "Smart Port Strategies",
     "summary": "本記事は、スマートポートの実現に向けた具体的な戦略に焦点を当てています。港湾IT、TOS、ターミナル自動化、DX、脱炭素化の各要素を統合し、港湾運営全体の最適化を目指します。データ分析に基づく予測モデルの導入や、AIを活用した交通管理システムの構築により、ボトルネックの解消と貨物処理能力の向上が期待されます。導入の背景には、サプライチェーンの混乱や環境負荷低減の要求があります。しかし、大規模なデータ収集と分析基盤の構築、そしてそれを運用する専門人材の育成が課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 45
   },
@@ -552,7 +552,7 @@
     "edition": "Edition Nokia E-Book 2025",
     "title": "A Digital Blueprint for Smart Ports",
     "summary": "この記事では、スマートポート構築のためのデジタル青写真（ブループリント）を提示しています。港湾ITインフラの強化、TOSのクラウド化、5Gなどの高速通信技術の導入を通じて、リアルタイムでのデータ連携と遠隔操作を実現し、ターミナル自動化を加速させます。DX推進により、港湾運営の透明性と効率性を高めることを目指します。導入の背景には、港湾の競争力強化とグローバルサプライチェーンのレジリエンス向上が挙げられます。しかし、既存のIT資産との統合、セキュリティリスクの管理、そしてデジタル技術に精通した人材の確保が課題です。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 49
   },
@@ -564,7 +564,7 @@
     "edition": "Edition 155",
     "title": "AI Revolution",
     "summary": "本記事は、港湾業界におけるAI技術の革命的な影響について詳述しています。AIは、港湾ITシステム、TOS、ターミナル自動化のあらゆる側面で活用され、貨物予測、船舶の動態管理、機器の予知保全などに導入されています。これにより、作業効率の大幅な向上、運用コストの削減、および安全性向上が期待できます。導入の背景には、データ量の増大とより高度な意思決定の必要性があります。しかし、AIモデルの精度向上、データのプライバシー保護、そしてAIを扱う専門知識を持つ人材の不足が課題です。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 50
   },
@@ -587,7 +587,7 @@
     "edition": "Edition 154",
     "title": "Port Automation Horizons",
     "summary": "この記事は、港湾自動化の将来の展望と新たな可能性に焦点を当てています。TOSと連携した無人搬送車（AGV）や自動クレーンなどの導入により、24時間365日の連続稼働と生産性向上が図られています。港湾ITの進化は、これらの自動化された機器を効率的に管理し、最適なオペレーションを実現します。導入の背景には、人手不足の深刻化と国際競争力の強化があります。しかし、自動化システムの高額な初期投資、複雑なシステム統合、そしてサイバー攻撃に対する脆弱性の克服が課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 52
   },
@@ -599,7 +599,7 @@
     "edition": "Edition 153",
     "title": "Sailing Towards Net Zero",
     "summary": "本記事は、港湾業界がネットゼロ排出量達成に向けて取り組む戦略について解説しています。脱炭素化の推進には、港湾ITシステムの活用によるエネルギー管理の最適化、再生可能エネルギー源の導入、電気・水素燃料船舶への対応が不可欠です。スマートポート技術と連携し、排出量のリアルタイム監視と分析を行うことで、効果的な削減策が実行されます。導入の背景には、国際海事機関（IMO）の規制強化や企業のESG（環境・社会・ガバナンス）目標達成への要求があります。しかし、技術的・経済的な制約、および国際的な協力体制の構築が課題です。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 53
   },
@@ -622,7 +622,7 @@
     "edition": "Edition 152",
     "title": "Navigating Challenges",
     "summary": "この記事は、港湾業界が直面する様々な課題（サプライチェーンの混乱、気候変動、サイバーセキュリティなど）に対処するための戦略に焦点を当てています。港湾ITとTOSの強化は、これらの課題に対応するための基盤となります。DXの推進により、データの可視化と迅速な意思決定を可能にし、レジリエントな港湾運営を目指します。導入の背景には、予測不能な国際情勢や自然災害のリスク増加があります。しかし、多様な課題に包括的に対応するためのリソース配分と、革新的なソリューションの継続的な導入が課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 55
   },
@@ -634,7 +634,7 @@
     "edition": "Edition 151",
     "title": "Shifting the Digital Tide",
     "summary": "本記事は、港湾におけるデジタル変革（DX）の潮流と、それが港湾運営にもたらす影響について論じています。港湾ITシステムの統合、TOSの進化、そしてターミナル自動化の推進により、データのシームレスな連携とリアルタイムでの情報共有が実現します。これにより、意思決定の迅速化と運用効率の向上が期待されます。導入の背景には、国際競争力の強化と顧客ニーズの多様化があります。しかし、既存のビジネスプロセスや組織文化の変革、そしてデジタルリテラシーの向上が課題として挙げられます。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 56
   },
@@ -657,7 +657,7 @@
     "edition": "Edition 150",
     "title": "GreenTech 2025",
     "summary": "この記事では、港湾におけるグリーンテクノロジーの最新動向と、2025年に向けた展望について紹介しています。脱炭素化を目標に掲げ、陸電供給、LNG燃料供給、再生可能エネルギーの導入など、環境負荷の低い技術への投資が進んでいます。港湾ITシステムは、これらのグリーン技術の監視と最適化を支援します。導入の背景には、気候変動問題への対応と環境規制の強化があります。しかし、高額な初期投資と、新しい技術の標準化、そして技術導入による運用コストのバランスを取ることが課題となります。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 58
   },
@@ -757,7 +757,7 @@
     "edition": "Edition 139",
     "title": "Container Terminal Automation Conference 2024",
     "summary": "本記事は、2024年に開催されたコンテナターミナル自動化会議の概要と主要な議論内容をまとめています。会議では、最新のターミナル自動化技術、TOSの進化、港湾ITシステムとの連携が焦点となりました。これにより、ターミナルの生産性向上、安全性強化、人件費削減への貢献が期待されます。導入の背景には、世界的な貿易量の増加と労働力不足の深刻化があります。しかし、自動化システム導入の高コスト、複雑なシステム統合、そして既存の港湾インフラとの互換性確保が課題として挙げられます。",
-    "url": "LINK",
+    "url": "https://www.porttechnology.org/editions/",
     "source": "magazine",
     "id": 67
   },
@@ -878,7 +878,7 @@
     "catLabel": "ショアパワー",
     "title": "Vietnam Maritime Administration formulates green ports criteria - vietnamnews.vn",
     "summary": "【本文取得不可】LINKから直接ご確認ください。",
-    "url": "LINK",
+    "url": "",
     "source": "news",
     "id": 78
   },
@@ -955,7 +955,7 @@
     "catLabel": "自動化/TOS",
     "title": "Navis launches new programme to certify TOS experts at terminals - Port Technology",
     "summary": "【本文取得不可】LINKから直接ご確認ください。",
-    "url": "LINK",
+    "url": "",
     "source": "news",
     "id": 85
   },
@@ -988,7 +988,7 @@
     "catLabel": "ショアパワー",
     "title": "TAN CANG – CAI MEP INTERNATIONAL TERMINAL (TCIT) AWARDED GREEN PORT 2020 BY THE APEC PORTS SERVICE NETWORK (APSN) COUNCIL - Vietnam Seaports Association",
     "summary": "TAN CANG – CAI MEP INTERNATIONAL TERMINAL (TCIT)が、\nAPEC港湾サービスネットワーク(APSN)理事会より\n「グリーンポート2020」の賞を受賞した。\nこの情報はベトナム港湾協会が報じている。\nTCITはベトナムに所在する。",
-    "url": "LINK",
+    "url": "",
     "source": "news",
     "id": 88
   },
@@ -1010,7 +1010,7 @@
     "catLabel": "スマートポート",
     "title": "LE HAVRE: A SMART PORT 5G PROJECT - wpassets.porttechnology.org",
     "summary": "ル・アーブルにおいて、スマートポートの5Gプロジェクトが実施されている。",
-    "url": "LINK",
+    "url": "",
     "source": "news",
     "id": 90
   },
