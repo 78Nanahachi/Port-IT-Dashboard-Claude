@@ -209,10 +209,9 @@ def parse_technology_sheet(rows: list[list]) -> list[dict]:
 
         edition = col(3)
 
-        # 日付: 発行日(A) → 発行月(B) の順で取得（数値型のまま渡す）
-        date_raw_a = row[0] if len(row) > 0 and row[0] != "" else None
+        # 日付: 発行月(B) のみ使用。A列（検索日）は無視する
         date_raw_b = row[1] if len(row) > 1 and row[1] != "" else None
-        date = normalize_date(date_raw_a) or normalize_date(date_raw_b)
+        date = normalize_date(date_raw_b)
 
         results.append({
             "date":     date,
