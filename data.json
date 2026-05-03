@@ -151,7 +151,7 @@
     "edition": "",
     "title": "Port of Antwerp-Bruges advances digital platform plan",
     "summary": "アントワープ・ブルージュ港の株主であるRX/SeaPortとAPZIは、デジタルプラットフォームRX/SeaPortとNxtPortの統合原則に合意しました。この統合は、港湾のDXを推進し、データ共有と連携を強化することを目的としています。導入により、港湾運営の効率化、サプライチェーンの透明性向上、意思決定の迅速化が期待されます。既存のシステム間の互換性確保と、データセキュリティ対策の強化が課題となります。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 14
   },
@@ -163,7 +163,7 @@
     "edition": "",
     "title": "HPH Trust deploys autonomous trucks in Hong Kong",
     "summary": "Hutchison Port Holdings Trust (HPH Trust)は、Westwell製の自律走行トラック (AT) フリートを香港で導入しました。これは、ターミナル自動化の一環であり、コンテナターミナル内での効率的な輸送を実現することが目的です。ATの導入により、人件費の削減、作業員の安全性向上、24時間体制での運用が可能になります。しかし、初期投資の高さや、既存のインフラとの統合、緊急時の対応プロトコルの確立が課題として挙げられます。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 15
   },
@@ -175,7 +175,7 @@
     "edition": "",
     "title": "MPA, SSA accelerate AI rollout across shipping sector",
     "summary": "シンガポール海事港湾庁 (MPA) とシンガポール海運協会 (SSA) は、海運セクター全体でのAI導入を加速するための覚書 (MoU) に署名しました。この取り組みは、海運業界のDXを推進し、運航効率の向上、安全性強化、新たなサービスの創出を目指しています。AIを活用することで、船舶の運航最適化、貨物追跡の精度向上、予測分析によるリスク管理が可能となります。導入には、データ共有の枠組み構築と、AI人材の育成が不可欠です。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 16
   },
@@ -187,7 +187,7 @@
     "edition": "",
     "title": "Port of Klaipėda advances shore power electrification rollout",
     "summary": "クライペダ港は、陸上電力供給の導入に向けた試験段階に入りました。これは、脱炭素化とスマートポート化の一環であり、停泊中の船舶からの排出ガス削減が主な目的です。陸上電力供給により、船舶は燃料を燃焼することなく電力を得られるため、CO2排出量や大気汚染物質の削減に貢献します。一方で、大規模なインフラ投資が必要であり、対応する船舶の普及も課題となります。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 17
   },
@@ -199,7 +199,7 @@
     "edition": "",
     "title": "Port of Klaipėda nears launch of green hydrogen output",
     "summary": "クライペダ港湾局は、グリーン水素ステーションプロジェクトの最終段階に達しました。これは、脱炭素化とエネルギー転換を推進するスマートポートの取り組みの一環です。グリーン水素の生産により、港湾運営および周辺地域でのクリーンエネルギー利用が促進され、化石燃料への依存度を低減します。技術的な実現可能性は高いものの、生産コストの削減と、供給網の構築が今後の課題となります。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 18
   },
@@ -211,7 +211,7 @@
     "edition": "",
     "title": "PIL, PSA launch green transhipment service",
     "summary": "Pacific International Lines (PIL) とPSA International (PSA) は、DNVの検証支援のもと、シンガポールで初の陸海連携グリーン付加価値トランシップサービスを開始しました。このサービスは、脱炭素化とサプライチェーン全体の環境負荷低減を目指すものです。グリーン燃料の使用や、効率的な輸送経路の最適化により、排出ガスを削減し、環境に配慮した物流を実現します。ただし、既存の輸送ネットワークとの連携や、コスト面での競争力確保が課題です。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 19
   },
@@ -223,7 +223,7 @@
     "edition": "",
     "title": "Port of Tyne trials autonomous terminal tractor",
     "summary": "Port of Tyneは、North East Automotive Alliance (NEAA)、Oxaおよび業界・学術パートナーとのコンソーシアムと共に、自律走行ターミナルトラクターの試験運用を開始しました。これは、港湾の自動化と効率化を目的としたスマートポートの取り組みです。自律走行トラクターの導入により、コンテナの輸送効率向上、人件費削減、24時間体制での運用が可能になります。しかし、天候や路面状況への対応、他の車両や人間との安全な協調作業の確立が今後の課題となります。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 20
   },
@@ -235,7 +235,7 @@
     "edition": "",
     "title": "CentrePort deploys private 5G for container operations",
     "summary": "CentrePortは、プライベート5Gネットワークの主要な運用アプリケーションを展開し、コンテナハンドリングにおける現場スタッフの接続性を強化しました。これは、港湾ITの進化とスマートポート化の一環であり、リアルタイムデータ通信の改善が目的です。5Gネットワークの導入により、高帯域幅と低遅延が実現され、遠隔操作機器の制御、高精細ビデオストリーミング、IoTデバイスの接続が強化されます。しかし、初期投資の高さと、既存のネットワークシステムとの統合が課題となります。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 21
   },
@@ -247,7 +247,7 @@
     "edition": "",
     "title": "Singapore launches autonomous feeder vessel EOI",
     "summary": "シンガポール海事港湾庁 (MPA) とPSA Singapore (PSA) は、自律走行フィーダー船の関心表明 (EOI) を開始しました。これは、海運業界のDXと自動化を推進し、効率的で持続可能な港湾運営を目指すものです。自律走行フィーダー船の導入により、人件費の削減、運航の安全性向上、24時間体制での運航が可能となります。技術的な成熟度、法規制の整備、海上交通における他の船舶との協調が課題です。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 22
   },
@@ -259,7 +259,7 @@
     "edition": "",
     "title": "MPA introduces OCEANS-X for maritime data connectivity",
     "summary": "シンガポールは、海事港湾庁 (MPA) が開発した新しいデータおよびAPI交換プラットフォーム「OCEANS-X」を立ち上げました。これは、海事データの接続性と共有を強化し、海運業界のDXを加速させることを目的としています。OCEANS-Xにより、異なるシステム間でのデータ連携が容易になり、サプライチェーン全体の可視性向上、意思決定の迅速化、新たなデジタルサービスの創出が期待されます。ただし、データ標準化の推進と、サイバーセキュリティ対策の強化が重要となります。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 23
   },
@@ -271,7 +271,7 @@
     "edition": "",
     "title": "MPA, LA, Long Beach advance GDSC implementation",
     "summary": "シンガポール海事港湾庁 (MPA)、ロサンゼルス港、ロングビーチ港は、GDSC (Green and Digital Shipping Corridor) の実施を進めています。これは、脱炭素化とDXを組み合わせたスマートポートの国際的な取り組みです。GDSCの導入により、船舶の運航効率向上、排出ガスの削減、デジタル技術を活用したサプライチェーンの最適化が期待されます。しかし、国際的な協力体制の構築、統一されたデータプラットフォームの開発、技術的な標準化が課題となります。",
-    "url": "https://www.porttechnology.org/editions/",
+    "url": "",
     "source": "magazine",
     "id": 24
   },
