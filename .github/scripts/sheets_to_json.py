@@ -25,7 +25,7 @@ SPREADSHEET_ID = "1jGre5314DttRSk2_xXVlFc0XxgroxKJMOVonhSTaLu0"
 SHEETS = {
     "list": {
         "gid": "0",
-        "range": "LIST!A:G",       # 検索日|国|カテゴリ|元タイトル|発信日|Gemini要約|URL
+        "range": "List!A:G",        # 検索日|国|カテゴリ|元タイトル|発信日|Gemini要約|URL
         "source": "news",
     },
     "technology": {
@@ -87,31 +87,40 @@ def fetch_sheet_values(api_key: str, range_name: str) -> list[list[str]]:
 def normalize_date(raw) -> str:
     """
     様々な日付フォーマットを YYYY-MM-DD に統一する。
-    UNFORMATTED_VALUE では日付が小数付きシリアル値（例: 46142.5328）で
-    返ってくるため、整数・小数の両方を処理する。
+
+    Sheets API UNFORMATTED_VALUE が返す形式:
+      - ISO 8601文字列: "2018-09-04T07:00:00.000Z"  ← 今回のケース
+      - シリアル値(小数): 46142.5328
+      - シリアル値(整数): 46142
+      - 通常文字列: "2026-04-18" / "2026/04/18"
     """
     if raw is None or str(raw).strip() == "":
         return ""
 
-    # 数値型（int/float）またはシリアル値文字列を処理
+    s = str(raw).strip()
+
+    # ① ISO 8601形式: "2018-09-04T07:00:00.000Z" → 先頭10文字で確定
+    if re.match(r"\d{4}-\d{2}-\d{2}T", s):
+        return s[:10]
+
+    # ② 数値シリアル値（整数・小数）: 40000〜60000 の範囲 = 2009〜2064年
     try:
-        serial = float(str(raw))
-        if 40000 < serial < 60000:  # 2009〜2064年の範囲
+        serial = float(s)
+        if 40000 < serial < 60000:
             epoch = datetime(1899, 12, 30, tzinfo=timezone.utc)
             dt = epoch + timedelta(days=serial)
             return dt.strftime("%Y-%m-%d")
     except ValueError:
         pass
 
-    s = str(raw).strip()
-
-    # YYYY-MM-DD / YYYY/MM/DD
+    # ③ YYYY-MM-DD / YYYY/MM/DD
     m = re.match(r"(\d{4})[/-](\d{1,2})[/-](\d{1,2})", s)
     if m:
         y, mo, d = m.groups()
         return f"{y}-{mo.zfill(2)}-{d.zfill(2)}"
 
-    return s[:10]  # フォールバック：先頭10文字
+    # ④ フォールバック：先頭10文字
+    return s[:10]
 
 
 def resolve_url(raw: str) -> str:
