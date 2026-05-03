@@ -123,27 +123,35 @@ def normalize_date(raw) -> str:
     return s[:10]
 
 
-def resolve_url(raw: str) -> str:
+def resolve_url(raw: str, fallback: str = "") -> str:
     """
     セルの値からURLを抽出して返す。
     スプレッドシートに混在する以下の形式すべてに対応:
       - 生URL:          "https://example.com"
       - HYPERLINK数式:  '=HYPERLINK("https://example.com","LINK")'
-      - 空・"#":        "" に統一
+      - 表示テキストのみ: "LINK" → Sheets APIがHYPERLINK数式の表示テキストだけ返す場合
+      - 空・"#":        fallback を返す（デフォルトは空文字）
     """
     if not raw:
-        return ""
+        return fallback
     s = str(raw).strip()
-    if s in ("#", ""):
-        return ""
+
+    # 空・無効値
+    if s in ("#", "", "LINK", "link", "Link"):
+        return fallback
 
     # HYPERLINK数式から生URLを抽出
     # =HYPERLINK("https://...", "LINK") -> https://...
     m = re.match(r'=HYPERLINK\(\s*"([^"]+)"', s, re.IGNORECASE)
     if m:
-        return m.group(1)
+        extracted = m.group(1)
+        return extracted if extracted else fallback
 
-    return s
+    # https:// で始まる通常のURL
+    if s.startswith("http"):
+        return s
+
+    return fallback
 
 
 def parse_list_sheet(rows: list[list]) -> list[dict]:
@@ -203,7 +211,8 @@ def parse_technology_sheet(rows: list[list]) -> list[dict]:
 
         title   = col(2)
         summary = col(4)
-        url     = resolve_url(col(5))
+        # URLが "LINK" テキストのみの場合は editions ページをfallbackとして使用
+        url     = resolve_url(col(5), fallback="https://www.porttechnology.org/editions/")
         if not title and not summary:
             continue
 
