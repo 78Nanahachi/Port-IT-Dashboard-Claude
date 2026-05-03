@@ -225,12 +225,18 @@ def parse_technology_sheet(rows: list[list]) -> list[dict]:
 
         title   = col(2)
         summary = col(4)
-        # URLが "LINK" テキストのみの場合は editions ページをfallbackとして使用
-        url     = resolve_url(col(5), fallback="https://www.porttechnology.org/editions/")
+        edition = col(3)
+
+        # URLの解決:
+        #   Editionあり（雑誌記事）→ "LINK"テキストの場合は editions 一覧をfallback
+        #   Editionなし（サイト記事）→ URLをそのまま使用、なければ空欄
+        if edition:
+            url = resolve_url(col(5), fallback="https://www.porttechnology.org/editions/")
+        else:
+            url = resolve_url(col(5), fallback="")
+
         if not title and not summary:
             continue
-
-        edition = col(3)
 
         # 日付: 発行月(B) のみ使用。A列（検索日）は無視する。YYYY-MM形式で保存
         date_raw_b = row[1] if len(row) > 1 and row[1] != "" else None
