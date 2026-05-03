@@ -125,16 +125,25 @@ def normalize_date(raw) -> str:
 
 def resolve_url(raw: str) -> str:
     """
-    Google News RSS の中間URLを処理する。
-    - https://news.google.com/rss/articles/... → そのまま保持（リダイレクト先は取得不可）
-    - 空・"#" → "" に統一
+    セルの値からURLを抽出して返す。
+    スプレッドシートに混在する以下の形式すべてに対応:
+      - 生URL:          "https://example.com"
+      - HYPERLINK数式:  '=HYPERLINK("https://example.com","LINK")'
+      - 空・"#":        "" に統一
     """
-    if not raw or raw.strip() in ("#", ""):
+    if not raw:
         return ""
-    url = raw.strip()
-    # Google News RSS URL はリダイレクトで有効期限が短い。
-    # 将来的に元URLへの解決が必要になった場合はここで処理を追加。
-    return url
+    s = str(raw).strip()
+    if s in ("#", ""):
+        return ""
+
+    # HYPERLINK数式から生URLを抽出
+    # =HYPERLINK("https://...", "LINK") -> https://...
+    m = re.match(r'=HYPERLINK\(\s*"([^"]+)"', s, re.IGNORECASE)
+    if m:
+        return m.group(1)
+
+    return s
 
 
 def parse_list_sheet(rows: list[list]) -> list[dict]:
