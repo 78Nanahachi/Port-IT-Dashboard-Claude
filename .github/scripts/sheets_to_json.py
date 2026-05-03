@@ -234,10 +234,10 @@ def parse_technology_sheet(rows: list[list]) -> list[dict]:
         edition = col(3)
 
         # URLの解決:
-        #   Editionあり（雑誌記事）→ "LINK"テキストの場合は editions 一覧をfallback
-        #   Editionなし（サイト記事）→ URLをそのまま使用、なければ空欄
+        #   Editionあり（雑誌記事）→ 常に editions 一覧ページ（個別URLは無視）
+        #   Editionなし（サイト記事）→ HYPERLINKのURLを使用
         if edition:
-            url = resolve_url(col(5), fallback="https://www.porttechnology.org/editions/")
+            url = "https://www.porttechnology.org/editions/"
         else:
             url = resolve_url(col(5), fallback="")
 
