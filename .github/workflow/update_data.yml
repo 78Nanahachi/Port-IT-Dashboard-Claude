@@ -1,1 +1,55 @@
+# .github/workflows/update_data.yml
+#
+# 毎週月曜 午前9時（JST）に Google Sheets から data.json を自動生成し、
+# 変更があれば commit & push → GitHub Pages が即座に更新される。
+#
+# 手動実行: GitHub の Actions タブ → "Update data.json" → Run workflow
+
+name: Update data.json
+
+on:
+  schedule:
+    # UTC 00:00 = JST 09:00 / 毎週月曜
+    - cron: "0 0 * * 1"
+  workflow_dispatch:   # 手動実行ボタンを有効化
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # data.json を push するために必要
+
+    steps:
+      # 1. リポジトリをチェックアウト
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Python をセットアップ（標準ライブラリのみ使うので追加インストール不要）
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # 3. スクリプトを実行して data.json を生成
+      - name: Generate data.json from Google Sheets
+        env:
+          SHEETS_API_KEY: ${{ secrets.SHEETS_API_KEY }}
+        run: |
+          python .github/scripts/sheets_to_json.py
+
+      # 4. 差分があれば commit & push
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data.json
+          # 変更がなければ何もしない（--allow-empty なし）
+          if git diff --staged --quiet; then
+            echo "data.json に変更なし。スキップします。"
+          else
+            RECORD_COUNT=$(python3 -c "import json; d=json.load(open('data.json')); print(len(d))")
+            git commit -m "chore: update data.json (${RECORD_COUNT} records) [skip ci]"
+            git push
+            echo "✅ data.json をプッシュしました（${RECORD_COUNT} 件）"
+          fi
 
