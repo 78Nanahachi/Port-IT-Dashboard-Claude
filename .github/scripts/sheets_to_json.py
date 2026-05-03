@@ -87,27 +87,45 @@ def fetch_sheet_values(api_key: str, range_name: str) -> list[list[str]]:
 def normalize_date(raw) -> str:
     """
     様々な日付フォーマットを YYYY-MM-DD に統一する。
-    Sheets の数値シリアル値（例: 46000）にも対応。
+    UNFORMATTED_VALUE では日付が小数付きシリアル値（例: 46142.5328）で
+    返ってくるため、整数・小数の両方を処理する。
     """
-    if not raw:
+    if raw is None or str(raw).strip() == "":
         return ""
-    s = str(raw).strip()
 
-    # Sheets のシリアル値（整数）
-    if re.fullmatch(r"\d{4,6}", s):
-        serial = int(s)
+    # 数値型（int/float）またはシリアル値文字列を処理
+    try:
+        serial = float(str(raw))
         if 40000 < serial < 60000:  # 2009〜2064年の範囲
             epoch = datetime(1899, 12, 30, tzinfo=timezone.utc)
             dt = epoch + timedelta(days=serial)
             return dt.strftime("%Y-%m-%d")
+    except ValueError:
+        pass
 
-    # YYYY/MM/DD HH:MM
+    s = str(raw).strip()
+
+    # YYYY-MM-DD / YYYY/MM/DD
     m = re.match(r"(\d{4})[/-](\d{1,2})[/-](\d{1,2})", s)
     if m:
         y, mo, d = m.groups()
         return f"{y}-{mo.zfill(2)}-{d.zfill(2)}"
 
     return s[:10]  # フォールバック：先頭10文字
+
+
+def resolve_url(raw: str) -> str:
+    """
+    Google News RSS の中間URLを処理する。
+    - https://news.google.com/rss/articles/... → そのまま保持（リダイレクト先は取得不可）
+    - 空・"#" → "" に統一
+    """
+    if not raw or raw.strip() in ("#", ""):
+        return ""
+    url = raw.strip()
+    # Google News RSS URL はリダイレクトで有効期限が短い。
+    # 将来的に元URLへの解決が必要になった場合はここで処理を追加。
+    return url
 
 
 def parse_list_sheet(rows: list[list]) -> list[dict]:
@@ -126,7 +144,7 @@ def parse_list_sheet(rows: list[list]) -> list[dict]:
 
         title   = col(3)
         summary = col(5)
-        url     = col(6)
+        url     = resolve_url(col(6))
         if not title and not summary:
             continue
 
@@ -134,7 +152,8 @@ def parse_list_sheet(rows: list[list]) -> list[dict]:
         cat, cat_label = resolve_category(raw_cat)
 
         # 日付は「発信日(E)」を優先、なければ「検索日(A)」
-        date_raw = col(4) or col(0)
+        # col() は str を返すが、シリアル値は数値型で来るため raw アクセスも使う
+        date_raw = row[4] if len(row) > 4 and row[4] != "" else (row[0] if row else "")
         date = normalize_date(date_raw)
 
         results.append({
@@ -166,14 +185,16 @@ def parse_technology_sheet(rows: list[list]) -> list[dict]:
 
         title   = col(2)
         summary = col(4)
-        url     = col(5)
+        url     = resolve_url(col(5))
         if not title and not summary:
             continue
 
-        edition = col(3)  # "Edition 123" などの文字列
+        edition = col(3)
 
-        # 日付: 発行日(A) → 発行月(B) の順で取得
-        date = normalize_date(col(0)) or normalize_date(col(1))
+        # 日付: 発行日(A) → 発行月(B) の順で取得（数値型のまま渡す）
+        date_raw_a = row[0] if len(row) > 0 and row[0] != "" else None
+        date_raw_b = row[1] if len(row) > 1 and row[1] != "" else None
+        date = normalize_date(date_raw_a) or normalize_date(date_raw_b)
 
         results.append({
             "date":     date,
