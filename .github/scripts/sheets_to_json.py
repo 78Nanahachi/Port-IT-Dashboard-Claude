@@ -9,6 +9,11 @@ data.json に統合して出力するスクリプト。
 ローカル実行:
   export SHEETS_API_KEY="your_api_key_here"
   python .github/scripts/sheets_to_json.py
+
+【修正履歴】
+  v2: LIST シートの G列（URL）を FORMULA で別取得してマージするよう修正
+      UNFORMATTED_VALUE では =HYPERLINK("URL","LINK") が "LINK" テキストだけ
+      返されてしまい、resolve_url() が空扱いにしていた問題を解消。
 """
 
 import os
@@ -282,25 +287,45 @@ def main():
         print("  export SHEETS_API_KEY='your_key_here'", file=sys.stderr)
         sys.exit(1)
 
+    # ── LIST シート ────────────────────────────────────────────────────────
     print("▶ LIST シートを取得中...")
     list_rows = fetch_sheet_values(api_key, SHEETS["list"]["range"])
+
+    # G列（URL）は FORMULA で別取得してマージ
+    # UNFORMATTED_VALUE では =HYPERLINK("URL","LINK") が "LINK" テキストのみ返り、
+    # resolve_url() が空扱いにしてしまうため、数式のまま取得して上書きする
+    print("  → LIST G列（URL）を FORMULA で再取得中...")
+    list_url_rows = fetch_sheet_values(api_key, "List!G:G", render="FORMULA")
+    for i, row in enumerate(list_rows):
+        formula_val = (
+            list_url_rows[i][0]
+            if i < len(list_url_rows) and list_url_rows[i]
+            else ""
+        )
+        if len(row) < 7:
+            row.extend([""] * (7 - len(row)))
+        row[6] = formula_val  # G列(index 6)を数式値で上書き
+
     list_records = parse_list_sheet(list_rows)
     print(f"  → {len(list_records)} 件取得")
 
+    # ── Technology シート ──────────────────────────────────────────────────
     print("▶ Technology シートを取得中...")
-    # 日付等は UNFORMATTED_VALUE、URL列(F列)は FORMULA で別取得してマージ
-    tech_rows       = fetch_sheet_values(api_key, SHEETS["technology"]["range"])
-    tech_url_rows   = fetch_sheet_values(api_key, "Technology!F:F", render="FORMULA")
-    # URL列をマージ: tech_rows の各行の6列目(index 5)を FORMULA 取得値で上書き
+    tech_rows     = fetch_sheet_values(api_key, SHEETS["technology"]["range"])
+    tech_url_rows = fetch_sheet_values(api_key, "Technology!F:F", render="FORMULA")
     for i, row in enumerate(tech_rows):
-        formula_val = tech_url_rows[i][0] if i < len(tech_url_rows) and tech_url_rows[i] else ""
+        formula_val = (
+            tech_url_rows[i][0]
+            if i < len(tech_url_rows) and tech_url_rows[i]
+            else ""
+        )
         if len(row) < 6:
             row.extend([""] * (6 - len(row)))
         row[5] = formula_val  # F列(index 5)を数式値で上書き
     tech_records = parse_technology_sheet(tech_rows)
     print(f"  → {len(tech_records)} 件取得")
 
-    # マージ → ID 採番
+    # ── マージ → ID 採番 → 出力 ───────────────────────────────────────────
     all_records = assign_ids(list_records + tech_records)
     total = len(all_records)
     print(f"▶ 合計 {total} 件を {OUTPUT_PATH} に書き出し中...")
