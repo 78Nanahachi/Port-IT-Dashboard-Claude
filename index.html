@@ -238,8 +238,11 @@ h1.hero-title em { color: var(--accent); font-style: normal; }
 .badge-edition { background: rgba(255,180,0,0.10); color: var(--amber); border: 1px solid rgba(255,180,0,0.25); font-size: 9px; }
 .card-date { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); white-space: nowrap; }
 .card-title { font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.45; }
-.card-summary { font-size: 12px; color: var(--text2); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.card-footer { display: flex; align-items: center; justify-content: flex-end; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--border); }
+.card-summary { font-size: 12px; color: var(--text2); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; transition: all 0.2s; }
+.card-summary.expanded { display: block; -webkit-line-clamp: unset; overflow: visible; }
+.card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--border); }
+.card-expand { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); background: none; border: none; cursor: pointer; letter-spacing: 0.05em; padding: 0; transition: color 0.15s; }
+.card-expand:hover { color: var(--accent); }
 .card-link { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); text-decoration: none; letter-spacing: 0.05em; transition: color 0.15s; display: flex; align-items: center; gap: 4px; }
 .card-link:hover { color: var(--accent); }
 .empty-state { grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: var(--text3); font-family: 'DM Mono', monospace; font-size: 12px; }
@@ -555,8 +558,9 @@ function renderCards() {
         <span class="card-date">${dateStr}</span>
       </div>
       <div class="card-title">${n.title}</div>
-      <div class="card-summary">${n.summary}</div>
+      <div class="card-summary" id="summary-${n.id}">${n.summary.replace(/\n/g, '<br>')}</div>
       <div class="card-footer">
+        <button class="card-expand" onclick="toggleSummary(${n.id}, this)">▼ 続きを読む</button>
         ${isExternal
           ? `<a class="card-link" href="${n.url}" target="_blank" rel="noopener">元記事を開く →</a>`
           : `<span class="card-link" style="opacity:0.4">リンクなし</span>`}
@@ -615,6 +619,14 @@ document.getElementById('search-input').addEventListener('input', e => {
 document.getElementById('sort-select').addEventListener('change', e => {
   sortMode = e.target.value; currentPage = 1; renderCards();
 });
+
+function toggleSummary(id, btn) {
+  const el = document.getElementById('summary-' + id);
+  if (!el) return;
+  const expanded = el.classList.toggle('expanded');
+  btn.textContent = expanded ? '▲ 閉じる' : '▼ 続きを読む';
+  btn.style.color = expanded ? 'var(--accent)' : '';
+}
 
 loadData();
 </script>
