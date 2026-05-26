@@ -126,7 +126,6 @@ header {
 .header-right { display: flex; align-items: center; gap: 1.5rem; }
 .header-meta { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--text3); letter-spacing: 0.05em; }
 .header-meta strong { color: var(--accent); }
-/* last-updated badge — filled after fetch */
 #last-updated { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--text3); }
 
 /* ─── HERO ────────────────────────────────────────── */
@@ -275,7 +274,6 @@ h1.hero-title em { color: var(--accent); font-style: normal; }
   <div class="logo">Port<span>IT</span> Watch</div>
   <div class="header-right">
     <span id="last-updated" class="header-meta"></span>
-    <div class="header-meta">ASEAN港湾ITニュースDB — データ更新: <strong>2026.04</strong></div>
   </div>
 </header>
 
@@ -310,12 +308,10 @@ h1.hero-title em { color: var(--accent); font-style: normal; }
     <div class="filter-group">
       <span class="filter-group-label">国</span>
       <button class="filter-btn active" data-filter="country" data-value="all">すべて</button>
-      <!-- Country buttons injected dynamically -->
     </div>
     <div class="filter-group" id="cat-filter-group">
       <span class="filter-group-label">カテゴリ</span>
       <button class="filter-btn active" data-filter="cat" data-value="all">すべて</button>
-      <!-- Category buttons injected dynamically -->
     </div>
   </div>
 
@@ -331,19 +327,14 @@ h1.hero-title em { color: var(--accent); font-style: normal; }
     <div class="result-count"><strong id="result-num">—</strong> 件表示中</div>
   </div>
 
-  <div class="news-grid" id="news-grid">
-    <!-- Cards injected here -->
-  </div>
-
+  <div class="news-grid" id="news-grid"></div>
   <div class="pagination" id="pagination"></div>
 </main>
 
 <script>
-// ─── CONFIG ────────────────────────────────────────────
-const DATA_URL    = './data.json';
-const PAGE_SIZE   = 20;
+const DATA_URL  = './data.json';
+const PAGE_SIZE = 20;
 
-// カテゴリ定義（日本語ラベルと色）
 const CAT_META = {
   smart:      { label: 'スマートポート',   color: '#00c8ff' },
   green:      { label: 'グリーン/脱炭素',  color: '#00e5a0' },
@@ -358,8 +349,7 @@ const COUNTRY_CLASS = {
   Philippines: 'badge-ph', ASEAN: 'badge-asean', Japan: 'badge-jp',
 };
 
-// ─── STATE ─────────────────────────────────────────────
-let NEWS_DATA    = [];
+let NEWS_DATA     = [];
 let activeCountry = 'all';
 let activeCat     = 'all';
 let searchQuery   = '';
@@ -368,7 +358,6 @@ let currentPage   = 1;
 let chartCountry  = null;
 let chartCat      = null;
 
-// ─── FETCH ─────────────────────────────────────────────
 async function loadData() {
   const overlay   = document.getElementById('loading-overlay');
   const loadText  = document.getElementById('loading-text');
@@ -382,14 +371,12 @@ async function loadData() {
     loadText.textContent = 'データを解析中...';
     NEWS_DATA = await res.json();
 
-    // 件数バリデーション
     if (!Array.isArray(NEWS_DATA) || NEWS_DATA.length === 0) {
       throw new Error('data.json の形式が正しくありません（空配列または配列以外）');
     }
 
     loadText.textContent = `${NEWS_DATA.length} 件読み込み完了`;
 
-    // 最新の検索日をヘッダーに表示
     const dates = NEWS_DATA.map(n => n.date).filter(Boolean).sort();
     const latestDate = dates[dates.length - 1];
     if (latestDate) {
@@ -397,13 +384,11 @@ async function loadData() {
         `最終更新: ${latestDate.replace(/-/g, '/')}`;
     }
 
-    // 初期化
     buildDynamicFilters();
     updateStats();
     buildCharts();
     renderCards();
 
-    // フェードアウト
     setTimeout(() => overlay.classList.add('hidden'), 400);
 
   } catch (err) {
@@ -414,9 +399,7 @@ async function loadData() {
   }
 }
 
-// ─── DYNAMIC FILTER BUTTONS ────────────────────────────
 function buildDynamicFilters() {
-  // 国ボタン（データから自動収集）
   const countries = [...new Set(NEWS_DATA.map(n => n.country))].sort();
   const countryGroup = document.querySelector('[data-filter="country"]').closest('.filter-group');
   countries.forEach(c => {
@@ -428,7 +411,6 @@ function buildDynamicFilters() {
     countryGroup.appendChild(btn);
   });
 
-  // カテゴリボタン（CAT_META 定義順）
   const catGroup = document.getElementById('cat-filter-group');
   Object.entries(CAT_META).forEach(([key, meta]) => {
     const btn = document.createElement('button');
@@ -439,7 +421,6 @@ function buildDynamicFilters() {
     catGroup.appendChild(btn);
   });
 
-  // イベント委譲でフィルタ処理
   document.querySelectorAll('.filters-section').forEach(sec => {
     sec.addEventListener('click', e => {
       const btn = e.target.closest('.filter-btn');
@@ -455,7 +436,6 @@ function buildDynamicFilters() {
   });
 }
 
-// ─── STATS ─────────────────────────────────────────────
 function updateStats() {
   const countries = new Set(NEWS_DATA.map(n => n.country)).size;
   const cats      = new Set(NEWS_DATA.map(n => n.cat)).size;
@@ -468,7 +448,6 @@ function updateStats() {
   document.getElementById('stat-latest').textContent    = isFinite(latest) ? latest : '—';
 }
 
-// ─── CHARTS ────────────────────────────────────────────
 function buildCharts() {
   const countryOrder  = ['Vietnam','Malaysia','Philippines','Indonesia','ASEAN','Japan'];
   const countryColors = ['#00c8ff','#00e5a0','#f472b6','#ffb400','#a78bfa','#ff5e5e'];
@@ -510,21 +489,16 @@ function buildCharts() {
   });
 }
 
-// チャートを現在のフィルタ状態に合わせて更新
 function updateCharts(filtered) {
   if (!chartCountry || !chartCat) return;
-
-  const countryOrder = ['Vietnam','Malaysia','Philippines','Indonesia','ASEAN','Japan'];
   const cl = chartCountry.data.labels;
   chartCountry.data.datasets[0].data = cl.map(c => filtered.filter(n => n.country === c).length);
   chartCountry.update();
-
   const catKeys = Object.keys(CAT_META);
   chartCat.data.datasets[0].data = catKeys.map(k => filtered.filter(n => n.cat === k).length);
   chartCat.update();
 }
 
-// ─── FILTERING + SORTING ───────────────────────────────
 function getFiltered() {
   const q = searchQuery.toLowerCase();
   return NEWS_DATA.filter(n => {
@@ -540,10 +514,9 @@ function getFiltered() {
   });
 }
 
-// ─── RENDER CARDS ──────────────────────────────────────
 function renderCards() {
-  const filtered = getFiltered();
-  const total    = filtered.length;
+  const filtered   = getFiltered();
+  const total      = filtered.length;
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
   if (currentPage > totalPages) currentPage = totalPages;
 
@@ -565,11 +538,9 @@ function renderCards() {
     const countryClass = COUNTRY_CLASS[n.country] || 'badge-vn';
     const catLabel     = (CAT_META[n.cat] || {}).label || n.catLabel || n.cat;
     const isExternal   = n.url && n.url !== '#';
-    // magazineは YYYY-MM（年月のみ）、それ以外は YYYY-MM-DD
     const dateStr      = n.source === 'magazine'
-      ? (n.date || '').slice(0, 7).replace('-', '/')   // "2026-04" → "2026/04"
+      ? (n.date || '').slice(0, 7).replace('-', '/')
       : (n.date || '').replace(/-/g, '/');
-    // Editionバッジ（magazineのみ表示）
     const editionBadge = (n.source === 'magazine' && n.edition)
       ? `<span class="badge badge-edition">${n.edition}</span>`
       : '';
@@ -596,18 +567,14 @@ function renderCards() {
   renderPagination(totalPages);
 }
 
-// ─── PAGINATION ────────────────────────────────────────
 function renderPagination(totalPages) {
   const pg = document.getElementById('pagination');
   if (totalPages <= 1) { pg.innerHTML = ''; return; }
 
   const p = currentPage;
   let html = '';
-
-  // 前へボタン
   html += `<button class="page-btn" onclick="goPage(${p-1})" ${p===1?'disabled':''}>← 前</button>`;
 
-  // ページ番号（最大7つ表示）
   const pages = [];
   if (totalPages <= 7) {
     for (let i = 1; i <= totalPages; i++) pages.push(i);
@@ -639,7 +606,6 @@ function goPage(n) {
   window.scrollTo({ top, behavior: 'smooth' });
 }
 
-// ─── SEARCH + SORT EVENTS ──────────────────────────────
 let searchTimer;
 document.getElementById('search-input').addEventListener('input', e => {
   clearTimeout(searchTimer);
@@ -650,7 +616,6 @@ document.getElementById('sort-select').addEventListener('change', e => {
   sortMode = e.target.value; currentPage = 1; renderCards();
 });
 
-// ─── BOOT ──────────────────────────────────────────────
 loadData();
 </script>
 </body>
