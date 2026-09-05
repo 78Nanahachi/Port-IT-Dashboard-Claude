@@ -373,12 +373,18 @@ async function loadData() {
     if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
 
     loadText.textContent = 'データを解析中...';
-    NEWS_DATA = await res.json();
-
+    const raw = await res.json();
+    // 旧形式(配列)と新形式({meta, items})の両方に対応
+    const meta = Array.isArray(raw) ? {} : (raw.meta || {});
+    NEWS_DATA  = Array.isArray(raw) ? raw : (raw.items || []);
     if (!Array.isArray(NEWS_DATA) || NEWS_DATA.length === 0) {
       throw new Error('data.json の形式が正しくありません（空配列または配列以外）');
     }
-
+    if (meta.version) {
+      const vEl = document.querySelector('.hero-version');
+      if (vEl) vEl.textContent = `(${meta.version})`;
+      document.title = `PortIT Watch — ASEAN港湾ITニュースDB ${meta.version}`;
+    }
     loadText.textContent = `${NEWS_DATA.length} 件読み込み完了`;
 
     const dates = NEWS_DATA.map(n => n.date).filter(Boolean).sort();
