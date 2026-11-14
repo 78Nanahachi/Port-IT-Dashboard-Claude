@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "v9.1",
-    "generatedAt": "2026-11-14 21:40",
+    "generatedAt": "2026-11-14 21:51",
     "count": 205
   },
   "items": [
@@ -11,8 +11,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "不正アクセス／物流企業で被害相次ぐ、個人情報漏えいやサービス停止 - 物流ニュースのLNEWS",
-      "summary": "本文を取得できなかったため、タイトルに基づく簡易要約です。\n\n**■概要:**\n物流企業において不正アクセスによる被害が相次いでおり、個人情報の漏えいやサービスの停止が発生している。\n\n**■港湾IT的観点:**\nタイトルからは港湾ITに特化した具体的な内容は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9nbUdaR0NuX08zaE40Y2ZjT2tFNENDM3JBdS1laWZOeVFqMEdwTlFjU0VKN2NiUHdZOTZXdF9ObFNHbDFPVVFNejY4TXBXRXk2aDk4LQ?oc=5",
+      "summary": "■概要:\n2026年10月以降、Shippio、CBcloud、エスケーロジ、佐川急便、ヤマト運輸、日本郵便、日水物流など多くの物流関連企業が不正アクセスの被害を受けた。これにより、サイトの一時停止や貿易DXサービスの一時停止などの措置が講じられた。\n\n■主なポイント:\n・2026年10月以降、物流関連企業で不正アクセスの被害が相次いでいる。\n・LNEWS調べでは、11月4日現在、Shippio、CBcloud、エスケーロジ、佐川急便、ヤマト運輸、日本郵便、日水物流が被害を受けた。\n・Shippioは不正アクセスにより貿易DXサービスを一時停止し、顧客情報漏えいを確認した。\n・佐川急便は、本件に起因する不正利用等の被害報告は寄せられていないとしつつも、同社や同社サービスを装った迷惑メールや不審な電話、SMS等が届く可能性があるとして注意を呼び掛けている。\n・日水物流は、10月20日時点で全17拠点において通常の入出荷業務を再開している。\n\n■港湾IT的観点:\nこの記事は、物流企業のITシステムがサイバー攻撃の標的となり、サービス停止や情報漏えいが発生していることを示しており、港湾のIT化やDX推進においてセキュリティ対策の重要性が高まっていることを意味する。",
+      "url": "https://www.lnews.jp/2026/11/s1104705.html",
       "source": "news",
       "id": 1
     },
@@ -33,8 +33,8 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "Carbon Border Adjustment Mechanism - ANTARA News",
-      "summary": "■概要:\nインドネシアのANTARA通信が、炭素国境調整メカニズム（CBAM）に関する記事を報じています。\n\n■港湾IT的観点:\nタイトルからは、港湾IT、DX、自動化といった具体的な観点については判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9DSzRhalJuaGlmSG5FNW5FeUhhbV8zaWJHNXdpeFZveXF6RjRmTjRvYnI5R09KdFpjRGJJZ29HSF93aHZzZlMwRktWSXZacTg3MEFYbnZldmtwdXRIMXQ2NTB6TkxWWkNNR1JtUEs2cFEzZw?oc=5",
+      "summary": "■概要:\nインドネシアは、欧州連合の炭素国境調整メカニズム（CBAM）の下でのコンプライアンスコストを削減するため、産業排出量の検証を加速するよう促されている。また、インドネシアの貿易省は、EUおよび英国の鉄鋼関税の影響を軽減するための緊急措置を準備している。\n\n■主なポイント:\n・インドネシアは、欧州連合の炭素国境調整メカニズム（CBAM）の下でのコンプライアンスコストを削減するため、産業排出量の正確な検証を加速するよう促されている（2026年10月29日）。\n・インドネシアの貿易省は、EUおよび英国の50パーセントの鉄鋼関税の影響を軽減するための緊急措置を準備している（2026年10月16日）。\n・インドネシア政府は、インドネシアのプランテーションおよび林業製品が直面する様々な課題や非関税障壁の監視を継続している（2026年10月6日）。\n・インドネシアの産業省は、世界の気温上昇を1.5℃以内に抑えるため、産業の脱炭素化を推進している（2025年12月5日）。\n・インドネシアは、グリーン産業の発展を促進し、効率性と有効性を優先することにコミットしている（2022年9月24日）。\n\n■港湾IT的観点:\n記事は直接的に港湾ITに言及していないが、CBAMや鉄鋼関税、非関税障壁への対応、産業の脱炭素化は、サプライチェーン全体の効率化と透明性向上を求めるものであり、港湾におけるIT化、DX、自動化、スマートポート化は、これらの要件を満たす上で不可欠な要素となる。",
+      "url": "https://en.antaranews.com/tag/carbon-border-adjustment-mechanism",
       "source": "news",
       "id": 3
     },
@@ -77,7 +77,7 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "Decarbonization Roadmaps - ANTARA News",
-      "summary": "■概要\nインドネシアのANTARA Newsが、脱炭素化ロードマップに関する記事を報じています。\n\n■港湾IT的観点\nタイトルからは判断不可。",
+      "summary": "インドネシア政府は、インフラ・地域開発調整大臣アグス・ハリマルティ・ユドヨノ氏によると、2026年5月に運輸部門の脱炭素化ロードマップを発表する予定です。このロードマップは、運輸部門全体の炭素排出量を削減するための中長期的な戦略的措置を概説します。また、英国とのパートナーシップを通じて、運輸部門の脱炭素化を加速するためのロードマップも策定されました。\n\n■主なポイント\n・インドネシア政府は、インフラ・地域開発調整大臣アグス・ハリマルティ・ユドヨノ氏が発表した通り、2026年5月に運輸部門の脱炭素化ロードマップを策定・発表する予定です。\n・このロードマップは、陸上輸送（BRTシステム、電気自動車、バイオ燃料の使用）、航空（持続可能な航空燃料SAFの採用）、海上輸送（グリーンポートイニシアチブの実施）における脱炭素化のパイロットプロジェクトを含みます。\n・トランス・スマトラ、トランス・カリマンタン、トランス・スラウェシ鉄道網の開発に関する規制の草案作成と制定が優先事項として挙げられています。\n・インフラ・地域開発調整省は、持続可能な航空燃料の実施に関する大統領令も準備しています。\n・このロードマップは、英国の「加速気候移行のためのパートナーシップ（UK PACT）」プログラムの一環として、運輸省が世界資源研究所（WRI）インドネシアおよびその他のコンソーシアムパートナーと協力して開発されました。\n\n■港湾IT的観点\nこの動きは、インドネシアの港湾がIT化、DX、自動化、脱炭素、インフラ開発の文脈で、グリーンポートイニシアチブの実施を通じて、より持続可能で効率的な運営を目指すことを意味します。\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
       "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE5QNENwUW52SHpyYkFHXzZYZTdXQm5YXzNBcFZRaWdsMHEtX1NnQmpaT29hcXV1QlM2UTh2Mmg0dGFYS0N1d0VrUWdYSzEwakJBR0lJdzhhUjBiQVdRUXlkRDZNcVo?oc=5",
       "source": "news",
       "id": 7
@@ -110,8 +110,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "Cisco, PSA to trial AI incident management platform at Tuas Port - Port Technology",
-      "summary": "■概要:\nCiscoとPSAは、Tuas PortにおいてAIインシデント管理プラットフォームの試行を実施します。\n\n■港湾IT的観点:\n港湾ITの観点からは、AI技術が港湾のインシデント管理に導入され、プラットフォームとして試行されることが示されています。",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5MT3hIVjdwQ1FnSWZxdEptb25qWmxiczlDcWhrTHBwWmZOV1ZzZFAzek9hV2NCSzFjTEZremtiUm5VeXZfd0hSNVNpSDNDVWhISVJzRTZVY0tDRUh4djRQWU9kVFpHNkM3N01Hck0yRQ?oc=5",
+      "summary": "概要:\nCiscoとPSA Singaporeは、世界最大の全自動コンテナターミナルであるTuas Portにおいて、AIを活用したオブザーバビリティおよびインシデント管理プラットフォームの概念実証を開発します。このプラットフォームは、Tuas Portのデジタルレジリエンスを強化することを目的としています。\n\n主なポイント:\n・港湾・ターミナル名：Tuas Port\n・事業者・発注者・港湾当局：PSA Singapore\n・ベンダー・システム・技術名：Cisco、AIを活用したオブザーバビリティおよびインシデント管理プラットフォーム\n・時期と段階：概念実証（Proof of Concept）を開発し、Tuas Port Phase 2 Living Labで最初に実装。\n・目的：デジタルレジリエンスの強化、計画外の停止の削減、将来的な停止の事前防止。\n\n港湾IT的観点:\nこの動きは、港湾のIT化、DX、自動化の文脈において、AIを活用したシステムが港湾運営の安定性と効率性を向上させ、サイバーセキュリティを強化することで、スマートポートの実現に向けた重要な一歩となることを意味します。\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
+      "url": "https://www.porttechnology.org/news/ai/cisco-psa-ai-tuas-port/",
       "source": "news",
       "id": 10
     },
@@ -121,8 +121,8 @@
       "cat": "dev",
       "catLabel": "[Dev] 開発・投資・入札",
       "title": "S’pore launches first LNG tender, eyes third terminal - The Star",
-      "summary": "**■概要:**\nシンガポールは初めて液化天然ガス（LNG）の入札を開始し、3番目のターミナルの建設を計画しています。\n\n**■港湾IT的観点:**\nタイトルからは、港湾IT、DX、自動化、脱炭素に関する具体的な情報は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMHp5Y2E3M3dNaWxKMndhZGVsZjBLOUVkSThFY3R3YWVfd0otbHF4S2o3N1F6RkpLUVNYOWNrcnp6d1NUREd4NmJBZzBSQWFRUHo4UUFQazJFLW5YWlJsZXlRY3dzOC1Kd0lyTDYzdXpPYWpxdkM2RzJudUFYNW1feEVQX0lpOFFTUFI1MEplYjQzWlRUMkJKRjBvY0cxS3ZjUVFqWHJJSWZOSUVUVExIZmlR?oc=5",
+      "summary": "概要: シンガポールが初のLNG入札を開始し、第三のターミナルを検討している。\n\n港湾IT的観点: タイトルからは判断不可。",
+      "url": "https://www.thestar.com.my/business/business-news/2026/10/28/spore-launches-first-lng-tender-eyes-third-terminal",
       "source": "news",
       "id": 11
     },
@@ -132,8 +132,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "Japanese contractor wins $166m Sihanoukville terminal deal - Splash247",
-      "summary": "以下、ご指定の記事タイトルに基づく要約です。\n\n**■概要:**\n日本の請負業者が、1億6600万ドル規模のシアヌークビルにおけるターミナル契約を獲得した。\n\n**■港湾IT的観点:**\nタイトルからは、港湾におけるIT、DX、自動化、脱炭素に関する具体的な内容は判断できない。",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUUFSSDY5OUU4aWc5MEpaSW5hV3NvRVJiZXJEVmhwUEtMVjJtcUR2X3lSMjJuS2toOGg5bFoyQnFQYmloY2gwVVRRM3B0dVFqM2NvOWpIa1ZWT0VSLUs3SU05ZzBEelFXTjJUcG5CMUQ5d2x6aXBSNlNHM1ZKN0NFdkE4V1J2b0U?oc=5",
+      "summary": "概要: 日本の建設業者がシアヌークビル港のターミナル契約を1億6600万ドルで獲得した。\n\n港湾IT的観点: タイトルからは判断不可。",
+      "url": "https://splash247.com/japanese-contractor-wins-166m-sihanoukville-terminal-deal/",
       "source": "news",
       "id": 12
     },
@@ -143,8 +143,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "Japanese contractor wins $166m Sihanoukville terminal deal - Splash247",
-      "summary": "## 記事タイトルからの要約\n\n**■概要:**\n日本の建設業者が、カンボジアのシアヌークビル（Sihanoukville）におけるターミナル案件を1億6600万ドルで受注しました。\n\n**■港湾IT的観点:**\n本タイトルからは、港湾のIT、DX、自動化、または脱炭素に関する内容は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNUUFSSDY5OUU4aWc5MEpaSW5hV3NvRVJiZXJEVmhwUEtMVjJtcUR2X3lSMjJuS2toOGg5bFoyQnFQYmloY2gwVVRRM3B0dVFqM2NvOWpIa1ZWT0VSLUs3SU05ZzBEelFXTjJUcG5CMUQ5d2x6aXBSNlNHM1ZKN0NFdkE4V1J2b0U?oc=5",
+      "summary": "概要: 日本の建設業者がシアヌークビル港のターミナル契約を1億6600万ドルで獲得した。\n\n港湾IT的観点: タイトルからは判断不可。",
+      "url": "https://splash247.com/japanese-contractor-wins-166m-sihanoukville-terminal-deal/",
       "source": "news",
       "id": 13
     },
@@ -154,8 +154,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "Cisco and PSA Singapore Collaborate on Tuas Port with AI-Driven Operations - The Maritime Executive",
-      "summary": "■概要:\nシスコとPSAシンガポールがトゥアス港において協業していることが示されています。この協業はAIを活用したオペレーションに焦点を当てています。\n\n■港湾IT的観点:\n本取り組みは、トゥアス港の運用においてAI技術の導入と活用が進められていることを明確に示しています。",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNUHRLemVxbEEzYlNwYVJKNnMwTTdCd2x5T3lzUnBoSmhuZG9uaDhFSkZVMGlWOVlwT1RUQkVkMmlNY1VCYlJyUjRmbU40dzQ2SmUzUHlnRHIwdkNnUGMxc1hkUVVVTjRPMXUzMGtnUE8wMTlYT3hMR05kTWNGNDBQQWw3R0ZDX1c2VkNOejE2YUNqeTBLWHpZZ2FPdHpKaE01RkViSS1FWWpoYVR3RXoyYkJ4N0h5am1zOUl3UFMwb2loMHVXSVZCMy0zZzR0S3d5S1FWM3Jn?oc=5",
+      "summary": "■概要: 誰が・どこで・何をしたか（何が決まったか）を事実ベースで2〜3文。\nCiscoとPSA Singapore（PSA）は、Tuas Portのデジタル変革を加速させるための戦略的協業を発表しました。両社は、AIを活用したオブザーバビリティおよびインシデント管理プラットフォームの概念実証を開発します。この協業は、CiscoのCountry Digital Accelerationプログラムの一環として行われます。\n\n■主なポイント: 記事に記載のある具体情報を「・」で3〜5点。次の情報は省略せず固有名詞・数値のまま書くこと：\n  港湾・ターミナル名／事業者・発注者・港湾当局／ベンダー・システム・技術名／金額・TEU・面積・期間などの数値／時期と段階（計画・入札・契約・着工・稼働）。\n・CiscoとPSA Singapore（PSA）は、Tuas Portのデジタル変革を加速させるための戦略的協業を発表しました。\n・協業の目的は、Tuas Port向けにAIを活用したオブザーバビリティおよびインシデント管理プラットフォームの概念実証を開発することです。\n・Tuas Portは現在、世界最大の完全自動化コンテナターミナルです。\n・このプラットフォームは、PSAのアプリケーション、インフラ、ネットワークシステムからのリアルタイムパフォーマンスデータを一元化し、AIを使用してサービスとインフラの相互作用をマッピングすることで、インシデント発生時の影響サービス特定、根本原因診断、リアルタイムでの解決策推奨を支援します。\n・プラットフォームは、Tuas Port Phase 2 Living Labで最初に実装され、2040年代の完全完成に向けて港湾の継続的な開発を支援するイノベーションのテスト、検証、改良が行われます。\n\n■港湾IT的観点: 港湾のIT化・DX・自動化・脱炭素・インフラ開発の文脈でこの動きが何を意味するかを1〜2文（記事から言える範囲に限る）。\nこの協業は、AIを活用したオブザーバビリティとインシデント管理プラットフォームを導入することで、Tuas Portのデジタルレジリエンスと運用効率を向上させ、港湾のIT化とDXを推進する重要なステップです。これにより、ダウンタイムの削減とサプライチェーンの信頼性強化が期待されます。",
+      "url": "https://maritime-executive.com/corporate/cisco-and-psa-singapore-collaborate-to-power-the-next-phase-of-tuas-port-with-ai-driven-operations",
       "source": "news",
       "id": 14
     },
@@ -165,7 +165,7 @@
       "cat": "smart",
       "catLabel": "[DX] DX・スマートポート",
       "title": "神戸海運貨物取扱業組合、港湾DXで現場改善。適正取引の構築目指す - 日本海事新聞 電子版",
-      "summary": "承知いたしました。記事タイトルから読み取れる範囲で要約します。\n\n**■概要:**\n神戸海運貨物取扱業組合は、港湾におけるデジタルトランスフォーメーション（DX）を推進し、現場の改善に取り組んでいます。この取り組みを通じて、適正な取引関係の構築を目指しています。\n\n**■港湾IT的観点:**\n港湾ITの観点からは、港湾DXが現場改善のための具体的な手段として活用されていることが読み取れます。",
+      "summary": "概要:\n神戸海運貨物取扱業組合は2026年10月21日に神戸市内で第79期定時総会を開催し、港湾DXによる現場改善と適正取引の構築を目指す方針を承認しました。 須藤明彦理事長（大森廻漕店会長）は、人手不足やコスト上昇といった海貨業界の厳しい経営環境に触れ、専門性と調整力を活かして荷主の事業を物流面から支える役割を強化する必要性を強調しました。\n\n主なポイント:\n・神戸海運貨物取扱業組合は2026年10月21日に神戸市内で第79期定時総会を開催しました。\n・総会では、港湾DXによる現場改善と適正取引の構築が目指されます。\n・須藤明彦理事長（大森廻漕店会長）は、人手不足やコスト上昇といった海貨業界の厳しい経営環境に言及しました。\n・理事長は、海貨業界が長年培ってきた専門性や調整力を生かし、荷主の事業を物流の面から支える役割をさらに高める必要があると強調しました。\n・港湾物流のデジタル化を現場の業務改善につなげるとともに、適正取引の構築に注力します。\n\n港湾IT的観点:\nこの動きは、神戸港における港湾物流のデジタル化とDX推進を通じて、現場の業務効率化と生産性向上を図ることを意味します。 また、適正取引の構築を目指すことで、港湾コミュニティ全体の持続可能な発展に貢献する可能性があります。\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
       "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5hY0lNZTduTDNyM09vblN6eFYzeTdxRGhRc3E5WDRpRGR3VGhOYnBIaE92Vzc3U2JSVFRCdUVSdjdsTFMzbU84MXc5Z2RteFVpV3QwMVV3?oc=5",
       "source": "news",
       "id": 15
@@ -176,8 +176,8 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "DOTr, MARINA to pilot e-ferries in Iloilo, hybrid vessels in Batangas - Philippine News Agency",
-      "summary": "はい、承知いたしました。記事タイトルから読み取れる範囲で要約します。\n\n---\n\n**■概要:**\nフィリピン運輸省（DOTr）とフィリピン海事産業庁（MARINA）が協力し、イロイロで電気フェリーの、バタンガスでハイブリッド船舶の試験運用を開始する予定です。\n\n**■港湾IT的観点:**\nタイトルからは、船舶の推進技術に関する情報が読み取れますが、港湾におけるIT・DX・自動化の具体的な内容については判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUkZlYVdjQ3l4RFUxVHJnRUpNak1FYWZDUHdmSXhOMXFpemFKUkdFNjJ2TkZFMG1kMVMxVk5vMHBUeWNOWnZabXpFY2g5LVkwX2xPZlJTZ2ZuZG9tYTliVEU1R2xoQW9rdlQ3UG1HTFVxd2tyWF9OSkx0RjNLcm1Vd2x0Q2ZJdjR2X3pYNTFmakxTay1JWjh3QUJUQWwwWnc?oc=5",
+      "summary": "■概要:\nフィリピン運輸省（DOTr）と海事産業庁（MARINA）は、炭素排出量と運航コスト削減のため、イロイロ-バコロド航路で電気フェリー、バタンガス-カラパン航路でハイブリッド船の試験運用を開始する。この取り組みは、よりクリーンで持続可能な公共交通機関を推進するフェルディナンド・R・マルコス・ジュニア大統領の意向に沿うものである。\n\n■主なポイント:\n・DOTrとMARINAは、イロイロ-バコロド航路で電気フェリー、バタンガス-カラパン航路でハイブリッド船の試験運用を行う。\n・純粋な電気船はイロイロ-バコロドのような短距離航路、ハイブリッド船はバタンガス-カラパンのような中距離航路で検討されている。\n・MARINAのデータによると、2025年には約6,900万人の海上旅客が記録され、約4,000隻の国内旅客船のうち約300隻の離島フェリーが国内フェリーからの二酸化炭素排出量の約86%を占めている。\n・世界銀行は、電気フェリーは従来の船舶より約1,000万米ドル高価だが、8%以上の収益を生み出す可能性があると指摘している。\n・Archipelago Philippine Ferries Corporationのクリストファー・パストラナ社長は、FastCat船を電気動力に改造する意向を表明した。\n・DOTrとMARINAは、11月4日にイロイロで「離島フェリー脱炭素化パイロットプロジェクトに関する利害関係者協議」を開催する。\n\n■港湾IT的観点:\nこの動きは、フィリピンの港湾における脱炭素化と持続可能なインフラ開発に向けた重要な一歩であり、電気およびハイブリッド船舶の導入は、将来的に港湾の充電インフラや関連するデジタル管理システムの必要性を高める可能性がある。",
+      "url": "https://www.pna.gov.ph/article/dotr-marina-to-pilot-e-ferries-in-iloilo-hybrid-vessels-in-batangas",
       "source": "news",
       "id": 16
     },
@@ -187,8 +187,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "1ヶ月間の海運ニュース - 日本海事新聞 電子版",
-      "summary": "**■概要:**\n本記事は、日本海事新聞の電子版が提供する、1ヶ月間の海運に関するニュースをまとめたものである。\n\n**■港湾IT的観点:**\nタイトルが「海運ニュース」と広範であるため、港湾のIT・DX・自動化・脱炭素に関する具体的な情報が含まれるかはタイトルからは判断不可。",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE11akdGSkJobENtMHVXTmp4LVpLMFZBZ0dILXlrbElOcGhpMnF2V0ZQWldyR0tEeGNJWWM1SnRYS2tMNU9EUzZDdEhnNFgwdW1ybTR4MFF1WURkQTFRZWJFdzBTX21oeS1tdmtJZ1oxbnY?oc=5",
+      "summary": "■概要:\n運輸総合研究所は、日インドネシア物流ワーキンググループ（WG）の第2回会合を11月5日にインドネシアのジャカルタで開催し、オンラインで一般公開すると発表した。韓国・釜山港湾公社（BPA）は11月26日に大分県で釜山港セミナーを開催する。\n\n■主なポイント:\n・運輸総合研究所は、今年5月に立ち上げた「日インドネシア物流ワーキンググループ（WG）」の第2回会合を11月5日にインドネシアのジャカルタで開催する。\n・日本物流団体連合会は11月から来年2月にかけて、会員企業と合同で2026年度の「物流業界合同説明会」を大阪・東京の両会場（対面）とオンラインで開催する。\n・大阪市が発表した港営事業会計の2025年度決算は、収益が約126億円、費用が約71億円で、損益収支は約56億円の黒字だった。\n・日本郵船グループのMTIは11月、研究開発の成果を報告する講演会「Monohakobi Techno Forum（モノハコビ・テクノ・フォーラム）2026」を都内で開催する。\n・韓国・釜山港湾公社（BPA）は11月26日、大分県で釜山港セミナーを開催する。\n\n■港湾IT的観点:\n本文に記載なし。",
+      "url": "http://www.jmd.co.jp/articleList.php?page=37&category=air_cargo",
       "source": "news",
       "id": 17
     },
@@ -198,8 +198,8 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "Govt drafting national shipping roadmap to drive growth - ANTARA News",
-      "summary": "**■概要:**\nインドネシア政府は、国の成長を促進するために国家海運ロードマップを策定しています。\n\n**■港湾IT的観点:**\nタイトルからは、港湾IT、DX、自動化、脱炭素に関する具体的な内容は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPMnlVdGtyeEN4WHZFNDN5Uzd5SXNHMkEtMWtIVGFhNk1yX0JBbmhocFNESnZIUlpIMFZ3MjV5eXhIMXhNV0pfNnNzZXNxYW8wUzlvN19fSGdKNU9CVy12NEdfSS16TlNTdGEwZEZGbThmSGY0ZGQzaFljeHNMaFZtenVnUm5lOVhsanVQN2NJLWVMLWp1aWJhVDR4dUFrdEM1Y25oNHctb2ZlYTl0UHR5dXVHMGtQSUNSNlZzTnRSOWdLV0V3aGFyQXVIb09RU2lNMW1MQ3pLXzh2dnlLV0s2ZDhuXy1HNXQzNzA5ODNsOUQtNHM?oc=5",
+      "summary": "■概要:\nインドネシアの産業省は、国内の海運産業の競争力強化、製造能力拡大、経済への貢献度向上を目指し、包括的な国家海運産業ロードマップを策定している。このロードマップは、海事産業の発展を導き、国の艦隊要件に生産を合わせるための構造的な基盤となる。\n\n■主なポイント:\n・インドネシア産業省は「国家海運産業ロードマップ」を策定中である。\n・ロードマップは、労働力訓練、先進技術導入、グリーンシッピング慣行、サプライチェーン全体での国内コンテンツ統合に焦点を当てている。\n・2026年から2030年の期間に、政府はジャワ島とバタム島以外の造船所インフラを拡張し、最大30,000DWTの船舶と最大60,000DWTのタンカーを建造することを目指す。\n・優先事項には、2,000人収容可能な旅客船、防衛およびオフショアエネルギー部門向けの特殊船舶の生産が含まれる。\n・持続可能性を推進するため、液化天然ガス、液化石油ガス、電気推進技術の使用を奨励し、船舶建造における国内コンテンツの目標を40%に設定している。\n・2022年から2026年半ばにかけて、インドネシアは船舶および浮体構造物を45.3億米ドル輸出したが、輸入は53.0億米ドルに達した。\n\n■港湾IT的観点:\nこの動きは、インドネシアの海運産業全体におけるデジタル化と技術変革への強い意欲を示しており、港湾のIT化、DX、自動化、スマートポート化、および脱炭素化に向けたインフラ開発と投資が加速する可能性を示唆している。",
+      "url": "https://en.antaranews.com/news/437025/govt-drafting-national-shipping-roadmap-to-drive-growth?utm_source=antaranews&utm_medium=desktop&utm_campaign=popular_right",
       "source": "news",
       "id": 18
     },
@@ -209,8 +209,8 @@
       "cat": "dev",
       "catLabel": "[Dev] 開発・投資・入札",
       "title": "DTI to fast-track $2-B I Squared Capital energy, infra investments - Philippine News Agency",
-      "summary": "本文を取得できなかったため、以下の記事タイトル（英語）から読み取れる範囲で日本語で要約します。\n\n**■概要:**\nフィリピン貿易産業省（DTI）は、Iスクエアド・キャピタルによる20億ドル規模のエネルギーおよびインフラ投資の迅速な推進を図る。\n\n**■港湾IT的観点:**\nタイトルにはエネルギーおよびインフラ投資に関する言及はあるものの、港湾IT、DX、自動化、脱炭素に直接関連する具体的な内容は読み取れない。",
-      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxObW9GUGoyZXB1X3RmdzFyV2xsX0ppOFNldXJFVkNxZ2UyamlqRVVMWlo4RUJqZFFUMVZydTRWZ0I3ZXFiaEl1M29WVmstNlJpb1F0QmR0VVhmbUR5alpkUDFBT0laeWxYNkZDWm43Rk03dGZ6YWxiWkZ5N2Rwcl8wSEE1TjhKckpMaThHMDBCNXVTb09sUE9EZTk3NA?oc=5",
+      "summary": "■概要: \nフィリピン貿易産業省（DTI）は、米国のプライベートエクイティ企業I Squared Capitalがフィリピンにおけるエネルギーおよびインフラプロジェクトにコミットした20億米ドルの投資について、政府支援の迅速化を図ると発表しました。この投資は、エネルギー安全保障の向上、コールドチェーン物流の近代化、デジタル接続の強化を目的としています。\n\n■主なポイント:\n・I Squared Capitalは、フィリピンに既に10億米ドル以上を投資しており、今後2～3年間でさらに10億米ドルを追加投資し、総投資額は20億米ドルとなります。\n・I Squared Capitalのフィリピン子会社であるPhilippine Coastal Storage and Pipeline Corp.は、BatangasとDavaoで新しい燃料貯蔵施設の建設を進めています。同社はフィリピン国営石油会社（PNOC）のために100万バレル以上の戦略的燃料備蓄も行っています。\n・I Squared Capitalは、Bases Conversion and Development Authority (BCDA) と2つの覚書を締結しました。内容は、Subic-Clark間の燃料パイプラインの提案と、Subic Bayにおける液化天然ガス発電プロジェクトの可能性についてです。\n・I Squared Capitalは、CebuとDavaoにあるRoyale Cold Storageの拡張計画を共有しました。昨年、Plaridel, BulacanでRoyale Cold Storage (RCS) の1.5ヘクタールの拡張に着工しました。\n・I Squared Capitalは、通信タワー、データセンター、病院における機会の探求に関心を示しています。\n\n■港湾IT的観点:\n記事は直接的に港湾ITに言及していませんが、I Squared Capitalによるコールドチェーン物流の近代化やデジタル接続の強化への投資は、港湾におけるスマートポート化、デジタルツイン、陸電・脱炭素といったIT・DX・自動化の進展を間接的に促進する可能性があります。特に、燃料貯蔵施設やパイプラインのインフラ開発は、港湾の効率化と脱炭素化に向けた基盤整備に貢献し、将来的な港湾ITソリューションの導入を容易にするでしょう。",
+      "url": "https://www.pna.gov.ph/article/dti-to-fast-track-2-b-i-squared-capital-energy-infra-investments",
       "source": "news",
       "id": 19
     },
@@ -231,8 +231,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "Splash Ports - Page 37 of 37 - Splash247",
-      "summary": "【記事タイトルからの要約】\n\n■概要:\nSplash247という情報源の「Splash Ports」に関する記事シリーズのうち、フィリピンに関する最終ページ（37ページ目）である。\n\n■港湾IT的観点:\nタイトルからは、港湾におけるIT、DX、自動化、脱炭素に関する具体的な内容は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE80aU1RSzdwMDIwRHZJbjlldFlsRFZ0N2ptWDVRc1lyVTdRNmNSWkFDb1V5U2Q0czJOV0tHUjJiUDBLUlRFcWRvbm9NcnVJWDhhOE1QNw?oc=5",
+      "summary": "概要:\nこのタイトルは、Splash247というウェブサイトの「Splash Ports」というカテゴリの37ページ目であることを示しています。フィリピンに関する港湾関連情報が掲載されている可能性があります。\n\n港湾IT的観点:\nタイトルからは、港湾ITに関する具体的な内容は判断できません。",
+      "url": "https://splash247.com/splashports/page/37/",
       "source": "news",
       "id": 21
     },
@@ -264,8 +264,8 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "Unilever PH on track for net zero via greener supply chain - PortCalls Asia",
-      "summary": "以下の記事タイトルから読み取れる範囲での要約です。\n\n**■概要:**\nユニリーバ フィリピンは、より環境に配慮したサプライチェーンを通じて、ネットゼロ達成に向けて順調に進んでいることを示しています。\n\n**■港湾IT的観点:**\nタイトルからは判断不可。",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVG9rUHpjaUdrMXF2RW9zX3NZeXVQUHBHYUVYNG9BOTZkTjF4SkRtT01VSVpRZERRWWV0YUtEUW5QaWhGY1duN0tkQ0dqUTU3MDc4ZnE4OE1tcjZ2Tmp6WFAtNHhHNVo2aHkwbjNhRjdaSjJVWE9FY1EzYjllSkFVbVNYekgxd1dt?oc=5",
+      "summary": "■概要:\nユニリーバ・フィリピンは、事業全体およびサプライチェーン全体における脱炭素化とグリーンイニシアチブを通じて、ネットゼロ目標の達成に向けて順調に進んでいます。これには再生可能エネルギーの利用やハイブリッド電気自動車の導入が含まれ、サプライヤーやパートナーとも協力して排出量削減を加速しています。同社の目標は、多国籍消費財企業であるユニリーバの2039年までのネットゼロコミットメントに沿ったものです。\n\n■主なポイント:\n・ユニリーバ・フィリピンは、事業全体およびサプライチェーン全体で脱炭素化とグリーンイニシアチブを進めています。\n・イニシアチブには、再生可能エネルギーの利用とハイブリッド電気自動車の導入が含まれます。\n・ユニリーバ・フィリピンは、サプライヤーや他のパートナーとも協力して排出量削減を加速しています。\n・ユニリーバ・フィリピンの目標は、多国籍消費財企業であるユニリーバの2039年までのネットゼロコミットメントに沿っています。\n・2019年には、ユニリーバ・フィリピンは地熱エネルギーを利用した100%再生可能グリッド電力に移行し、工場やその他の施設にソーラールーフトップパネルの設置を拡大しています。\n・同社は、自社保有車両を2030年までに100%ハイブリッド電気自動車に移行することを約束しています。\n\n■港湾IT的観点:\nこの記事は、ユニリーバ・フィリピンがサプライチェーン全体の脱炭素化とグリーン化を推進していることを示しており、これは港湾における陸電・脱炭素化、スマートポート、デジタルツインといったIT化・DX・自動化の文脈で、サプライチェーン全体の環境負荷低減に向けた取り組みが加速していることを意味します。特に、ハイブリッド電気自動車への移行や再生可能エネルギーの利用は、港湾における物流のグリーン化と排出量削減に直接的に貢献する可能性を秘めています。",
+      "url": "https://portcalls.com/unilever-ph-on-track-for-net-zero-via-greener-supply-chain/",
       "source": "news",
       "id": 24
     },
@@ -308,8 +308,8 @@
       "cat": "dev",
       "catLabel": "[Dev] 開発・投資・入札",
       "title": "Gas Malaysia targets investment decision on Kedah LNG terminal by second half of 2027 - The Star",
-      "summary": "■概要:\nGas Malaysiaは、マレーシアのケダLNGターミナルに関する投資決定を2027年下半期までに目標としています。\n\n■港湾IT的観点:\nタイトルからは、港湾のIT、DX、自動化、脱炭素に関する具体的な情報は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxQQXdub3kxRWJVcXNRV21XTTFCc19ob1Z5clJsWWY4OTBhNEN2cXZkMjBCSU00WHdUTl9uaTZkbHlNREh6RUxfNlZLcWN5eU5zcEw0MVdtalVualJ2OUNzajBFM01mT0Ewb19PTUR2azZGZFVjMU1CanAxYTgyV0t0bjY1TC1Jc3R5NmliaHRwQ2IzejZjTWtCaHQ1ZHhBWGNiR2cyelhTTUh2bklBQlBrZnpFME9TX09KOVNrUFd4VUVEN09DX3doclh0eVFFRlRBWjN6N0VMY2dsdFR4VmFR?oc=5",
+      "summary": "■概要:\nGas Malaysiaは、日本企業の東京ガスとオランダ企業のVTTIとの共同事業として、ケダ州ヤン地区に初の再ガス化ターミナルを建設する計画で、2027年下半期までに最終投資決定を目指しています。この施設は2030年末までに稼働開始予定です。\n\n■主なポイント:\n・事業者・発注者: Gas Malaysia (東京ガス、VTTIと共同開発)\n・港湾・ターミナル名: ケダ州ヤン地区のLNG再ガス化ターミナル\n・金額: 20億リンギットから30億リンギット（4億9,000万ドルから7億3,500万ドル）\n・時期と段階: 2027年下半期までに最終投資決定、2030年末までに稼働開始予定\n・生産能力: 年間最大600万トン\n\n■港湾IT的観点:\nこの動きは、マレーシア北部地域におけるガス供給のギャップを埋め、エネルギー安全保障を強化するための重要なインフラ開発を意味します。また、マレーシアのガス市場自由化の進展と、将来的なLNG輸入国への転換の可能性を示唆しています。\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
+      "url": "https://www.thestar.com.my/business/business-news/2026/10/02/gas-malaysia-targets-investment-decision-on-kedah-lng-terminal-by-second-half-of-2027",
       "source": "news",
       "id": 28
     },
@@ -319,8 +319,8 @@
       "cat": "smart",
       "catLabel": "[DX] DX・スマートポート",
       "title": "Balis Pengambengan Port project to create 25,000 jobs: Minister - ANTARA News",
-      "summary": "■概要\nインドネシアにおいて、大臣はバリス・プンガンバンガン港プロジェクトが25,000の雇用を創出すると述べた。\n\n■港湾IT的観点\nタイトルからは、本港湾プロジェクトにおけるIT、DX、自動化、または脱炭素に関する内容は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQbTczaFNVUTlGc2dlcjhIX0ptd0E1dnlZTGRZcGQ5M0JiaUE0UEhZLXBrcWF6azJOQnNENDB4TURGUFBEQ2VzR01wV2w5dExaamNjOWVJTjl6M0phMDM4M1JKbWpGV1Y0QmlnUE83MHpMWnNCSmx4SU9XZkRtbENvQUM2TXNxanV6TzN5Z1k5V1JWNEM3WEUxbFQ1MU9fcExDdHdNLXpn0gGmAUFVX3lxTFBtNzNoU1VROUZzZ2VyOEhfSm13QTV2eVlMZFlwZDkzQmJpQTRQSFktcGtxYXprMk5Cc0Q0MHhNREZQUERDZXNHTXBXbDl0TFpqY2M5ZUlOOXozSmEwMzgzUkptakZXVjRCaWdQTzcwekxac0JKbHhJT1dmRG1sQ29BQzZNc3FqdXpPM3lnWTlXUlY0QzdYRTFsVDUxT19wTEN0d00temc?oc=5",
+      "summary": "■概要:\nインドネシア政府は、バリ州ジャンブラナ県にあるペンガンベンガン漁港を近代的な漁業ハブとして開発する計画を発表しました。海洋水産大臣サクティ・ワヒュ・トレンゴノ氏によると、このプロジェクトは最大25,000人の雇用を創出すると見込まれています。\n\n■主なポイント:\n・プロジェクト名: ペンガンベンガン漁港開発\n・場所: バリ州ジャンブラナ県\n・投資額: 約1.2兆ルピア（約6,700万米ドル）\n・雇用創出: 最大25,000人\n・目的: 近代的な漁業ハブ、大型漁船（マグロ漁船を含む）のドッキングハブ、観光との統合、漁業産業の競争力強化。\n・課題: 停泊地のシルト化が荷役活動を妨げている。\n\n■港湾IT的観点:\nこの記事は主に漁港のインフラ開発と雇用創出に焦点を当てており、港湾のIT化、DX、自動化、脱炭素に関する具体的な言及はありません。",
+      "url": "https://en.antaranews.com/amp/news/433811/balis-pengambengan-port-project-to-create-25000-jobs-minister",
       "source": "news",
       "id": 29
     },
@@ -330,7 +330,7 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "Tankers enter the death zone - Splash 24/7",
-      "summary": "■概要\nフィリピンにおいて、タンカーが「死のゾーン」と表現される区域に入っていることが示されています。\n\n■港湾IT的観点\nタイトルからは判断不可。",
+      "summary": "「Tankers enter the death zone - Splash 24/7」という記事タイトルでWeb検索しましたが、フィリピンに特化した同一のニュース（同じ出来事を報じた記事・プレスリリース）は確認できませんでした。検索結果には、タンカーの売買市場に関する一般的な記事や、フィリピンで発生したタンカー沈没事故に関する別のニュースが複数表示されましたが、記事タイトルと地域を厳密に一致させる制約があるため、要約はできません。\n\n取得不可\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
       "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBlWjZ3WkJuRmlvSE5JLVY4VUZfS0Zvdy1TbUw1eHhialRLNjBpRzVfWWh6YllOeEY1aTdVWkdldFpNcEwtbm5GR2oyR3J1VVlZNlpWNGRVb0JydmltYmlMVw?oc=5",
       "source": "news",
       "id": 30
@@ -341,7 +341,7 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "PH, ASEAN, Australia push maritime decarbonization - PortCalls Asia",
-      "summary": "■概要\nフィリピン、ASEAN、およびオーストラリアは、海上輸送における脱炭素化の推進に取り組んでいます。\n\n■港湾IT的観点\nタイトルからは港湾IT、DX、自動化に関する具体的な内容は判断できません。",
+      "summary": "■概要:\nフィリピン、ASEAN、オーストラリアは、2026年10月に開催された「ASEAN Future of Maritime Conference 2026」において、海事分野の脱炭素化に向けた協力を強化した。フィリピンは、ASEAN事務局およびオーストラリアのインフラ開発プログラムであるPartnerships for Infrastructure (P4I) と共同でこの会議を主催した。この会議では、海事部門における投資、技術、スキル開発の推進に焦点が当てられた。\n\n■主なポイント:\n・フィリピンの運輸省（DOTr）は、フィリピン港湾庁（PPA）、海事産業庁（MARINA）、フィリピン沿岸警備隊（PCG）とともに、海事部門の温室効果ガス排出量ベースラインを確立する作業を進めている。\n・「ASEAN Future of Maritime Conference 2026」は、「Navigating Our Future Together: Advancing Maritime Decarbonization through Investment, Innovation and Skills」をテーマに開催された。\n・会議では、持続可能な船隊の開発、港湾運営からの排出量削減、規制協力の強化、海事のデジタル化とグリーン移行に必要な労働力スキルの開発に焦点が当てられた。\n・オーストラリアは、P4Iを通じて、マレーシア、タイ、ベトナムの海事政策およびインフラ運営を担当する主要政府機関や事業者との戦略的協力を確立している。\n・オーストラリアは、初の「Maritime Emissions Reduction National Action Plan (MERNAP)」を策定しており、その課題論文の一つでは「グリーンシッピング回廊」の開発の重要性が強調されている。\n\n■港湾IT的観点:\nこの動きは、海事部門の脱炭素化を達成するために、港湾運営における排出量削減や海事のデジタル化、グリーン移行に必要なスキル開発が不可欠であることを示している。特に、温室効果ガス排出量ベースラインの確立は、今後のITを活用した排出量監視・管理システムの導入や、スマートポート技術による効率化・脱炭素化の推進に繋がる重要なステップである。\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
       "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE92SlljeGVJMWJRUW42azlaYl9WNkdWV1pKWUxxZXNYemVDVEdrbTRTZnJjZTRvb0ZoNmRXaFZ2T0FYU3I0M3Z1b1YzdTlqZFRZN193Wnh0cmFjV05RQ3o4MEV1dVdubTBDSUgxeFJjT05qZDFIQkVvaWk5aw?oc=5",
       "source": "news",
       "id": 31
@@ -363,8 +363,8 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "PH, ASEAN, Australia push maritime decarbonization - PortCalls Asia",
-      "summary": "■概要:\nフィリピン、ASEAN、およびオーストラリアが連携し、海事分野における脱炭素化を推進しています。\n\n■港湾IT的観点:\nタイトルからは、港湾IT、DX、または自動化に関する具体的な内容は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE92SlljeGVJMWJRUW42azlaYl9WNkdWV1pKWUxxZXNYemVDVEdrbTRTZnJjZTRvb0ZoNmRXaFZ2T0FYU3I0M3Z1b1YzdTlqZFRZN193Wnh0cmFjV05RQ3o4MEV1dVdubTBDSUgxeFJjT05qZDFIQkVvaWk5aw?oc=5",
+      "summary": "概要:\nフィリピン、ASEAN、オーストラリアは、2026年ASEAN海事の未来会議において、海事部門の脱炭素化に向けた協力を強化することを決定しました。この会議はフィリピンが主催し、投資、イノベーション、労働力スキルを通じて持続可能な海運の推進に焦点を当てました。フィリピンは、海事部門の温室効果ガス排出量ベースラインを確立する作業を進めています。\n\n主なポイント:\n・2026年ASEAN海事の未来会議がフィリピンで開催され、フィリピン、ASEAN、オーストラリアが海事部門の脱炭素化における協力を強化しました。\n・フィリピンの運輸省（DOTr）、フィリピン港湾庁（PPA）、海事産業庁（MARINA）、フィリピン沿岸警備隊（PCG）は、海事部門の温室効果ガス排出量ベースラインの確立に取り組んでいます。\n・会議はDOTrがASEAN事務局およびオーストラリアのインフラ開発プログラムであるPartnerships for Infrastructure (P4I) と共同で開催しました。\n・議論は、持続可能な船隊の創設、港湾排出量の削減、規制協力の強化、海事のデジタル化とグリーン移行のための労働力スキルの構築に集中しました。\n・フィリピンの運輸長官Giovanni Lopezは、海事部門の環境的および経済的目標を達成するために、ASEAN加盟国間の集団行動とオーストラリアのような国々との強力なパートナーシップが必要であると述べました。\n\n港湾IT的観点:\nこの記事の動きは、ASEAN地域における港湾のIT化、DX、自動化、脱炭素化、インフラ開発が、単なる技術導入に留まらず、温室効果ガス排出量ベースラインの確立や規制協力の強化といった政策・制度面での国際連携と一体となって推進されていることを示唆しています。特に、海事のデジタル化とグリーン移行のための労働力スキル構築への言及は、技術導入と並行して人材育成が不可欠であるという認識が共有されていることを意味します。",
+      "url": "https://portcalls.com/ph-asean-australia-push-maritime-decarbonization/",
       "source": "news",
       "id": 33
     },
@@ -374,8 +374,8 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "PH, ASEAN, Australia push maritime decarbonization - PortCalls Asia",
-      "summary": "■概要:\nフィリピン、ASEAN（東南アジア諸国連合）、およびオーストラリアが海事部門の脱炭素化を推進しています。\n\n■港湾IT的観点:\nタイトルからは、脱炭素化への具体的な港湾IT、DX、自動化の取り組みについては判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE92SlljeGVJMWJRUW42azlaYl9WNkdWV1pKWUxxZXNYemVDVEdrbTRTZnJjZTRvb0ZoNmRXaFZ2T0FYU3I0M3Z1b1YzdTlqZFRZN193Wnh0cmFjV05RQ3o4MEV1dVdubTBDSUgxeFJjT05qZDFIQkVvaWk5aw?oc=5",
+      "summary": "概要:\nフィリピン、ASEAN、オーストラリアは、2026年のASEAN海事の未来会議において、海事部門の脱炭素化に向けた協力を強化しました。この会議はフィリピンが主催し、投資、イノベーション、労働力スキルを通じて持続可能な海運を推進することを目的としています。フィリピンは、海事部門の温室効果ガス排出量ベースラインを確立する作業を進めています。\n\n主なポイント:\n・2026年10月2日に開催された「ASEAN海事の未来会議2026」において、フィリピン、ASEAN、オーストラリアが海事の脱炭素化に関する協力を強化しました。\n・フィリピンの運輸省（DOTr）、フィリピン港湾庁（PPA）、海事産業庁（MARINA）、フィリピン沿岸警備隊（PCG）は、海事部門の温室効果ガス排出量ベースラインの確立に取り組んでいます。\n・会議は、フィリピン運輸長官のジョバンニ・ロペス氏が、海事部門の脱炭素化を支援するためのASEAN協力とオーストラリアとのパートナーシップの強化を呼びかけました。\n・会議は、DOTrがASEAN事務局およびオーストラリアの東南アジアにおけるインフラ開発プログラムであるPartnerships for Infrastructure (P4I) と共同で主催しました。\n・議論は、持続可能な船隊の創設、港湾排出量の削減、規制協力の強化、海事のデジタル化とグリーン移行のための労働力スキルの構築に焦点を当てました。\n\n港湾IT的観点:\nこの記事の動きは、ASEAN地域における海事部門のIT化、DX、自動化、脱炭素化が、単なる技術導入に留まらず、排出量ベースラインの確立、規制協力、労働力スキルの開発といった包括的なアプローチで推進されていることを示しています。特に、港湾排出量の削減が議論の主要なポイントの一つとして挙げられており、スマートポートやデジタルツイン技術の導入による効率化と脱炭素化への貢献が期待されます。",
+      "url": "https://portcalls.com/ph-asean-australia-push-maritime-decarbonization/",
       "source": "news",
       "id": 34
     },
@@ -396,7 +396,7 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "Premier Alliance joins accelerating return to Suez - Splash 24/7",
-      "summary": "■概要\nPremier Allianceが、スエズへの加速的な回帰に参加しました。\n\n■港湾IT的観点\nタイトルからは、港湾IT、DX、自動化、脱炭素に関する情報は読み取れません。",
+      "summary": "■概要:\nPremier Allianceは、2026年10月からアジアとヨーロッパを結ぶFE1サービスをスエズ運河経由に戻す準備を進めている。これは、2024年1月から採用していた喜望峰経由のルートからの変更となる。この動きは、コンテナ船業界における喜望峰迂回ルートからの回帰を加速させるものとなる。\n\n■主なポイント:\n・Premier Alliance（ONE、HMM、Yang Ming）は、2026年10月から東南アジア-北ヨーロッパ間のFE1サービスをスエズ運河経由に戻す。\n・FE1サービスの最初のスエズ運河経由の航海は、8,110 TEUのONE Continuityで、2026年10月17日にレムチャバンを出港する予定である。\n・この変更は、2024年1月に喜望峰経由のルートを採用して以来、Premier Allianceにとって初めてのルート変更となる。\n・FE1サービスは、レムチャバン、カイメップ、シンガポール、ロッテルダム、ハンブルク、ルアーブルに寄港する。\n・Linerlyticaの計算によると、2026年5月以降、200万TEUを超える140隻以上のコンテナ船がスエズ運河経由のルートに戻っている。\n\n■港湾IT的観点:\nスエズ運河経由ルートへの回帰は、航海の短縮により船舶の需要を減少させ、結果として海上輸送能力の増加につながる可能性がある。これにより、港湾における船舶の到着スケジュールやコンテナ処理能力の最適化がより重要となり、港湾ITシステムによる効率的なターミナル運営や貨物管理の必要性が高まる。\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
       "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5tN0xoVDZLRFcwNGdNMlpNXzFyZDdpWkdYRXA2YUFSa2h5VnZlbHlWQXNzRjkxQ1NqMWEwOUpFSi1QcG4tLUhtbUU2eE9Kb3lSb0diclVBUk5URVpzZ1FTV1RORE9PaUJPeXBwSk9aM19kWXczQTc1R3N3dlh2QQ?oc=5",
       "source": "news",
       "id": 36
@@ -407,8 +407,8 @@
       "cat": "smart",
       "catLabel": "[DX] DX・スマートポート",
       "title": "Balis Pengambengan port to become world-class fisheries hub - ANTARA News",
-      "summary": "■概要\nインドネシアに位置するバリス・プンガンバンガン港が、世界クラスの漁業ハブとなる予定です。\n\n■港湾IT的観点\nタイトルからは、港湾のIT化、DX、自動化、または脱炭素に関する具体的な内容は判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQRnhsUXF2QnFma3U4OE5pRTJ2Z2pBZkdrSFFuLXRla0lEZVd3VUZickpWN0k3enpIdGdCX3JURXJSTkgtLWZ1eURUMkVUU2F1c0llNFFCblh4RHAzUHJzZk9GU3NJYnIyNnYwNWU4TGc1NUREWVlIMVFvUkl0cVpLdXpqcldvTW5XcEdiZ1ptSmFWcmlKOEZpNnNFaWFCd9IBowFBVV95cUxPNU0zMU5fSkIxaFRsZzRmTXJ6TXQza3IyTEtnd0Ixa2d3eG9wTTJUblllQUtkUmNUZ2c1U2J0YXRVbC1JLWduTlJoMVNwVk9KSXlDODNNM2FKSTV3X3daRmVzbGV3c0c2VW5jWklsZ2o3Zlg5VWtRc3F2N1lLd1pXWVdfMmV2b2RTMV9ucm9TdlNTT080X0tLeVY5V04xdFJHajlR?oc=5",
+      "summary": "■概要:\nインドネシアは、バリ島のペンガンベンガン漁港を、漁業、加工、流通を統合した世界クラスの漁業ハブとして開発することを決定した。海洋水産大臣サクティ・ワヒュ・トレンゴノ氏が発表し、2029年の完成を目指す。このプロジェクトは、経済成長と観光振興を目的としている。\n\n■主なポイント:\n・インドネシアはバリ島のペンガンベンガン漁港を世界クラスの漁業ハブに開発する。\n・プロジェクト名「統合漁港および国際魚市場フェーズI」は、港湾面積を13.5ヘクタールから49.3ヘクタールに、港湾水域を24ヘクタールから88.3ヘクタールに拡張する。\n・港湾の収容能力は1,273隻から1,600隻に増加し、ベノア港から運航する大型漁船も収容可能となる。\n・年間水揚げ量は61,300メートルトンから124,000メートルトン以上に倍増し、年間非税国家歳入は480億ルピアから1,040億ルピアに増加すると予測されている。\n・このプロジェクトは、イスラム開発銀行（IsDB）の支援を受けており、契約額は1.27兆ルピアで、2029年末までに完成予定である。\n・約25,000人の雇用創出が見込まれており、現在の労働力の約3倍となる。\n\n■港湾IT的観点:\n記事には港湾IT、DX、自動化、デジタルツイン、陸電・脱炭素に関する具体的な言及はないが、漁業、加工、流通を統合する「世界クラスの漁業ハブ」への開発は、将来的なサプライチェーン全体の効率化や最適化に向けたIT導入の可能性を示唆している。また、環境に配慮した設計と運用は、持続可能な港湾開発の一環として、将来的にスマートポート技術や脱炭素化技術の導入を促す可能性がある。",
+      "url": "https://en.antaranews.com/news/433483/balis-pengambengan-port-to-become-world-class-fisheries-hub",
       "source": "news",
       "id": 37
     },
@@ -418,8 +418,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "COSCO completes first supramax-to-boxship conversion - Splash 24/7",
-      "summary": "■概要\nCOSCOが、スーパーマックス船をコンテナ船に転換する作業を初めて完了しました。\n\n■港湾IT的観点\nタイトルからは判断不可。",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPdzA1ZXo3MUxrVGc2azZYOC0wb2x1eGxMeXo4OWhSckZPVTNKWWZzbmx0MnJta2lCa2dabTBxajhEYTNuVTBFVTF0M0xyTmdFMEhZNWpncWtuRWNuYVRQRGUwdENlcDZqd3BOVXdqVlNtLWVwRFRCcGdLa2ZXUVBDaQ?oc=5",
+      "summary": "概要: COSCOがスプラマックス型バルク船からコンテナ船への改造を初めて完了した。これはフィリピンで行われたプロジェクトである。\n\n港湾IT的観点: タイトルからは判断不可。",
+      "url": "https://splash247.com/cosco-completes-first-supramax-to-boxship-conversion/",
       "source": "news",
       "id": 38
     },
@@ -429,7 +429,7 @@
       "cat": "smart",
       "catLabel": "[DX] DX・スマートポート",
       "title": "1ヶ月間の海運ニュース - 日本海事新聞 電子版",
-      "summary": "■概要\n日本海事新聞の電子版が、過去1ヶ月間にわたる海運関連のニュースをまとめたものである。\n\n■港湾IT的観点\nタイトルからは判断不可。",
+      "summary": "「1ヶ月間の海運ニュース - 日本海事新聞 電子版」というタイトルの記事は直接見つかりませんでしたが、関連する海運ニュースの概要が複数確認できました。特に、苫小牧港での新TOS導入に関する情報が含まれる「海事プレスONLINE」の記事と、「Daily Cargo」の「苫小牧港セミナー うねり対策を推進、安定荷役目指す 新TOSも導入」が関連性が高いと判断しました。\n\n■概要:\n苫小牧港では、うねり対策を推進し、安定した荷役を目指すために新たなTOS（ターミナルオペレーションシステム）が導入されることが決定しました。\n\n■主なポイント:\n・苫小牧港でうねり対策推進と安定荷役を目指す。\n・新TOS（ターミナルオペレーションシステム）が導入される。\n\n■港湾IT的観点:\n苫小牧港における新TOS導入は、港湾のIT化・DX推進の一環であり、安定荷役による効率化と安全性向上に貢献すると考えられます。\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
       "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9LUGo1aUtDUU9sSE13UDhaMW5TNktENXNlWUFIOHdkM09IWnd1ektqV2RLMG1wZFJ6ZFU5QWlRXy16QjZKWVZEem1BX3hTdHJrY3NXNkhvWU1pNnQyMUt4WFFvS0RxQjNWWFpCRGtCTXhXdw?oc=5",
       "source": "news",
       "id": 39
@@ -451,8 +451,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "MPA, MPABD deepen maritime and port cooperation - Port Technology",
-      "summary": "■概要:\nブルネイにおいて、MPAとMPABDは海事および港湾分野での協力関係を深化させます。\n\n■港湾IT的観点:\n本タイトルからは、協力の内容が港湾IT、DX、自動化、脱炭素に関するものかどうかは判断できません。",
-      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNTlprRjM5b2RJYXRCSGROQ0N0aU8yUXlEYTRIZmZ0WFBzVnFCNEFoYUllRU9mZEJPRXE3Rm42SmtYZEFWcnczLVFmMjRnblloT0daZlZlVXBDRU41RlZqcXJZb3VvSHdBMS05ZkU2Z01heXFXdU0zZ1FKUWI0UVZVUHJFUnpJZi1VTnhQanhEUTg1MU9Yd3p1S3lOZlg4cmlyektkS1pZcnVlaGM?oc=5",
+      "summary": "■概要:\nシンガポール海事港湾庁（MPA）とブルネイ・ダルサラーム海事港湾庁（MPABD）は、海事および港湾業務における協力を強化するための覚書（MoU）を締結しました。この合意は、第12回シンガポール・ブルネイ青年リーダーズ・プログラムの期間中、2026年9月28日から10月2日にかけて署名されました。\n\n■主なポイント:\n・署名者: MPA長官 Ang Wee Keong氏、MPABD長官 Captain (Ret.) Zil Husam bin Haji Abdul Rahman氏。\n・署名時期: 2026年9月28日～10月2日（第12回シンガポール・ブルネイ青年リーダーズ・プログラム期間中）。\n・協力分野: 海事のデジタル化、安全、港湾国監督（PSC）検査、事故調査、訓練。\n・目的: より安全でクリーンかつ効率的な海運業務の発展支援、両海事当局間の技術協力機会の拡大。\n・背景: MPAとMPABD間の長年にわたる特別な友好関係と強力なパートナーシップ。\n\n■港湾IT的観点:\nこの動きは、シンガポールとブルネイが海事部門のデジタル化を推進し、港湾運営の効率性、安全性、持続可能性を向上させるための地域協力の重要性を示しています。特に、海事のデジタル化における情報交換と協力は、両国のスマートポート化とDX推進に貢献すると考えられます。\n※元記事を直接取得できなかったため、GeminiのWeb参照により要約",
+      "url": "https://www.porttechnology.org/news/ports-and-terminals/mpa-and-mpabd-deepen-maritime-and-port-cooperation/",
       "source": "news",
       "id": 41
     },
@@ -462,8 +462,8 @@
       "cat": "smart",
       "catLabel": "[DX] DX・スマートポート",
       "title": "Indonesia plans four integrated fishing ports as export hubs - ANTARA News",
-      "summary": "■概要:\nインドネシアは、4つの統合された漁港を計画している。これらの漁港は、輸出ハブとしての役割を担う予定である。\n\n■港湾IT的観点:\nタイトルからは、港湾IT、DX、自動化、脱炭素に関する具体的な情報は判断できない。",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxONjlQLVk2T2RXa1Z6VmV4OGtkOVJzMGxqOFdXQmp0MWQtam9teDFJcjB3cEdEN0JLV0JVMmVXd2liRXlPTTZKYkJES1pvMktpNUNBMU5mNkt3WGhWSjFJblkza0VLYXN5YVlOeWFLXzI4bGJRbGNEUHp2cFR1LVI2UTJjTndNY2pvZkFoSlo3TFMwZkF0S1Z0alBvNThpQW_SAaQBQVVfeXFMTU01SXhSSFJCNXhoN0ZwTmI2b2lXMG9LSno0OHJNMHk5azh2bUhMRE5FT19sLUxxalEwaDVRVDRPUEx2MmNBb29mNXptZzZVNU9LWTNrTkZIdlV5Vk1MazJ0M0xWUWJ6ZUl1R0lLTXk3S1pUVElUMFFUZHVuSGwza1ZqS0JsZ2tDcnBjdkN4TzQxb2lPSFdtS3E1RzlDOElNdWxWNDk?oc=5",
+      "summary": "■概要:\nインドネシア政府は、海洋水産大臣サクティ・ワヒュ・トレンゴノ氏の発表により、4つの漁港を近代的な統合施設として開発し、輸出ハブとして機能させる計画を立てています。この計画は、漁業者と企業へのサービス向上を目指しており、バリ州ジェンブラナのペンガンベンガン港で起工式が行われました。\n\n■主なポイント:\n・インドネシア政府は、4つの漁港を近代的な統合施設に開発し、輸出ハブとして機能させる計画です。\n・対象となる4つの漁港は、バリ州ジェンブラナのペンガンベンガン港、西ジャワ州チレボン、中央ジャワ州チラチャップ、北スラウェシ州ビトゥンです。\n・ペンガンベンガン港では、2026年9月29日火曜日に起工式が行われました。\n・チラチャップとバリの港は、インドネシア南部海域のクロマグロとイカの生産と貿易を支援する可能性に基づいて開発されます。\n・ビトゥンの港は、インドネシア東部の漁業を強化するためにアップグレードされます。\n・これらの4つのプロジェクトはパイロットモデルと見なされ、その性能を評価した上で他の漁港への展開が検討されます。\n\n■港湾IT的観点:\n記事には港湾IT、DX、自動化、デジタルツイン、陸電・脱炭素に関する具体的な言及はありませんが、近代的な統合施設への開発は、将来的な効率化や国際貿易への対応を見据えたITインフラ導入の可能性を示唆しています。",
+      "url": "https://en.antaranews.com/news/433412/indonesia-plans-four-integrated-fishing-ports-as-export-hubs",
       "source": "news",
       "id": 42
     },
@@ -473,8 +473,8 @@
       "cat": "automation",
       "catLabel": "[IT] TOS・自動化・IT基盤",
       "title": "NECがAI税番判定を強化、通関の属人化打破 - LOGISTICS TODAY",
-      "summary": "■概要:\nNECはAIを活用した税番判定機能を強化し、通関業務における属人化の解消を目指しています。\n\n■港湾IT的観点:\nAIによる税番判定強化と通関業務の属人化打破は、港湾における通関プロセスの効率化とデジタル化を推進する技術であると捉えられます。",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE9aMWhiTzc5UFZnOXJIejhQbnM2RHFfdTQ5Y19YaW1EYzVySXpPaVBpWUxlRXVKejFwTkkzVFRXV0laNjFhMFRwNA?oc=5",
+      "summary": "■概要:\n日本電気（NEC）は、AIを活用した税番特定支援サービスを大幅に機能強化しました。これにより、通関業務の属人化を解消し、コンプライアンス強化や関税コスト最適化を促進します。\n\n■主なポイント:\n・NECはAIを活用した税番特定支援サービスを大幅に機能強化しました。\n・画像解析をはじめとする5つの新機能が追加され、専門知識を持たない営業部門や荷主企業でも直感的な操作が可能になりました。\n・新機能には、商品画像やファイルからの直接判定機能、大量の製品情報を一括で読み込み自動判定する一括判定機能、判定した税番にひも付く関税率を即座に表示する税率表示機能が含まれます。\n・AIによる判定結果を自社固有のデータベースに保存・蓄積し、社内独自コードとひも付けた検索を実現する判定結果のデータベース記録機能と、誰がいつどのような税番を検索したかを自動で記録・可視化する判定履歴の自動保存機能も追加されました。\n・現在の利用者は物流事業者が6割を占めていますが、荷主からの引き合いも増加傾向にあります。\n\n■港湾IT的観点:\nこの動きは、通関業務におけるAI活用によるDX推進の一環であり、港湾における貿易手続きの効率化、属人化の解消、コンプライアンス強化、およびコスト最適化に貢献します。将来的には、原産地証明の取得など、より複雑な業務領域へのAI適用を通じて、港湾関連業務全体のスマート化とデジタルツインの実現に向けた基盤強化を意味します。",
+      "url": "https://www.logi-today.com/995847",
       "source": "news",
       "id": 43
     },
@@ -484,8 +484,8 @@
       "cat": "green",
       "catLabel": "[Green] 脱炭素・グリーン化",
       "title": "Some truckers, brokers urge joining transport strike over port woes - PortCalls Asia",
-      "summary": "■概要\nフィリピンにおいて、一部のトラック運転手やブローカーが、港湾が抱える問題に対し、交通ストライキへの参加を呼びかけている。\n\n■港湾IT的観点\nタイトルからは判断不可。",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPOHp1SWl1TU52em10ZDVaNkRRRkdicWxEdHlNUDBuZVYxUW9YeFpIREZUY1dlVHdROVBMUGtrMWNRc3hYZzRPRTctWVR2Vnh2TDY5b2haTHhZWVBrdnJIU21SRnVjZXRxeWxaM1BPWGRxcjJNNmRFR0tMUWlybWUzOFNmT2I5WGJaWnFROU9abV8xdlE?oc=5",
+      "summary": "■概要: \nフィリピンにおいて、一部の港湾トラック運転手、通関業者、輸入業者が、港湾混雑の改善などを求めて9月28日から全国的な交通ストライキへの参加を呼びかけている。この呼びかけは、9月23日にマニラのクラブ・イントラムロスで開催された協議会で決定された。\n\n■主なポイント: \n・一部の港湾トラック運転手、通関業者、輸入業者は、9月28日から始まる全国的な交通ストライキへの参加を業界に促している。\n・ストライキの主な理由は、港湾混雑の悪化、空コンテナ返却の遅延、高騰する燃料価格、運転手不足、取り締まり官によるハラスメントである。\n・トラック運転手は、空コンテナをデポに返却するまでに最大2週間待つことがあり、船会社がヤードスペースを十分に確保していないことを非難している。\n・参加グループは、ジープニー運転手に支給されているような貨物トラック運転手への燃料補助金を要求している。\n・この決定は、9月23日にマニラのクラブ・イントラムロスで開催された協議会で、フィリピン運送業者協会連合のメアリー・ザパタ会長とフィリピン通関業者協会インクのレイ・ソリマン氏が主導して行われた。\n\n■港湾IT的観点:\n港湾のIT化やDXは、空コンテナの効率的な管理、ヤードスペースの最適化、トラックの待機時間短縮に貢献し、今回のストライキの主要な原因である港湾混雑や非効率性を緩和する可能性がある。デジタル化された情報共有システムやターミナルオペレーティングシステム（TOS）の導入は、サプライチェーン全体の透明性を高め、このような運用上の課題を解決するための重要なステップとなる。",
+      "url": "https://portcalls.com/some-truckers-brokers-urge-joining-transport-strike-over-port-woes/",
       "source": "news",
       "id": 44
     },
